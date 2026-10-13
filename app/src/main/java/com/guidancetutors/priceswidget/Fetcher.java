@@ -32,7 +32,7 @@ class Fetcher {
         String goldSrc = "الصاغة";
         String page = get("https://market.isagha.com/prices");
         Double g24 = num("iSagha 24", page, "data-unit=\"24\"\\s+data-metal=\"gold\"[\\s\\S]{0,800}?data-testid=\"price-figure\"[^>]*>\\s*([0-9.,]+)");
-        Double g21 = num("iSagha 21", page, "data-unit=\"21\"\\s+data-metal=\"gold\"[\\s\\S]{0,800}?data-testid=\"price-figure\"[^>]*>\\s*([0-9.,]+)");
+        Double g21 = num("iSagha 21", page, "prices-strip__name[^>]*>\\s*عيار 21\\s*<[\\s\\S]{0,1500}?بيع\\s*<[\\s\\S]{0,300}?>\\s*([0-9][0-9.,]*)\\s*<");
         if (g24 == null) {
             Double oz = num("Gold-API", get("https://api.gold-api.com/price/XAU"), "\"price\":([0-9.]+)");
             Double rate = usd != null ? usd : (p.contains("usd") ? (double) p.getFloat("usd", 0) : null);
