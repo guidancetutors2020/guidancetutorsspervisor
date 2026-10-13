@@ -4,8 +4,8 @@
 > Task :app:mergeDebugResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
-> Task :app:processDebugMainManifest
 > Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
 > Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
@@ -14,15 +14,15 @@
 > Task :app:compressDebugAssets
 > Task :app:desugarDebugFileDependencies
 > Task :app:processDebugJavaRes NO-SOURCE
-> Task :app:checkDebugDuplicateClasses
-> Task :app:mergeDebugStartupProfile
 > Task :app:processDebugManifestForPackage
-> Task :app:mergeExtDexDebug
-> Task :app:mergeLibDexDebug
+> Task :app:checkDebugDuplicateClasses
 > Task :app:mergeDebugJavaResource
+> Task :app:mergeDebugStartupProfile
 > Task :app:mergeDebugJniLibFolders
 > Task :app:mergeDebugNativeLibs NO-SOURCE
 > Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeExtDexDebug
+> Task :app:mergeLibDexDebug
 > Task :app:processDebugResources
 > Task :app:validateSigningDebug
 > Task :app:compileDebugJavaWithJavac
@@ -34,16 +34,14 @@
 > Task :app:packageDebug
 > Task :app:createDebugApkListingFileRedirect
 > Task :app:assembleDebug
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1791926807627.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1791927307185.json
 
-BUILD SUCCESSFUL in 37s
+BUILD SUCCESSFUL in 48s
 33 actionable tasks: 33 executed
-24 7062.75
-21 None
-CTX ر لأسعار الذهب عيار 24 و21 و18 مع تحديثات مستمرة على مدار اليوم." /> <meta name="keywords" content="سعر الذهب اليوم, أسعار الذهب في مصر, سعر الذهب عيار 21, سعر الذهب عيار 24, سعر الذهب عيار 18, سعر الذهب عيار 14, أسعار الذهب لحظة بلحظة" /> <link rel="canonical" href="https://market.isagha.com/prices"> <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"> <meta name="author" content="iSagha"> <link rel="alternate" hreflang="ar-eg" href="https://market.isagha.com/prices"> <link rel="alternate" hreflang="a
-CTX  <option value="0" selected>ذهب عيار 24 - سنة واحدة</option> <option value="1" >ذهب عيار 21 - سنة واحدة</option> <option value="2" >ذهب عيار 18 - سنة واحدة</option> <option value="3" >ذهب عيار 24 - سنتان</option> <option value="4" >ذهب عيار 21 - سنتان</option> <option value="5" >ذهب عيار 18 - سنتان</option> <option value="6" >ذهب عيار 24 - خمس سنوات</o
-CTX ption> <option value="3" >ذهب عيار 24 - سنتان</option> <option value="4" >ذهب عيار 21 - سنتان</option> <option value="5" >ذهب عيار 18 - سنتان</option> <option value="6" >ذهب عيار 24 - خمس سنوات</option> <option value="7" >ذهب عيار 21 - خمس سنوات</option> <option value="8" >ذهب عيار 18 - خمس سنوات</option> </select> <noscript> 
-CTX n> <option value="6" >ذهب عيار 24 - خمس سنوات</option> <option value="7" >ذهب عيار 21 - خمس سنوات</option> <option value="8" >ذهب عيار 18 - خمس سنوات</option> </select> <noscript> <p class="mt-0 mb-4 text-center"> <button type="submit" class="site-btn site-btn-outline border-gold-strong text-gold-text">عرض</button> </p> </noscript> </form> <fi
-CTX  whitespace-nowrap text-gold-text"> <span class="prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">عيار 21</span> <span class="prices-strip__arrow shrink-0 text-[0.7rem] leading-none text-up" role="img" aria-label="ارتفاع">▲</span> </span> <span class="prices-strip__price prices-strip__price--buy col-span-3 col-start-1 row-start-2 flex items-center justify-between gap-2 text-[0.95rem] font-bold text-ink"> <span class="prices-strip__caption shrink-0 text-xs font-normal text-ink-3">شراء</s
-CTX 1" data-testid="prices-chip" x-bind:aria-pressed="unit === '21'" x-on:click="unit = '21'">عيار 21</button> <button type="button" class="prices-filter-chip site-btn site-btn-chip" data-unit="22" data-testid="prices-chip" x-bind:aria-pressed="unit === '22'" x-on:click="unit = '22'">عيار 22</button> <button type="button" class="prices-filter-chip site-btn site-btn-chip" 
+ticker 24 7062.75
+ticker 21 None
+STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">عيار 14|▲|شراء|4093.25|ج.م|بيع|4120|ج.م|
+STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">عيار 18|▲|شراء|5262.75|ج.م|بيع|5297.25|ج.م|
+STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">عيار 21|▲|شراء|6140|ج.م|بيع|6180|ج.م|
+STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">أوقية الذهب|▼|شراء|4160.76|$|بيع|4161.36|$|
 "EGP":52.658715
