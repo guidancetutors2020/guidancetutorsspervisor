@@ -21,41 +21,45 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="9dp">
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingHorizontal="6dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="نيويورك" android:textSize="13sp" android:textColor="@color/ink" android:maxLines="1" android:textStyle="bold"  />
-                    <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
-                    <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/New_York" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="14.5sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
-                </LinearLayout>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="فلوريدا، جورجيا، أوهايو، ميشيغان، بنسلفانيا، نيوجيرسي، فيرجينيا" android:textSize="9.5sp" android:textColor="@color/faint" android:maxLines="1" android:ellipsize="end" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="7dp">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:background="@drawable/tile" android:paddingHorizontal="9dp" android:paddingVertical="7dp" android:layout_marginHorizontal="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الشرقي" android:textSize="12sp" android:textColor="@color/ink" android:textStyle="bold" android:maxLines="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ET" android:textSize="9sp" android:textColor="@color/faint" android:fontFamily="@font/num_semibold" android:layout_marginStart="4dp" android:maxLines="1" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/New_York" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="15sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
             </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingHorizontal="6dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="تكساس" android:textSize="13sp" android:textColor="@color/ink" android:maxLines="1" android:textStyle="bold"  />
-                    <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
-                    <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/Chicago" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="14.5sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
-                </LinearLayout>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="إلينوي، مينيسوتا، ويسكونسن، ميزوري، لويزيانا، ألاباما" android:textSize="9.5sp" android:textColor="@color/faint" android:maxLines="1" android:ellipsize="end" />
+            <TextView android:id="@+id/st_e" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textSize="10sp" android:textColor="@color/muted" android:maxLines="4" android:lineSpacingExtra="1.5dp" android:layout_marginTop="3dp" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:background="@drawable/tile" android:paddingHorizontal="9dp" android:paddingVertical="7dp" android:layout_marginHorizontal="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="المركزي" android:textSize="12sp" android:textColor="@color/ink" android:textStyle="bold" android:maxLines="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CT" android:textSize="9sp" android:textColor="@color/faint" android:fontFamily="@font/num_semibold" android:layout_marginStart="4dp" android:maxLines="1" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/Chicago" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="15sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
             </LinearLayout>
+            <TextView android:id="@+id/st_c" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textSize="10sp" android:textColor="@color/muted" android:maxLines="4" android:lineSpacingExtra="1.5dp" android:layout_marginTop="3dp" />
+        </LinearLayout>
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="5dp">
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingHorizontal="6dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="كاليفورنيا" android:textSize="13sp" android:textColor="@color/ink" android:maxLines="1" android:textStyle="bold"  />
-                    <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
-                    <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/Los_Angeles" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="14.5sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
-                </LinearLayout>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="واشنطن، أوريجون، نيفادا" android:textSize="9.5sp" android:textColor="@color/faint" android:maxLines="1" android:ellipsize="end" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="6dp">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:background="@drawable/tile" android:paddingHorizontal="9dp" android:paddingVertical="7dp" android:layout_marginHorizontal="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الجبلي" android:textSize="12sp" android:textColor="@color/ink" android:textStyle="bold" android:maxLines="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MT" android:textSize="9sp" android:textColor="@color/faint" android:fontFamily="@font/num_semibold" android:layout_marginStart="4dp" android:maxLines="1" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/Denver" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="15sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
             </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingHorizontal="6dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="كولورادو" android:textSize="13sp" android:textColor="@color/ink" android:maxLines="1" android:textStyle="bold"  />
-                    <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
-                    <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/Denver" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="14.5sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
-                </LinearLayout>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="يوتا، نيو مكسيكو، مونتانا، وايومنغ، أيداهو" android:textSize="9.5sp" android:textColor="@color/faint" android:maxLines="1" android:ellipsize="end" />
+            <TextView android:id="@+id/st_m" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textSize="10sp" android:textColor="@color/muted" android:maxLines="4" android:lineSpacingExtra="1.5dp" android:layout_marginTop="3dp" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:background="@drawable/tile" android:paddingHorizontal="9dp" android:paddingVertical="7dp" android:layout_marginHorizontal="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="الغربي" android:textSize="12sp" android:textColor="@color/ink" android:textStyle="bold" android:maxLines="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PT" android:textSize="9sp" android:textColor="@color/faint" android:fontFamily="@font/num_semibold" android:layout_marginStart="4dp" android:maxLines="1" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                <TextClock android:layout_width="wrap_content" android:layout_height="wrap_content" android:timeZone="America/Los_Angeles" android:format12Hour="h:mm a" android:format24Hour="h:mm a" android:textSize="15sp" android:textColor="@color/accent_soft" android:fontFamily="@font/num_bold" android:maxLines="1" />
             </LinearLayout>
+            <TextView android:id="@+id/st_p" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textSize="10sp" android:textColor="@color/muted" android:maxLines="4" android:lineSpacingExtra="1.5dp" android:layout_marginTop="3dp" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/card" android:paddingHorizontal="8dp" android:paddingVertical="8dp" android:layout_marginTop="9dp">

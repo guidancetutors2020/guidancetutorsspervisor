@@ -25,7 +25,11 @@ public class PriceWidget extends AppWidgetProvider {
     static final String A_REFRESH = PKG + "REFRESH", A_KEY = PKG + "KEY", A_MODE = PKG + "MODE", A_NOOP = PKG + "NOOP";
 
     static final ZoneId EGYPT = ZoneId.of("Africa/Cairo");
-    static final String[] US_NAMES = {"نيويورك", "تكساس", "كولورادو", "كاليفورنيا"};
+    static final String[] US_NAMES = {"الشرقي", "المركزي", "الجبلي", "الغربي"};
+    static final String ST_E = "نيويورك، نيوجيرسي، ميشيغان، فلوريدا، جورجيا، نورث كارولينا، فيرجينيا، ماريلاند، بنسلفانيا، أوهايو، ماساتشوستس، كونيتيكت، إنديانا، واشنطن العاصمة";
+    static final String ST_C = "تكساس، إلينوي، مينيسوتا، ويسكونسن، ميزوري، تينيسي، أوكلاهوما، لويزيانا، ألاباما، أيوا، كانساس";
+    static final String ST_M = "كولورادو، يوتا، نيو مكسيكو، أيداهو، مونتانا، وايومنغ";
+    static final String ST_P = "كاليفورنيا، ولاية واشنطن، أوريجون، نيفادا";
     static final ZoneId[] US_ZONES = {ZoneId.of("America/New_York"), ZoneId.of("America/Chicago"),
             ZoneId.of("America/Denver"), ZoneId.of("America/Los_Angeles")};
     static final DateTimeFormatter TIME = DateTimeFormatter.ofPattern("h:mm a", Locale.US);
@@ -141,6 +145,15 @@ public class PriceWidget extends AppWidgetProvider {
                     : "آخر تحديث " + java.time.Instant.ofEpochMilli(t).atZone(EGYPT).format(TIME);
         }
         v.setTextViewText(R.id.updated, status);
+
+        // States per zone. Arizona skips daylight saving, so it sits with Mountain in winter and Pacific in summer.
+        java.time.Instant nowI = java.time.Instant.now();
+        boolean azMountain = ZoneId.of("America/Phoenix").getRules().getOffset(nowI)
+                .equals(US_ZONES[2].getRules().getOffset(nowI));
+        v.setTextViewText(R.id.st_e, ST_E);
+        v.setTextViewText(R.id.st_c, ST_C);
+        v.setTextViewText(R.id.st_m, azMountain ? ST_M + "، أريزونا" : ST_M);
+        v.setTextViewText(R.id.st_p, azMountain ? ST_P : ST_P + "، أريزونا");
 
         // Time converter
         int mode = p.getInt("conv_mode", 0);
