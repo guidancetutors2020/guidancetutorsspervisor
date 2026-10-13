@@ -18,12 +18,12 @@ Daemon will be stopped at the end of the build
 > Task :app:generateDebugResValues
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
-> Task :app:packageDebugResources
 > Task :app:mergeDebugResources
+> Task :app:packageDebugResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
-> Task :app:parseDebugLocalResources
 > Task :app:processDebugMainManifest
+> Task :app:parseDebugLocalResources
 > Task :app:processDebugManifest
 > Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
@@ -33,14 +33,14 @@ Daemon will be stopped at the end of the build
 > Task :app:desugarDebugFileDependencies
 > Task :app:processDebugJavaRes NO-SOURCE
 > Task :app:checkDebugDuplicateClasses
-> Task :app:processDebugManifestForPackage
-> Task :app:mergeDebugJavaResource
 > Task :app:mergeDebugStartupProfile
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeExtDexDebug
+> Task :app:mergeDebugJavaResource
+> Task :app:mergeLibDexDebug
 > Task :app:mergeDebugJniLibFolders
 > Task :app:mergeDebugNativeLibs NO-SOURCE
 > Task :app:stripDebugDebugSymbols NO-SOURCE
-> Task :app:mergeExtDexDebug
-> Task :app:mergeLibDexDebug
 > Task :app:processDebugResources
 > Task :app:validateSigningDebug
 > Task :app:compileDebugJavaWithJavac
@@ -52,7 +52,7 @@ Daemon will be stopped at the end of the build
 > Task :app:packageDebug
 > Task :app:createDebugApkListingFileRedirect
 > Task :app:assembleDebug
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1791925624178.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1791926075204.json
 
-BUILD SUCCESSFUL in 49s
+BUILD SUCCESSFUL in 31s
 33 actionable tasks: 33 executed
