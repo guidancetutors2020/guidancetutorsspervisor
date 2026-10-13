@@ -8,21 +8,21 @@
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
 > Task :app:mergeDebugShaders
+> Task :app:processDebugManifestForPackage
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
 > Task :app:compressDebugAssets
 > Task :app:desugarDebugFileDependencies
 > Task :app:processDebugJavaRes NO-SOURCE
-> Task :app:processDebugManifestForPackage
 > Task :app:checkDebugDuplicateClasses
-> Task :app:mergeDebugJavaResource
 > Task :app:mergeDebugStartupProfile
+> Task :app:mergeExtDexDebug
+> Task :app:mergeLibDexDebug
 > Task :app:mergeDebugJniLibFolders
 > Task :app:mergeDebugNativeLibs NO-SOURCE
 > Task :app:stripDebugDebugSymbols NO-SOURCE
-> Task :app:mergeExtDexDebug
-> Task :app:mergeLibDexDebug
+> Task :app:mergeDebugJavaResource
 > Task :app:processDebugResources
 > Task :app:validateSigningDebug
 > Task :app:compileDebugJavaWithJavac
@@ -34,14 +34,10 @@
 > Task :app:packageDebug
 > Task :app:createDebugApkListingFileRedirect
 > Task :app:assembleDebug
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1791927307185.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1791927462299.json
 
-BUILD SUCCESSFUL in 48s
+BUILD SUCCESSFUL in 44s
 33 actionable tasks: 33 executed
-ticker 24 7062.75
-ticker 21 None
-STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">عيار 14|▲|شراء|4093.25|ج.م|بيع|4120|ج.م|
-STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">عيار 18|▲|شراء|5262.75|ج.م|بيع|5297.25|ج.م|
-STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">عيار 21|▲|شراء|6140|ج.م|بيع|6180|ج.م|
-STRIP prices-strip__name min-w-0 flex-none overflow-hidden text-ellipsis">أوقية الذهب|▼|شراء|4160.76|$|بيع|4161.36|$|
+CHECK 24 7062.75
+CHECK 21 6180
 "EGP":52.658715
