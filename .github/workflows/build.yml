@@ -17,7 +17,6 @@ jobs:
           mkdir -p out
           tail -40 build.log > out/build-log.txt
           curl -sL -A "Mozilla/5.0 (Linux; Android 15) Chrome/128 Mobile" https://market.isagha.com/prices -o is.html
-',' ')) for m in re.finditer('prices-strip__name',h)]" >> out/build-log.txt
           python3 ci/inspect.py >> out/build-log.txt
           curl -s https://open.er-api.com/v6/latest/USD | grep -o '"EGP":[0-9.]*' >> out/build-log.txt
           cp app/build/outputs/apk/debug/app-debug.apk out/PricesWidget.apk || true
