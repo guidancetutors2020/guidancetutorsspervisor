@@ -1,0 +1,21 @@
+name: build-apk
+on: push
+permissions:
+  contents: write
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '17' }
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: '8.7' }
+      - run: gradle assembleDebug --no-daemon > build.log 2>&1 || true
+      - run: |
+          mkdir -p out
+          tail -60 build.log > out/build-log.txt
+          cp app/build/outputs/apk/debug/app-debug.apk out/PricesWidget.apk || true
+          git config user.name ci; git config user.email ci@x
+          git add out; git commit -m "build output [skip ci]"; git push
