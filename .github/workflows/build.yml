@@ -18,6 +18,7 @@ jobs:
           tail -40 build.log > out/build-log.txt
           curl -sL -A "Mozilla/5.0 (Linux; Android 15) Chrome/128 Mobile" https://market.isagha.com/prices -o is.html
           python3 -c "import re;h=open('is.html',encoding='utf8').read();[print(k, (re.search(r'data-unit=\"'+k+r'\"\s+data-metal=\"gold\"[\s\S]{0,800}?data-testid=\"price-figure\"[^>]*>\s*([0-9.,]+)',h) or [0,None])[1]) for k in ('24','21')]" >> out/build-log.txt
+          python3 -c "import re;h=open('is.html',encoding='utf8').read();[print('CTX',re.sub(r'\s+',' ',h[m.start()-150:m.start()+450])) for m in list(re.finditer('عيار 21',h))[:6]]" >> out/build-log.txt
           curl -s https://open.er-api.com/v6/latest/USD | grep -o '"EGP":[0-9.]*' >> out/build-log.txt
           cp app/build/outputs/apk/debug/app-debug.apk out/PricesWidget.apk || true
           git config user.name ci; git config user.email ci@x
