@@ -1,0 +1,12 @@
+name: probe
+on: push
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          UA="Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"
+          curl -sL -A "$UA" "https://query1.finance.yahoo.com/v8/finance/chart/EGP=X?interval=1m&range=1d" | head -c 600; echo
+          curl -sL -A "$UA" "https://market.isagha.com/prices" -o is.html; wc -c is.html
+          grep -o '.\{300\}عيار 24.\{400\}' is.html | head -5 | sed 's/\s\+/ /g'
+          echo ----; grep -oi 'application/json[^<]\{0,200\}\|api[^"]\{0,80\}price[^"]\{0,60\}' is.html | head -10
