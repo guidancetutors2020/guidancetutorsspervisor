@@ -22,8 +22,7 @@ import java.util.Locale;
 
 public class PriceWidget extends AppWidgetProvider {
     static final String PKG = "com.guidancetutors.priceswidget.";
-    static final String A_REFRESH = PKG + "REFRESH", A_STEP = PKG + "STEP", A_NOW = PKG + "NOW",
-            A_MODE = PKG + "MODE", A_ZONE = PKG + "ZONE";
+    static final String A_REFRESH = PKG + "REFRESH", A_KEY = PKG + "KEY", A_MODE = PKG + "MODE", A_NOOP = PKG + "NOOP";
 
     static final ZoneId EGYPT = ZoneId.of("Africa/Cairo");
     static final String[] US_NAMES = {"نيويورك", "تكساس", "كولورادو", "كاليفورنيا"};
@@ -44,22 +43,55 @@ public class PriceWidget extends AppWidgetProvider {
         if (A_REFRESH.equals(a)) {
             startRefresh(ctx);
             return;
-        } else if (A_STEP.equals(a)) {
-            int m = ((convMinutes(p) + intent.getIntExtra("delta", 0)) % 1440 + 1440) % 1440;
-            p.edit().putInt("conv_min", m).apply();
-        } else if (A_NOW.equals(a)) {
-            p.edit().remove("conv_min").apply();
-        } else if (A_MODE.equals(a)) {
-            p.edit().putInt("conv_mode", 1 - p.getInt("conv_mode", 0)).remove("conv_min").apply();
-        } else if (A_ZONE.equals(a)) {
-            if (p.getInt("conv_mode", 0) == 1) {
-                p.edit().putInt("conv_zone", (p.getInt("conv_zone", 0) + 1) % 4).remove("conv_min").apply();
+        } else if (A_NOOP.equals(a)) {
+            return;
+        } else if (A_KEY.equals(a)) {
+            String k = intent.getStringExtra("k");
+            String buf = p.getString("buf", "");
+            SharedPreferences.Editor e = p.edit();
+            if (k == null) return;
+            if (k.length() == 1 && Character.isDigit(k.charAt(0))) {
+                if (buf.length() < 4) e.putString("buf", buf + k);
+            } else if (k.equals("del")) {
+                if (!buf.isEmpty()) e.putString("buf", buf.substring(0, buf.length() - 1));
+            } else if (k.equals("clr")) {
+                e.putString("buf", "");
+            } else if (k.equals("now")) {
+                ZonedDateTime now = ZonedDateTime.now(p.getInt("conv_mode", 0) == 0 ? EGYPT : US_ZONES[0]);
+                e.putString("buf", String.format(Locale.US, "%02d%02d", now.getHour(), now.getMinute()))
+                        .putString("ampm", now.getHour() < 12 ? "AM" : "PM");
+            } else if (k.equals("AM") || k.equals("PM")) {
+                e.putString("ampm", k);
             }
+            e.apply();
+        } else if (A_MODE.equals(a)) {
+            p.edit().putInt("conv_mode", 1 - p.getInt("conv_mode", 0)).putString("buf", "").apply();
         } else {
             super.onReceive(ctx, intent);
             return;
         }
         render(ctx);
+    }
+
+    /**
+     * Turns typed digits into minutes of the day. 1-2 digits = hour ("7", "11", "19"),
+     * 2 digits above 23 = hour + tens of minutes ("73" = 7:30), 3 digits = H:MM, 4 digits = HH:MM.
+     * Hours 1-12 follow the AM/PM keys; 0 and 13-23 are read as 24-hour time. Returns -1 if invalid.
+     */
+    static int parse(String buf, String ampm) {
+        if (buf.isEmpty()) return -1;
+        int h, m;
+        int n = Integer.parseInt(buf);
+        if (buf.length() <= 2 && n <= 23) { h = n; m = 0; }
+        else if (buf.length() == 2) { h = buf.charAt(0) - '0'; m = (buf.charAt(1) - '0') * 10; }
+        else if (buf.length() == 3) { h = buf.charAt(0) - '0'; m = Integer.parseInt(buf.substring(1)); }
+        else { h = Integer.parseInt(buf.substring(0, 2)); m = Integer.parseInt(buf.substring(2)); }
+        if (h > 23 || m > 59) return -1;
+        if (h >= 1 && h <= 12) {
+            if (h == 12) h = 0;
+            if ("PM".equals(ampm)) h += 12;
+        }
+        return h * 60 + m;
     }
 
     /** Network work runs as a job: Android blocks network for a bare broadcast in the background. */
@@ -81,14 +113,6 @@ public class PriceWidget extends AppWidgetProvider {
                     .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
                     .setOverrideDeadline(2000).build());
         }
-    }
-
-    static int convMinutes(SharedPreferences p) {
-        if (p.contains("conv_min")) return p.getInt("conv_min", 0);
-        ZoneId src = p.getInt("conv_mode", 0) == 0 ? EGYPT : US_ZONES[p.getInt("conv_zone", 0)];
-        ZonedDateTime now = ZonedDateTime.now(src);
-        int m = now.getHour() * 60 + now.getMinute();
-        return (m / 30) * 30; // round down to the half hour, the way classes are booked
     }
 
     static String dayTag(ZonedDateTime from, ZonedDateTime to) {
@@ -120,34 +144,60 @@ public class PriceWidget extends AppWidgetProvider {
 
         // Time converter
         int mode = p.getInt("conv_mode", 0);
-        int zone = p.getInt("conv_zone", 0);
-        int mins = convMinutes(p);
-        ZoneId srcZone = mode == 0 ? EGYPT : US_ZONES[zone];
-        ZonedDateTime src = LocalDate.now(srcZone).atTime(mins / 60, mins % 60).atZone(srcZone);
-        v.setTextViewText(R.id.conv_time, src.format(TIME));
+        String buf = p.getString("buf", "");
+        String ampm = p.getString("ampm", "PM");
+        int mins = parse(buf, ampm);
+        boolean typed = !buf.isEmpty();
+        boolean bad = typed && mins < 0;
+        boolean ampmApplies = !typed || bad || (parse(buf, "AM") != parse(buf, "PM"));
+
         v.setTextViewText(R.id.conv_mode, mode == 0 ? "مصر ← أمريكا  ⇄" : "أمريكا ← مصر  ⇄");
-        v.setTextViewText(R.id.conv_src, mode == 0 ? "بتوقيت مصر" : "بتوقيت " + US_NAMES[zone] + "  ▾ غيّر الولاية");
+        v.setTextViewText(R.id.conv_hint, mode == 0 ? "اكتب الوقت بتوقيت مصر" : "اكتب الوقت بتوقيت أمريكا");
+        v.setTextViewText(R.id.res_label, mode == 0
+                ? "الوقت ده في أمريكا"
+                : "الوقت ده في مصر، لو كان بتوقيت:");
+        v.setInt(R.id.kam, "setBackgroundResource", ampmApplies && "AM".equals(ampm) ? R.drawable.key_on : R.drawable.key_soft);
+        v.setInt(R.id.kpm, "setBackgroundResource", ampmApplies && "PM".equals(ampm) ? R.drawable.key_on : R.drawable.key_soft);
 
         int[][] slots = {
                 {R.id.r1, R.id.r1_name, R.id.r1_time, R.id.r1_day},
                 {R.id.r2, R.id.r2_name, R.id.r2_time, R.id.r2_day},
                 {R.id.r3, R.id.r3_name, R.id.r3_time, R.id.r3_day},
                 {R.id.r4, R.id.r4_name, R.id.r4_time, R.id.r4_day}};
-        if (mode == 0) {
-            for (int i = 0; i < 4; i++) {
+        if (bad) {
+            v.setTextViewText(R.id.conv_time, "وقت غير صحيح");
+            v.setTextColor(R.id.conv_time, 0xFFF4CF70);
+        } else {
+            v.setTextColor(R.id.conv_time, 0xFFEEF3FF);
+        }
+        for (int i = 0; i < 4; i++) {
+            v.setTextViewText(slots[i][1], US_NAMES[i]);
+            if (bad) { v.setTextViewText(slots[i][2], "--"); v.setTextViewText(slots[i][3], " "); continue; }
+            if (!typed) {
+                if (i == 0) v.setTextViewText(R.id.conv_time, "--:--");
+                v.setTextViewText(slots[i][2], "--");
+                v.setTextViewText(slots[i][3], " ");
+                continue;
+            }
+            if (mode == 0) {
+                ZonedDateTime src = LocalDate.now(EGYPT).atTime(mins / 60, mins % 60).atZone(EGYPT);
+                if (i == 0) v.setTextViewText(R.id.conv_time, src.format(TIME));
                 ZonedDateTime t = src.withZoneSameInstant(US_ZONES[i]);
-                v.setViewVisibility(slots[i][0], View.VISIBLE);
-                v.setTextViewText(slots[i][1], US_NAMES[i]);
+                v.setTextViewText(slots[i][2], t.format(TIME));
+                v.setTextViewText(slots[i][3], dayTag(src, t));
+            } else {
+                if (!typed) {
+                    if (i == 0) v.setTextViewText(R.id.conv_time, "--:--");
+                    v.setTextViewText(slots[i][2], "--");
+                    v.setTextViewText(slots[i][3], " ");
+                    continue;
+                }
+                ZonedDateTime src = LocalDate.now(US_ZONES[i]).atTime(mins / 60, mins % 60).atZone(US_ZONES[i]);
+                if (i == 0) v.setTextViewText(R.id.conv_time, src.format(TIME));
+                ZonedDateTime t = src.withZoneSameInstant(EGYPT);
                 v.setTextViewText(slots[i][2], t.format(TIME));
                 v.setTextViewText(slots[i][3], dayTag(src, t));
             }
-        } else {
-            ZonedDateTime t = src.withZoneSameInstant(EGYPT);
-            v.setViewVisibility(slots[0][0], View.VISIBLE);
-            v.setTextViewText(slots[0][1], "في مصر");
-            v.setTextViewText(slots[0][2], t.format(TIME));
-            v.setTextViewText(slots[0][3], dayTag(src, t));
-            for (int i = 1; i < 4; i++) v.setViewVisibility(slots[i][0], View.GONE);
         }
 
         // Clicks
@@ -156,19 +206,21 @@ public class PriceWidget extends AppWidgetProvider {
         v.setOnClickPendingIntent(R.id.usd, refresh);
         v.setOnClickPendingIntent(R.id.g24, refresh);
         v.setOnClickPendingIntent(R.id.g21, refresh);
-        v.setOnClickPendingIntent(R.id.m60, step(ctx, 2, -60));
-        v.setOnClickPendingIntent(R.id.m30, step(ctx, 3, -30));
-        v.setOnClickPendingIntent(R.id.p30, step(ctx, 4, 30));
-        v.setOnClickPendingIntent(R.id.p60, step(ctx, 5, 60));
-        v.setOnClickPendingIntent(R.id.conv_now, pi(ctx, 6, new Intent(ctx, PriceWidget.class).setAction(A_NOW)));
-        v.setOnClickPendingIntent(R.id.conv_mode, pi(ctx, 7, new Intent(ctx, PriceWidget.class).setAction(A_MODE)));
-        v.setOnClickPendingIntent(R.id.conv_src_box, pi(ctx, 8, new Intent(ctx, PriceWidget.class).setAction(A_ZONE)));
+        v.setOnClickPendingIntent(R.id.root, pi(ctx, 2, new Intent(ctx, PriceWidget.class).setAction(A_NOOP)));
+        v.setOnClickPendingIntent(R.id.conv_mode, pi(ctx, 3, new Intent(ctx, PriceWidget.class).setAction(A_MODE)));
+        int[] keyIds = {R.id.k0, R.id.k1, R.id.k2, R.id.k3, R.id.k4, R.id.k5, R.id.k6, R.id.k7, R.id.k8, R.id.k9};
+        for (int d = 0; d < 10; d++) v.setOnClickPendingIntent(keyIds[d], key(ctx, 10 + d, String.valueOf(d)));
+        v.setOnClickPendingIntent(R.id.kdel, key(ctx, 20, "del"));
+        v.setOnClickPendingIntent(R.id.kclr, key(ctx, 21, "clr"));
+        v.setOnClickPendingIntent(R.id.know, key(ctx, 22, "now"));
+        v.setOnClickPendingIntent(R.id.kam, key(ctx, 23, "AM"));
+        v.setOnClickPendingIntent(R.id.kpm, key(ctx, 24, "PM"));
 
         AppWidgetManager.getInstance(ctx).updateAppWidget(new ComponentName(ctx, PriceWidget.class), v);
     }
 
-    static PendingIntent step(Context ctx, int code, int delta) {
-        return pi(ctx, code, new Intent(ctx, PriceWidget.class).setAction(A_STEP).putExtra("delta", delta));
+    static PendingIntent key(Context ctx, int code, String k) {
+        return pi(ctx, code, new Intent(ctx, PriceWidget.class).setAction(A_KEY).putExtra("k", k));
     }
 
     static PendingIntent pi(Context ctx, int code, Intent i) {
