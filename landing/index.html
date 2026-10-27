@@ -109,10 +109,10 @@ html.anim [data-reveal].split:not(.in) .wi{transform:translateY(118%)}
 
 /* hook band */
 .hook{background:var(--ink);color:var(--on);position:relative;overflow:hidden;padding-block:clamp(40px,6.5vw,76px)}
-.hook-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(28px,4vw,56px);align-items:center}
+.hook-grid{position:relative}
 .hook-txt{display:grid;gap:16px;min-width:0}
-.hvid{margin:0;position:relative;aspect-ratio:4/5;width:100%;max-width:360px;justify-self:center;border-radius:28px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 30% 18%,rgba(255,182,39,.28),transparent 55%),linear-gradient(160deg,#2C5D45,#0F251B);border:2px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -30px rgba(0,0,0,.65)}
-.hvid::before{content:"";position:absolute;inset:0;background:var(--emblem) center 36%/44% no-repeat;opacity:.13}
+.hvid{margin:40px auto 0;position:relative;aspect-ratio:16/9;width:100%;max-width:880px;border-radius:28px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 30% 18%,rgba(255,182,39,.28),transparent 55%),linear-gradient(160deg,#2C5D45,#0F251B);border:2px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -30px rgba(0,0,0,.65)}
+.hvid::before{content:"";position:absolute;inset:0;background:var(--emblem) center 40%/26% no-repeat;opacity:.13}
 .hvid-tag{position:absolute;top:14px;inset-inline-start:14px;display:inline-flex;align-items:center;gap:7px;background:rgba(0,0,0,.35);color:var(--on);font-size:13.5px;font-weight:700;border-radius:999px;padding:4px 12px}
 .hvid-tag i{width:8px;height:8px;border-radius:50%;background:var(--tomato);animation:blink 1.2s ease-in-out infinite}
 .hvid-play{position:relative;width:90px;height:90px;border-radius:50%;border:0;background:var(--sun);color:var(--ink);display:grid;place-items:center;box-shadow:0 6px 0 var(--sun-d);cursor:pointer;transition:transform .15s}
@@ -127,7 +127,7 @@ html.anim [data-reveal].split:not(.in) .wi{transform:translateY(118%)}
 .hvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;z-index:2}
 .hvid.nudge .hvid-play{animation:shake .5s}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-@media (max-width:860px){.hook-grid{grid-template-columns:1fr}.hvid{aspect-ratio:16/11;max-width:none}}
+@media (max-width:600px){.hvid{aspect-ratio:4/3.4;margin-top:28px}}
 .hook-tag{justify-self:start;display:inline-flex;align-items:center;gap:8px;background:rgba(255,182,39,.15);color:var(--sun);font-weight:700;font-size:15px;border-radius:999px;padding:4px 14px}
 .hook-tag i{width:8px;height:8px;border-radius:50%;background:var(--sun);animation:blink 1.4s ease-in-out infinite}
 @keyframes blink{50%{opacity:.25}}
@@ -382,14 +382,14 @@ html.anim .steps:not(.drawn)::before{transform:scaleX(0)}
 .incl-grid li:nth-child(4) .ii{background:var(--grape-d)}.incl-grid li:nth-child(5) .ii{background:var(--teal-d)}.incl-grid li:nth-child(6) .ii{background:var(--sun);color:var(--ink)}
 @media (max-width:900px){.incl-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.incl-grid{gap:10px}.incl-grid li{flex-direction:column;text-align:center;font-size:14.5px;gap:8px;padding:14px 10px}}
-.bridge{margin-top:30px;display:flex;align-items:center;gap:16px;background:var(--sun);color:var(--ink);text-decoration:none;border-radius:24px;padding:18px 22px;border:2.5px solid var(--ink);box-shadow:5px 6px 0 var(--ink);max-width:780px;transition:transform .15s}
+.bridge{margin-top:30px;display:flex;align-items:center;gap:16px;background:var(--p-leaf);color:var(--green-d);text-decoration:none;border-radius:24px;padding:16px 20px;border:2px solid var(--leaf);box-shadow:0 12px 26px -18px rgba(31,122,74,.55);max-width:780px;transition:transform .15s}
 .bridge:hover{transform:translateY(-2px)}
-.bridge-i{flex:none;width:56px;height:56px;border-radius:16px;background:var(--card);display:grid;place-items:center;color:var(--tomato-d)}
+.bridge-i{flex:none;width:52px;height:52px;border-radius:16px;background:var(--green);display:grid;place-items:center;color:var(--on)}
 .bridge-i .ico{width:30px;height:30px;stroke-width:2;animation:giftbob 2.2s ease-in-out infinite}
 @keyframes giftbob{50%{transform:rotate(-10deg) scale(1.1)}}
 .bridge-t{display:grid;gap:2px;flex:1;min-width:0}
 .bridge-t b{font-size:clamp(19px,2.4vw,23px);line-height:1.3}
-.bridge-t span{font-weight:600;font-size:15.5px;line-height:1.5}
+.bridge-t span{font-weight:600;font-size:16px;line-height:1.5;color:var(--ink)}
 .bridge-a{flex:none;width:26px;height:26px;stroke-width:2.4;animation:nudge 1.6s ease-in-out infinite}
 .pfoot{display:grid;gap:6px;margin-top:22px;color:var(--muted);font-size:15.5px}
 .pfoot b{color:var(--ink)}
@@ -626,11 +626,6 @@ html.anim .day-panel{animation:fadeup .3s ease both}
       <p class="hook-q" id="hook-q" data-i18n="hQ">فكم ساعة سيقضونها مع القرآن وتعلّم العربية؟</p>
       <a class="hook-cue" href="#start"><span data-i18n="hCue">الحل يبدأ من هنا</span><svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></a>
      </div>
-      <figure class="hvid" id="hvid">
-        <span class="hvid-tag"><i aria-hidden="true"></i><span data-i18n="vTag">آراء الأهالي</span></span>
-        <button type="button" class="hvid-play" aria-label="تشغيل فيديو آراء الأهالي" data-i18n-aria="vPlay"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
-        <figcaption><b data-i18n="vT">شاهدي ماذا يقول الأهالي عن أكاديمية معلمين الهداية</b><small class="hvid-ph" data-i18n="vPh">[ فيديو آراء الأهالي يُضاف هنا ]</small></figcaption>
-      </figure>
     </div>
   </section>
 
@@ -719,6 +714,11 @@ html.anim .day-panel{animation:fadeup .3s ease both}
         <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg><h3 data-i18n="s5t">مشرفة تربوية كل شهر</h3><p data-i18n="s5d">تجلس معكم مشرفة تربوية مرة كل شهر، تسمع ملاحظاتكم، وتعطيكم رأيها في مستوى أولادك وما يحتاجونه.</p></div>
         <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-sprout"/></svg><h3 data-i18n="s6t">من عمر 4 سنوات، وللكبار</h3><p data-i18n="s6d">لكل عمر طريقته: ألعاب وأنشطة للصغار، وخطة مرنة تناسب يوم الكبار.</p></div>
       </div>
+      <figure class="hvid" id="hvid">
+        <span class="hvid-tag"><i aria-hidden="true"></i><span data-i18n="vTag">آراء الأهالي</span></span>
+        <button type="button" class="hvid-play" aria-label="تشغيل فيديو آراء الأهالي" data-i18n-aria="vPlay"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+        <figcaption><b data-i18n="vT">شاهدي ماذا يقول الأهالي عن أكاديمية معلمين الهداية</b><small class="hvid-ph" data-i18n="vPh">[ فيديو آراء الأهالي يُضاف هنا ]</small></figcaption>
+      </figure>
     </div>
   </section>
 
@@ -836,7 +836,7 @@ html.anim .day-panel{animation:fadeup .3s ease both}
       </div>
       <a class="bridge" href="#referral">
         <span class="bridge-i"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg></span>
-        <span class="bridge-t"><b data-i18n="brT">تريدين خصمًا إضافيًا؟</b><span data-i18n="brD">استفيدي من برنامج «الدال على الخير»: رشّحي أسرة واحصلي على خصم 25% أو 50%، أو شهر كامل مجانًا.</span></span>
+        <span class="bridge-t"><b data-i18n="brT">تريدين خصمًا إضافيًا؟</b><span data-i18n="brD">رشّحينا لأسر أكثر لتستفيدي بالخصم.</span></span>
         <svg class="ico bridge-a" aria-hidden="true"><use href="#i-down"/></svg>
       </a>
     </div>
@@ -992,7 +992,7 @@ html.anim .day-panel{animation:fadeup .3s ease both}
     t1:'Al-Azhar teachers with ijazah', t2:'Flexible times', t3:'Live one-on-one classes', t4:'Registered in the USA',
     vTag:'Parent reviews', vPlay:'Play the parent reviews video', vT:'Hear what parents say about Guidance Tutors Academy', vPh:'[ Parent reviews video goes here ]',
     deckHint:'Swipe the card to see the next program', deckAria:'Programs', deckPrev:'Previous program', deckNext:'Next program',
-    brT:'Want an extra discount?', brD:'Use our "Guide to Good" program: recommend a family and get 25% or 50% off, or a full month free.',
+    brT:'Want an extra discount?', brD:'Recommend us to more families and enjoy the discount.',
     n1:'families have studied with us', n2:'families learning now', n3:'male and female teachers', n4:'countries',
     pH:'Why do our kids in the US drift away from the Quran and Arabic?', pSub:"It isn't your kids, and it isn't you. It's the setup.",
     p1t:'English is everywhere', p1d:'School, friends and screens are all in English. When do your kids ever need Arabic?',
