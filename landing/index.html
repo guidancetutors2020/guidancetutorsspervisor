@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حصص قرآن وعربي أونلاين لطفلك | معلمين الهداية</title>
+<meta name="description" content="حصص فردية مباشرة مع معلمين أزهريين يتكلمون الإنجليزية، على توقيت ولايتك في أمريكا. منصة لولي الأمر، وخصم 10% للعائلات، وأول حصة مجانية.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#1F7A4A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Guidance Tutors">
+<meta property="og:title" content="القرآن والعربية لطفلك، بلا مشاوير ولا فصول مزدحمة">
+<meta property="og:description" content="معلم أزهري يتكلم العربية والإنجليزية يعلّم طفلك وحده من البيت. أول حصة مجانية.">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap">
+<script>
+  // Pick the language before first paint: ?lang= wins, then the visitor's last choice, then the browser.
+  (function(){
+    var l = null;
+    try { l = new URLSearchParams(location.search).get('lang'); } catch(e) {}
+    if (l !== 'ar' && l !== 'en') { try { l = localStorage.getItem('gt-lang'); } catch(e) {} }
+    if (l !== 'ar' && l !== 'en') { l = /^ar\b/i.test(navigator.language || '') ? 'ar' : (/^en\b/i.test(navigator.language || '') ? 'en' : 'ar'); }
+    document.documentElement.lang = l;
+    document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+  })();
+</script>
+<style>
+/* Family-warm landing page. Noorani-Qaida colour blocks on a fresh, light ground; one column on phones. */
+:root{
+  --emblem:url("assets/emblem.png");
+  --bg:#F7FAF1; --paper:#EDF1E6; --band:#FFF1C7; --mint:#E6F5EC; --card:#FFFFFF;
+  --ink:#1B3A2B; --muted:#4E6759; --line:#DFE8D8;
+  --green:#1F7A4A; --green-d:#145834; --sun:#FFB627; --sun-d:#D98E00;
+  --tomato:#F25F4C; --tomato-d:#C8402F; --sky:#3D8BFD; --sky-d:#2463C9;
+  --leaf:#34A56F; --leaf-d:#22784F; --grape:#8E6CEF; --grape-d:#6A49C9;
+  --p-tomato:#FFE7E3; --p-sky:#E2EEFF; --p-sun:#FFF0C9; --p-leaf:#DDF3E6; --p-grape:#ECE6FF;
+  --on:#FFFFFF; --emerald:#013131;
+  --font:'Baloo Bhaijaan 2','Segoe UI',Tahoma,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17.5px;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+[id]{scroll-margin-top:16px}
+img{max-width:100%}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.25;text-wrap:balance}
+h2{font-size:clamp(29px,4.8vw,46px)}
+p{margin:0}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.wrap{max-width:1140px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(56px,8.5vw,100px)}
+.head{display:grid;gap:8px;max-width:760px}
+.sub{color:var(--muted);font-size:clamp(17px,1.9vw,19px)}
+.ico{width:1.25em;height:1.25em;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ph{display:inline-block;border:1.5px dashed currentColor;border-radius:8px;padding:2px 10px;font-style:normal}
+bdi{unicode-bidi:isolate}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:var(--on);border:0;border-radius:999px;padding:14px 28px;font-weight:700;font-size:18px;line-height:1.3;text-decoration:none;box-shadow:0 5px 0 var(--green-d);transition:transform .12s,box-shadow .12s;text-align:center}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--green-d)}
+.btn.sun{background:var(--sun);color:var(--ink);box-shadow:0 5px 0 var(--sun-d)}
+.link{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:19px;line-height:1.15}
+.brand i{width:46px;height:46px;border-radius:14px;background:var(--emblem) center/72% no-repeat,var(--emerald);flex:none}
+.brand small{display:block;font-weight:500;font-size:12.5px;color:var(--muted)}
+.top-r{display:flex;align-items:center;gap:16px}
+.lang{background:var(--card);border:2px solid var(--ink);border-radius:999px;padding:4px 14px;font-weight:700;font-size:15px;line-height:1.5}
+@media (max-width:560px){.top .link{display:none}}
+
+/* hero */
+.hero{padding-block:18px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,60px);align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--p-leaf);color:var(--green-d);font-weight:700;font-size:15px;border-radius:999px;padding:4px 14px;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,6.2vw,62px)}
+.lead{color:var(--muted);font-size:clamp(17px,2vw,19.5px);margin-top:16px;max-width:48ch}
+.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:28px}
+.micro{font-size:15px;color:var(--muted);margin-top:14px}
+.play{display:grid;justify-items:center;gap:26px;min-width:0}
+.tiles{display:flex;gap:clamp(8px,1.6vw,14px)}
+.tile{width:clamp(64px,10vw,104px);aspect-ratio:1;border-radius:22%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:clamp(40px,6.4vw,66px);line-height:1;padding-bottom:6%;animation:drop .8s cubic-bezier(.3,1.5,.5,1) both}
+.tile:nth-child(1){background:var(--tomato);box-shadow:0 7px 0 var(--tomato-d);rotate:-7deg;animation-delay:.05s}
+.tile:nth-child(2){background:var(--sky);box-shadow:0 7px 0 var(--sky-d);rotate:5deg;translate:0 14px;animation-delay:.17s}
+.tile:nth-child(3){background:var(--sun);box-shadow:0 7px 0 var(--sun-d);rotate:-3deg;animation-delay:.29s;color:var(--ink)}
+.tile:nth-child(4){background:var(--leaf);box-shadow:0 7px 0 var(--leaf-d);rotate:8deg;translate:0 10px;animation-delay:.41s}
+@keyframes drop{from{transform:translateY(-46px)}to{transform:none}}
+.bubble{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:22px;padding:14px 22px;font-weight:700;rotate:-2deg;box-shadow:5px 6px 0 var(--ink);max-width:300px;text-align:center;line-height:1.45}
+.bubble::after{content:"";position:absolute;top:-12px;inset-inline-end:40px;width:20px;height:20px;background:var(--card);border-top:2px solid var(--ink);border-inline-start:2px solid var(--ink);transform:rotate(45deg)}
+.bubble small{display:block;font-weight:500;color:var(--muted);font-size:14.5px}
+.trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px;grid-column:1/-1}
+.trust>span{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:7px 16px;font-weight:600;font-size:15.5px}
+.trust .ico{color:var(--green)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.play{order:-1;gap:22px}}
+
+/* numbers */
+.nums-sec{padding-block:4px 30px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,3vw,32px);justify-items:center}
+.num{width:clamp(132px,19vw,172px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;align-content:center;text-align:center;padding:14px;font-weight:600;line-height:1.3;font-size:15px}
+.num strong{font-size:clamp(28px,4.2vw,40px);font-weight:800;display:block;line-height:1.15}
+.num:nth-child(1){background:var(--sun);color:var(--ink);rotate:-5deg}
+.num:nth-child(2){background:var(--sky-d);color:#fff;rotate:3deg}
+.num:nth-child(3){background:var(--tomato-d);color:#fff;rotate:-2deg}
+.num:nth-child(4){background:var(--leaf-d);color:#fff;rotate:4deg}
+@media (max-width:640px){.nums{grid-template-columns:repeat(2,1fr);row-gap:18px}.num{width:min(100%,150px);font-size:14px}}
+
+/* problem */
+.problem{background:var(--paper)}
+.probs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+.prob{background:var(--card);border-radius:24px;padding:24px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:start}
+.prob .ico{grid-row:span 2;width:30px;height:30px;padding:10px;box-sizing:content-box;border-radius:16px;background:var(--p-tomato);color:var(--tomato-d)}
+.prob h3{font-size:21px}
+.prob p{color:var(--muted);font-size:16.5px}
+.good{display:flex;align-items:center;gap:12px;margin-top:30px;background:var(--green);color:#fff;border-radius:20px;padding:16px 22px;font-weight:700;font-size:clamp(18px,2.3vw,22px);width:max-content;max-width:100%}
+.good .ico{width:28px;height:28px}
+@media (max-width:700px){.probs{grid-template-columns:1fr}}
+
+/* compare */
+.cmp{margin-top:36px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.15fr);border-radius:26px;overflow:hidden;border:2px solid var(--line);background:var(--card)}
+.cmp>div{display:contents}
+.cmp [role="row"]>*{padding:15px 18px;border-top:1.5px solid var(--line);font-size:16px}
+.cmp .ch>*{border-top:0;font-weight:800;font-size:17px;padding-block:18px}
+.cmp b{font-weight:700}
+.cmp .off{color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.cmp .off .ico{color:var(--tomato-d);margin-top:3px}
+.cmp .on{background:var(--mint);color:var(--ink);font-weight:600;display:flex;gap:8px;align-items:flex-start;border-inline-start:2px solid var(--leaf)}
+.cmp .on .ico{color:var(--green);margin-top:3px}
+.cmp .ch .on{background:var(--green);color:#fff;border-inline-start-color:var(--green)}
+@media (max-width:680px){
+  .cmp{grid-template-columns:1fr 1fr}
+  .cmp [role="row"]>b{grid-column:1/-1;padding-bottom:6px;background:var(--bg);font-size:15px}
+  .cmp .ch>b{display:none}
+  .cmp [role="row"]>span{font-size:15px;padding:10px 12px 14px}
+  .cmp [role="row"]:not(.ch)>span{border-top:0}
+}
+
+/* solution */
+.sols{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.sol{border-radius:26px;padding:24px 22px;display:grid;gap:6px;align-content:start}
+.sol:nth-child(1){background:var(--p-leaf)}.sol:nth-child(2){background:var(--p-sky)}.sol:nth-child(3){background:var(--p-tomato)}.sol:nth-child(4){background:var(--p-sun)}
+.sol h3{font-size:21px}
+.sol p{color:var(--muted);font-size:16px}
+.sol .ico{width:34px;height:34px;stroke-width:2;color:var(--ink);margin-bottom:4px}
+@media (max-width:980px){.sols{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.sols{grid-template-columns:1fr}}
+
+/* platform */
+.platform{background:var(--mint)}
+.platform .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.mock{background:var(--card);border:2.5px solid var(--ink);border-radius:30px;box-shadow:7px 8px 0 var(--ink);padding:18px;display:grid;gap:12px;max-width:430px;width:100%;justify-self:center;rotate:-1.5deg}
+.mock-h{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:800}
+.mock-h i{width:34px;height:34px;border-radius:10px;background:var(--emblem) center/70% no-repeat,var(--emerald);flex:none}
+.mock-h span{display:flex;align-items:center;gap:10px}
+.mock-dot{width:10px;height:10px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 4px var(--p-leaf)}
+.mock-next{background:var(--p-sun);border-radius:20px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mock-next small{display:block;color:var(--muted);font-size:13.5px;font-weight:600}
+.mock-next b{font-size:18px}
+.mock-join{background:var(--green);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;font-size:15px;box-shadow:0 3px 0 var(--green-d)}
+.mock-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mock-tiles div{border-radius:16px;padding:12px 8px;display:grid;justify-items:center;gap:4px;font-size:13.5px;font-weight:700;text-align:center}
+.mock-tiles div:nth-child(1){background:var(--p-leaf)}.mock-tiles div:nth-child(2){background:var(--p-sky)}.mock-tiles div:nth-child(3){background:var(--p-grape)}
+.mock-tiles .ico{width:24px;height:24px}
+.mock-msg{background:var(--bg);border-radius:18px;border-start-start-radius:6px;padding:10px 14px;font-size:14.5px;line-height:1.6}
+.mock-msg b{color:var(--green)}
+.mock-acts{display:flex;gap:8px;flex-wrap:wrap}
+.mock-acts span{border:1.5px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13.5px;font-weight:600}
+.mock-note{text-align:center;color:var(--muted);font-size:13.5px;margin-top:14px}
+.feats{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 26px;margin-top:30px}
+.feat{display:grid;grid-template-columns:auto 1fr;gap:2px 14px}
+.feat .ico{grid-row:span 2;width:26px;height:26px;padding:9px;box-sizing:content-box;border-radius:14px;background:var(--card);color:var(--green)}
+.feat h3{font-size:19px}
+.feat p{color:var(--muted);font-size:16px}
+@media (max-width:900px){.platform .wrap{grid-template-columns:1fr}.mock-wrap{order:2}}
+@media (max-width:520px){.feats{grid-template-columns:1fr}}
+
+/* steps */
+.steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative}
+.steps::before{content:"";position:absolute;top:34px;inset-inline:12% 12%;border-top:3px dashed var(--line)}
+.steps li{position:relative;display:grid;gap:8px;justify-items:center;text-align:center}
+.steps li>b{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font-size:30px;font-weight:800;color:#fff;border:5px solid var(--bg)}
+.steps li:nth-child(1)>b{background:var(--tomato-d)}.steps li:nth-child(2)>b{background:var(--sky-d)}.steps li:nth-child(3)>b{background:var(--leaf-d)}
+.steps h3{font-size:23px}
+.steps p{color:var(--muted);max-width:30ch}
+@media (max-width:760px){.steps{grid-template-columns:1fr;gap:22px}.steps::before{display:none}.steps li{grid-template-columns:auto 1fr;justify-items:start;text-align:start;column-gap:16px}.steps li>b{grid-row:span 2}}
+
+/* programs */
+.progs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.prog{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:22px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:start}
+.prog .ltr-tile{grid-row:span 2;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:30px;line-height:1;padding-bottom:4px}
+.prog:nth-child(1) .ltr-tile{background:var(--tomato);box-shadow:0 4px 0 var(--tomato-d)}
+.prog:nth-child(2) .ltr-tile{background:var(--sky);box-shadow:0 4px 0 var(--sky-d)}
+.prog:nth-child(3) .ltr-tile{background:var(--sun);box-shadow:0 4px 0 var(--sun-d);color:var(--ink)}
+.prog:nth-child(4) .ltr-tile{background:var(--leaf);box-shadow:0 4px 0 var(--leaf-d)}
+.prog:nth-child(5) .ltr-tile{background:var(--grape);box-shadow:0 4px 0 var(--grape-d)}
+.prog:nth-child(6) .ltr-tile{background:var(--tomato);box-shadow:0 4px 0 var(--tomato-d)}
+.prog h3{font-size:20px}
+.prog p{color:var(--muted);font-size:16px}
+@media (max-width:900px){.progs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.progs{grid-template-columns:1fr}}
+
+/* pricing */
+.pricing{background:var(--band)}
+.dur{display:inline-flex;margin-top:22px;background:var(--card);border:2px solid var(--ink);border-radius:999px;padding:4px}
+.dur button{background:none;border:0;border-radius:999px;padding:8px 22px;color:var(--ink);font-weight:700}
+.dur button[aria-checked="true"]{background:var(--ink);color:#fff}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px;align-items:stretch}
+.plan{position:relative;background:var(--card);border-radius:26px;padding:28px 20px 22px;display:flex;flex-direction:column;gap:4px;border:2px solid var(--line)}
+.plan.is-rec{border:3px solid var(--green);box-shadow:0 18px 40px -22px rgba(31,122,74,.55)}
+.plan-badge{position:absolute;top:-16px;inset-inline-end:18px;background:var(--tomato-d);color:#fff;font-weight:800;font-size:15px;padding:4px 16px;border-radius:999px;rotate:4deg;box-shadow:0 3px 0 #9E2F22}
+.plan h3{font-size:22px}
+.plan-count{color:var(--muted);font-size:15px}
+.plan-price{display:flex;align-items:baseline;gap:6px;margin-top:10px;flex-wrap:wrap}
+.plan-price .amt{font-size:52px;font-weight:800;line-height:1}
+.plan-price .per{color:var(--muted);font-size:16px}
+.plan-unit{margin-top:4px;font-weight:700;color:var(--green)}
+.plan-note{margin:10px 0 18px;color:var(--muted);font-size:15.5px;flex:1}
+.plan-cta{border:2px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:11px;font-weight:700}
+.plan.is-rec .plan-cta{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-d)}
+@media (max-width:1040px){.plans{grid-template-columns:repeat(2,1fr);gap:28px 18px}}
+@media (max-width:620px){.plans{grid-template-columns:1fr;max-width:440px}}
+.family{display:flex;align-items:center;gap:18px;margin-top:34px;background:var(--card);border:2.5px solid var(--ink);border-radius:26px;padding:18px 22px;box-shadow:5px 6px 0 var(--ink);max-width:760px}
+.family strong{flex:none;width:86px;height:86px;border-radius:50%;background:var(--tomato-d);color:#fff;display:grid;place-items:center;font-size:30px;font-weight:800;rotate:-8deg}
+.family h3{font-size:21px}
+.family p{color:var(--muted);font-size:16px}
+.incl{margin-top:30px}
+.incl h3{font-size:19px;margin-bottom:10px}
+.incl ul{display:flex;flex-wrap:wrap;gap:8px 10px;margin:0;padding:0;list-style:none}
+.incl li{display:flex;align-items:center;gap:6px;background:var(--card);border-radius:999px;padding:6px 14px;font-weight:600;font-size:15px}
+.incl .ico{color:var(--green)}
+.pfoot{display:grid;gap:6px;margin-top:22px;color:var(--muted);font-size:15.5px}
+.pfoot b{color:var(--ink)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.rev{background:var(--card);border:2px solid var(--line);border-radius:26px;padding:22px 24px;display:grid;gap:12px;align-content:space-between}
+.rev:nth-child(odd){border-end-start-radius:6px}
+.rev:nth-child(even){border-end-end-radius:6px}
+.rev p{font-size:17.5px;line-height:1.75}
+.rev cite{display:flex;align-items:center;gap:10px;font-style:normal;font-weight:700;font-size:15.5px}
+.rev cite i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal;font-weight:800}
+.rev:nth-child(1) cite i{background:var(--sky-d)}.rev:nth-child(2) cite i{background:var(--tomato-d)}.rev:nth-child(3) cite i{background:var(--leaf-d)}.rev:nth-child(4) cite i{background:var(--grape-d)}
+.rev cite small{display:block;color:var(--muted);font-weight:500;font-size:13.5px}
+.rev-note{color:var(--muted);font-size:14.5px;margin-top:14px}
+.vids{margin-top:18px;border:2.5px dashed var(--sky);border-radius:26px;padding:22px;display:flex;align-items:center;gap:16px;color:var(--sky-d);font-weight:700}
+.vids span{width:56px;height:56px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center;flex:none}
+@media (max-width:760px){.revs{grid-template-columns:1fr}}
+
+/* faq */
+.faq{display:grid;gap:12px;margin-top:34px;max-width:860px}
+.faq details{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:0 20px}
+.faq details[open]{border-color:var(--leaf)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0;font-weight:700;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--p-leaf);color:var(--green);display:grid;place-items:center;font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{color:var(--muted);padding-bottom:18px}
+
+/* booking */
+.book .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,56px);align-items:start}
+.reassure{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+.reassure li{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.reassure .ico{color:var(--green);margin-top:4px}
+.direct{margin-top:26px;background:var(--p-leaf);border-radius:20px;padding:16px 18px;display:grid;gap:6px}
+.direct p{color:var(--muted);font-size:15.5px}
+.direct b{font-size:19px}
+.card{background:var(--card);border-radius:30px;padding:clamp(20px,4vw,38px);border:2px solid var(--line)}
+@media (max-width:900px){.book .wrap{grid-template-columns:1fr}}
+
+.bk-steps{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bk-steps li{font-size:14.5px;display:flex;flex-direction:column;gap:8px;font-weight:700;color:var(--muted)}
+.bk-steps li::before{content:"";height:8px;border-radius:8px;background:var(--line)}
+.bk-steps li.is-on,.bk-steps li.is-done{color:var(--green)}
+.bk-steps li.is-on::before,.bk-steps li.is-done::before{background:var(--green)}
+.bk-pane{display:grid;gap:12px}
+.bk-q{margin-top:6px;font-weight:700}
+.bk label{font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;font-weight:600;padding:9px 16px;line-height:1.35}
+.chip[aria-checked="true"],.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.bk-field{display:grid;gap:6px}
+.bk input,.bk select{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);min-height:50px}
+.bk-err{min-height:1.5em;margin-top:6px;font-size:15px;font-weight:700;color:var(--tomato-d)}
+.bk-nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.bk-nav .bk-next,.bk-nav .bk-go{margin-inline-start:auto}
+.bk-back{background:none;border:0;color:var(--muted);font-weight:700;text-decoration:underline;padding:8px}
+.bk-pkg{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:15px;padding:10px 14px;margin-bottom:16px;background:var(--p-leaf);border-radius:14px;font-weight:600}
+.bk-pkg button{background:none;border:0;text-decoration:underline;padding:0;font-size:14px}
+.bk-done{display:grid;gap:10px;margin-top:18px;padding-top:18px;border-top:1.5px solid var(--line)}
+.bk-done p{font-size:15px}
+.bk-done pre{white-space:pre-wrap;font:inherit;font-size:15px;margin:0;padding:12px 14px;line-height:1.8;background:var(--bg);border-radius:14px}
+.bk-copy{background:none;border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:700;justify-self:start}
+
+/* final + footer */
+.final{background:var(--green);color:#fff;text-align:center}
+.final h2{font-size:clamp(32px,5.6vw,54px)}
+.final p{opacity:.92;margin:10px auto 26px;max-width:46ch}
+.foot{padding-block:28px;color:var(--muted);font-size:15px}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:flex-start}
+.foot b{color:var(--ink)}
+.foot a{text-decoration:none}
+
+/* mobile booking bar */
+.mbar{position:fixed;inset:auto 0 0;z-index:40;display:none;gap:10px;align-items:center;background:rgba(247,250,241,.97);border-top:2px solid var(--line);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));transition:transform .3s ease}
+.mbar .btn{flex:1;min-height:50px;font-size:17px;padding:10px 16px}
+.mbar .wa{flex:none;width:52px;height:52px;border-radius:50%;background:var(--card);border:2px solid var(--green);color:var(--green);display:grid;place-items:center}
+.mbar .wa .ico{width:26px;height:26px}
+.mbar.is-away,.mbar.is-early{transform:translateY(120%)}
+@media (max-width:760px){.mbar{display:flex}body{padding-bottom:78px}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Guidance Tutors","alternateName":"أكاديمية معلمين الهداية","url":"https://guidancetutors.net","email":"guidancetutors2020@gmail.com","telephone":"+1-267-300-4382","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St Ste N","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}}
+</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.4-3.8 4.4-5.8 8-5.8s6.6 2 8 5.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 19c.8-3 2.6-4.6 5-4.6s4.2 1.6 5 4.6M11 19c.8-3 2.6-4.6 5-4.6s4.2 1.6 5 4.6"/></symbol>
+  <symbol id="i-group" viewBox="0 0 24 24"><circle cx="12" cy="7" r="2.6"/><circle cx="5.5" cy="10" r="2.2"/><circle cx="18.5" cy="10" r="2.2"/><path d="M7.5 19c.6-3 2.3-4.6 4.5-4.6s3.9 1.6 4.5 4.6M2 19c.4-2 1.6-3.3 3.5-3.4M22 19c-.4-2-1.6-3.3-3.5-3.4"/></symbol>
+  <symbol id="i-lang" viewBox="0 0 24 24"><path d="M3.5 4.5h11v8H8.5l-3.5 3v-3H3.5z"/><path d="M14.5 9h6v8h-1.5v3l-3.5-3h-3.5v-2"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 15.5l1.6-5.2A2 2 0 0 1 8.5 9h7a2 2 0 0 1 1.9 1.3l1.6 5.2"/><rect x="3.5" y="15.5" width="17" height="3.5" rx="1.2"/><path d="M6.5 19v1.5M17.5 19v1.5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/><path d="M4 20L20 4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.6c0 4.4-3.1 7.8-7.5 9.4-4.4-1.6-7.5-5-7.5-9.4V6z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2.5 9L12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11v5c1.6 1.6 3.4 2.3 5.5 2.3s3.9-.7 5.5-2.3v-5M21.5 9v5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10.5H9.5L5 19.5v-3.5H4z"/><path d="M8.5 10.8h.01M12 10.8h.01M15.5 10.8h.01"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M9 6.5v11l8.5-5.5z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol>
+  <symbol id="i-report" viewBox="0 0 24 24"><path d="M6 3.5h9l3.5 3.5v13.5H6z"/><path d="M9 11h6M9 14.5h6M9 18h3.5"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M10 15l2 2 3.5-3.5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7.5 4.5 3.5 4.5v14c4 0 6.5.5 8.5 2 2-1.5 4.5-2 8.5-2v-14c-4 0-6.5.5-8.5 2z"/><path d="M12 6.5v14"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.6 18.4z"/><path d="M9 9.2c.2 1.9 1.9 3.9 4 4.7l1.2-1.1 1.7.9c-.3 1.1-1.2 1.8-2.3 1.7-3-.4-5.4-2.9-5.8-5.9-.1-1.1.6-2 1.7-2.3l.9 1.7z"/></symbol>
+</svg>
+
+<header class="wrap top">
+  <a class="brand" href="#top" id="top"><i aria-hidden="true"></i><span data-i18n="brand">معلمين الهداية</span></a>
+  <div class="top-r">
+    <a class="link" href="#book" data-i18n="navBook">احجزي التجريبية</a>
+    <button type="button" class="lang" id="lang-btn" lang="en">English</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="kicker" data-i18n="kicker">لأهالينا في أمريكا</span>
+        <h1 data-i18n="h1">القرآن والعربية لطفلك، بلا مشاوير ولا فصول مزدحمة</h1>
+        <p class="lead" data-i18n="lead">معلم أزهري يتكلم العربية والإنجليزية يعلّم طفلك وحده، في حصة مباشرة من البيت وعلى توقيت ولايتكم. وأنتِ تتابعين كل حصة من منصة ولي الأمر.</p>
+        <div class="ctas">
+          <a class="btn" href="#book" id="hero-cta" data-i18n="cta">احجزي حصة تجريبية مجانية</a>
+          <a class="link" href="#pricing" data-i18n="seePrices">الأسعار</a>
+        </div>
+        <p class="micro" data-i18n="micro">مجانية بالكامل، بلا أي بيانات دفع.</p>
+      </div>
+      <div class="play" aria-hidden="true">
+        <div class="tiles" dir="rtl"><span class="tile">ا</span><span class="tile">ق</span><span class="tile">ر</span><span class="tile">أ</span></div>
+        <div class="bubble"><span data-i18n="bubble">أول حصة مجانية</span><small data-i18n="bubbleSmall">ومعها تحديد مستوى طفلك</small></div>
+      </div>
+      <div class="trust">
+        <span><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg><span data-i18n="t1">معلمون أزهريون بإجازة في القرآن</span></span>
+        <span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="t2">معلمون ومعلمات</span></span>
+        <span><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg><span data-i18n="t3">حصة فردية مباشرة</span></span>
+        <span><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="t4">مسجلة رسميًا في وايومنج، أمريكا</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="nums-sec">
+    <div class="wrap nums">
+      <div class="num"><strong><bdi dir="ltr">1,000+</bdi></strong><span data-i18n="n1">أسرة درست معنا</span></div>
+      <div class="num"><strong><bdi dir="ltr">300+</bdi></strong><span data-i18n="n2">أسرة تدرس الآن</span></div>
+      <div class="num"><strong><bdi dir="ltr">40+</bdi></strong><span data-i18n="n3">معلمًا ومعلمة</span></div>
+      <div class="num"><strong><bdi dir="ltr">15+</bdi></strong><span data-i18n="n4">دولة</span></div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem" id="problem">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="pH">لماذا يبتعد أطفال كثيرون في أمريكا عن القرآن والعربية؟</h2>
+        <p class="sub" data-i18n="pSub">العيب ليس في الطفل، ولا في حرصكِ. العيب في الظروف.</p>
+      </div>
+      <div class="probs">
+        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-lang"/></svg><h3 data-i18n="p1t">الإنجليزية في كل مكان</h3><p data-i18n="p1d">المدرسة والأصحاب والشاشات كلها بالإنجليزية. فمتى يستعمل طفلك العربية؟</p></div>
+        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-group"/></svg><h3 data-i18n="p2t">ساعة في الأسبوع وسط مجموعة</h3><p data-i18n="p2d">في الفصل الجماعي، نصيب كل طفل من القراءة والتصحيح دقائق قليلة.</p></div>
+        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><h3 data-i18n="p3t">مشاوير ومواعيد ثابتة</h3><p data-i18n="p3d">مدرسة ورياضة وعمل، ثم طريق طويل إلى المسجد. ويكفي أسبوع مزدحم واحد ليتوقف كل شيء.</p></div>
+        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg><h3 data-i18n="p4t">لا تعرفين أين وصل</h3><p data-i18n="p4d">بعد شهور من الدراسة، يصعب أن تعرفي ماذا تعلّم طفلك بالضبط، وأين يحتاج مساعدة.</p></div>
+      </div>
+      <p class="good"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="good">الخبر الجيد: كل هذا له حل، ومن البيت.</span></p>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="cH">لماذا يفيد التعلم أونلاين طفلك أكثر؟</h2>
+        <p class="sub" data-i18n="cSub">مدرسة المسجد ونهاية الأسبوع خير كبير، والحصص الفردية أونلاين تكمّل ما لا يتسع له وقتها.</p>
+      </div>
+      <div class="cmp" id="cmp" role="table"></div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="sH">هكذا نحل المشكلة في الهداية</h2>
+        <p class="sub" data-i18n="sSub">معلم مناسب، ووقت مناسب، ومتابعة لا تحتاجين فيها إلى السؤال.</p>
+      </div>
+      <div class="sols">
+        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg><h3 data-i18n="s1t">معلم أزهري يتكلم لغة طفلك</h3><p data-i18n="s1d">خريجو الأزهر بإجازة في القرآن، يشرحون بالعربية والإنجليزية حتى يفهم طفلك كل كلمة.</p></div>
+        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg><h3 data-i18n="s2t">حصة فردية على مستواه</h3><p data-i18n="s2d">الدرس يمشي على سرعة طفلك، والتصحيح في كل آية.</p></div>
+        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><h3 data-i18n="s3t">معلمات للبنات</h3><p data-i18n="s3d">معلمات متخصصات في القرآن للبنات والأخوات اللواتي يفضّلن ذلك.</p></div>
+        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><h3 data-i18n="s4t">مواعيد على توقيتكم</h3><p data-i18n="s4d">صباحًا أو بعد المدرسة أو في نهاية الأسبوع، مع دعم على مدار الساعة.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="platform" id="platform">
+    <div class="wrap">
+      <div class="mock-wrap">
+        <div class="mock" role="img" aria-label="شكل توضيحي لمنصة ولي الأمر" data-i18n-aria="mockAria">
+          <div class="mock-h"><span><i aria-hidden="true"></i><span data-i18n="mTitle">منصة ولي الأمر</span></span><span class="mock-dot" aria-hidden="true"></span></div>
+          <div class="mock-next"><div><small data-i18n="mNext">الحصة القادمة</small><b data-i18n="mWhen">اليوم، 5:00 مساءً</b></div><span class="mock-join" data-i18n="mJoin">ادخلي الحصة</span></div>
+          <div class="mock-tiles">
+            <div><svg class="ico" aria-hidden="true"><use href="#i-report"/></svg><span data-i18n="mT1">تقرير الحصة</span></div>
+            <div><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg><span data-i18n="mT2">الواجب</span></div>
+            <div><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><span data-i18n="mT3">المكتبة</span></div>
+          </div>
+          <p class="mock-msg" data-i18n="mMsg"><b>المعلم:</b> قراءة آدم اليوم أفضل، ما شاء الله. الواجب: مراجعة الدرس الثالث.</p>
+          <div class="mock-acts"><span data-i18n="mA1">تأجيل الحصة</span><span data-i18n="mA2">تغيير الموعد</span><span data-i18n="mA3">مراسلة المعلم</span></div>
+        </div>
+        <p class="mock-note" data-i18n="mNote">شكل توضيحي للمنصة</p>
+      </div>
+      <div>
+        <div class="head">
+          <h2 data-i18n="plH">منصة ولي الأمر: طفلك أمامكِ في أي وقت</h2>
+          <p class="sub" data-i18n="plSub">من الموبايل أو الكمبيوتر، كل ما يخص دراسة طفلك في مكان واحد.</p>
+        </div>
+        <div class="feats">
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-video"/></svg><h3 data-i18n="f1t">دخول الحصة بضغطة</h3><p data-i18n="f1d">طفلك يدخل حصته من المنصة مباشرة، بلا روابط ضائعة.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><h3 data-i18n="f2t">تواصل مع المعلم</h3><p data-i18n="f2d">راسلي معلم طفلك من داخل المنصة متى احتجتِ.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-report"/></svg><h3 data-i18n="f3t">تقارير الحصص</h3><p data-i18n="f3d">تقرير قصير بعد كل حصة، وتقرير شهري عن مستوى طفلك.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg><h3 data-i18n="f4t">الواجبات</h3><p data-i18n="f4d">واجب كل حصة مكتوب أمامكِ، فتعرفين ماذا يراجع طفلك في البيت.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><h3 data-i18n="f5t">تأجيل وتغيير المواعيد</h3><p data-i18n="f5d">ظرف طارئ؟ أجّلي الحصة أو غيّري موعدها من المنصة.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><h3 data-i18n="f6t">مكتبة كتب مجانية</h3><p data-i18n="f6d">كتب ومواد تعليمية مجانية لطفلك داخل المنصة.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="steps">
+    <div class="wrap">
+      <div class="head"><h2 data-i18n="stH">ابدئي في 3 خطوات</h2></div>
+      <ol class="steps">
+        <li><b>1</b><h3 data-i18n="st1t">احجزي التجريبية</h3><p data-i18n="st1d">أجيبي عن 3 أسئلة قصيرة، وأرسلي لنا المواعيد المناسبة على الواتساب.</p></li>
+        <li><b>2</b><h3 data-i18n="st2t">قابلي المعلم</h3><p data-i18n="st2d">حصة فردية مجانية يتعرف فيها المعلم على طفلك ويحدد مستواه.</p></li>
+        <li><b>3</b><h3 data-i18n="st3t">ابدئي الخطة</h3><p data-i18n="st3d">اختاري حصصًا مدتها 30 دقيقة أو ساعة، من 2 إلى 5 مرات في الأسبوع.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="prH">اختاري من أين يبدأ طفلك</h2>
+        <p class="sub" data-i18n="prSub">كل البرامج فردية، للأطفال والكبار. ويمكن تقسيم الحصص بين أكثر من برنامج.</p>
+      </div>
+      <div class="progs">
+        <div class="prog"><span class="ltr-tile" aria-hidden="true">ت</span><h3 data-i18n="pr1t">قراءة القرآن بالتجويد</h3><p data-i18n="pr1d">من الحروف العربية حتى التلاوة الصحيحة الواثقة.</p></div>
+        <div class="prog"><span class="ltr-tile" aria-hidden="true">ح</span><h3 data-i18n="pr2t">حفظ القرآن للأطفال</h3><p data-i18n="pr2d">حفظ وقراءة بأنشطة وألعاب تجعل الطفل ينتظر حصته.</p></div>
+        <div class="prog"><span class="ltr-tile" aria-hidden="true">ق</span><h3 data-i18n="pr3t">حفظ القرآن للكبار</h3><p data-i18n="pr3d">خطة تناسب يومك، ومراجعة منتظمة حتى لا يضيع ما حفظت.</p></div>
+        <div class="prog"><span class="ltr-tile" aria-hidden="true">ع</span><h3 data-i18n="pr4t">اللغة العربية</h3><p data-i18n="pr4d">لغير الناطقين بها، بمناهج مثل نور البيان والعربية بين يديك.</p></div>
+        <div class="prog"><span class="ltr-tile" aria-hidden="true">ن</span><h3 data-i18n="pr5t">قصص الأنبياء</h3><p data-i18n="pr5d">قصص على قدر عمر الطفل، تغرس فيه الصدق والصبر والرحمة.</p></div>
+        <div class="prog"><span class="ltr-tile" aria-hidden="true">س</span><h3 data-i18n="pr6t">أساسيات الإسلام</h3><p data-i18n="pr6d">العقيدة والعبادات والآداب، خطوة بخطوة من البداية.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="prcH">باقات شهرية واضحة</h2>
+        <p class="sub" data-i18n="prcSub">اختاري مدة الحصة وعدد الحصص في الأسبوع. كلما زادت الحصص، قلّ سعر الحصة.</p>
+      </div>
+      <div class="dur" role="radiogroup" id="dur" aria-label="مدة الحصة">
+        <button type="button" role="radio" data-d="30" data-i18n="d30">30 دقيقة</button>
+        <button type="button" role="radio" data-d="60" data-i18n="d60">ساعة</button>
+      </div>
+      <div class="plans" id="plans"></div>
+      <div class="family">
+        <strong><bdi dir="ltr">10%</bdi></strong>
+        <div><h3 data-i18n="famH">خصم دائم للعائلة</h3><p data-i18n="famD">إذا سجّل معنا طالبان أو أكثر من نفس الأسرة، ينزل الاشتراك الشهري 10% طوال مدة الدراسة.</p></div>
+      </div>
+      <div class="incl">
+        <h3 data-i18n="inclH">في كل الباقات</h3>
+        <ul id="incl"></ul>
+      </div>
+      <div class="pfoot">
+        <p data-i18n="custom">تحتاجين 6 أو 7 أيام في الأسبوع؟ نصمم لكِ باقة بسعر <b><bdi dir="ltr">$8.50</bdi></b> للساعة.</p>
+        <p data-i18n="pay">الدفع بالبطاقة البنكية أو Apple Pay أو Cash App.</p>
+        <p data-i18n="pnote">الأسعار شهرية بالدولار الأمريكي. سعر الحصة تقريبي، محسوب على 4 أسابيع في الشهر.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="head"><h2 data-i18n="rH">ماذا يقول الأهالي</h2></div>
+      <div class="revs" id="revs"></div>
+      <p class="rev-note" data-i18n="rNote">آراء منشورة على موقعنا، مترجمة من الإنجليزية.</p>
+      <div class="vids"><span><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><i class="ph" data-i18n="vids">[ مكان فيديوهات آراء الأهالي: أرسلها لأضيفها هنا ]</i></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2 data-i18n="qH">أسئلة يسألها الأهالي</h2></div>
+      <div class="faq" id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="book" id="book" style="padding-top:0">
+    <div class="wrap">
+      <div>
+        <div class="head">
+          <h2 data-i18n="bH">احجزي الحصة التجريبية المجانية</h2>
+          <p class="sub" data-i18n="bSub">3 خطوات قصيرة، ثم تُفتح رسالة واتساب فيها كل التفاصيل. نرد عليكِ ونرتب الموعد على توقيتكم.</p>
+        </div>
+        <ul class="reassure">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r1">مجانية بالكامل، بلا بيانات دفع</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r2">تقابلين المعلم وتجربين المنصة</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="r3">تقررين بعد الحصة، بلا أي التزام</span></li>
+        </ul>
+        <div class="direct">
+          <p data-i18n="dirP">تفضّلين الكلام مباشرة؟ راسلينا على الواتساب:</p>
+          <b><bdi dir="ltr">+1 267-300-4382</bdi></b>
+          <a class="link wa-direct" href="#" target="_blank" rel="noopener" data-i18n="dirA">ابدئي محادثة</a>
+        </div>
+      </div>
+      <div class="card" id="form-host"></div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2 data-i18n="fH">أول حصة علينا. جرّبي، ثم قرّري.</h2>
+      <p data-i18n="fP">لا اشتراك ولا دفع قبل أن تري الحصة بنفسك.</p>
+      <a class="btn sun" href="#book" data-i18n="cta">احجزي حصة تجريبية مجانية</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div><b data-i18n="footName">أكاديمية معلمين الهداية</b><br><span>Guidance Tutors</span></div>
+    <div><span dir="ltr">30 N Gould St Ste N, Sheridan, WY 82801</span><br><span>guidancetutors2020@gmail.com</span></div>
+    <div><span data-i18n="footWa">واتساب:</span> <bdi dir="ltr">+1 267-300-4382</bdi><br><a href="https://guidancetutors.net" target="_blank" rel="noopener">guidancetutors.net</a></div>
+  </div>
+</footer>
+
+<div class="mbar is-early" id="mbar">
+  <a class="btn" href="#book" data-i18n="cta">احجزي حصة تجريبية مجانية</a>
+  <a class="wa wa-direct" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg></a>
+</div>
+
+<script>
+(function(){
+  /* ── Settings: fill the tracking IDs when you have them ── */
+  var CONFIG = {
+    whatsapp: '12673004382',
+    metaPixelId: '',  // Meta Pixel ID, e.g. '123456789012345'
+    ga4Id: ''         // Google Analytics 4 ID, e.g. 'G-XXXXXXXXXX'
+  };
+
+  /* ── Tracking (loads only when an ID is set) ── */
+  if (CONFIG.metaPixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', CONFIG.metaPixelId); fbq('track', 'PageView');
+  }
+  if (CONFIG.ga4Id) {
+    var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.ga4Id; document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', CONFIG.ga4Id);
+  }
+  function track(name, params){
+    try { if (window.fbq) fbq(name === 'Lead' || name === 'Contact' ? 'track' : 'trackCustom', name, params || {}); } catch(e) {}
+    try { if (window.gtag) gtag('event', name, params || {}); } catch(e) {}
+  }
+
+  /* ── Data ── */
+  var PRICES = { '30': {2:38, 3:55, 4:72, 5:88}, '60': {2:75, 3:110, 4:144, 5:175} };
+  var ORDER = [5, 4, 3, 2];   // highest first, so the recommended plan reads as good value
+  var REC = 3;
+  var STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+
+  var EN = {
+    brand:'Guidance Tutors', navBook:'Book a trial', kicker:'For Muslim families in the US',
+    h1:'Quran and Arabic for your child, without the drive or the crowded class',
+    lead:'An Al-Azhar teacher who speaks Arabic and English teaches your child one-on-one, live from home, on your time zone. You follow every class on the parent platform.',
+    cta:'Book a free trial class', seePrices:'See prices', micro:'Completely free. No payment details needed.',
+    bubble:'Your first class is free', bubbleSmall:'plus a level check for your child',
+    t1:'Al-Azhar teachers with Quran ijazah', t2:'Male and female teachers', t3:'Live one-on-one classes', t4:'Registered in Wyoming, USA',
+    n1:'families have studied with us', n2:'families learning now', n3:'male and female teachers', n4:'countries',
+    pH:'Why do so many kids in the US drift away from the Quran and Arabic?', pSub:"It isn't your child, and it isn't you. It's the setup.",
+    p1t:'English is everywhere', p1d:'School, friends and screens are all in English. When does your child ever need Arabic?',
+    p2t:'One hour a week, in a group', p2d:'In a group class, each child gets a few minutes of reading and correction at most.',
+    p3t:'Long drives, fixed times', p3d:'School, sports, work, then a long drive to the masjid. One busy week and everything stops.',
+    p4t:"You can't see the progress", p4d:"After months of classes, it's hard to know what your child has learned and where they need help.",
+    good:'The good news: all of this can be fixed, from home.',
+    cH:'Why online works better for your child', cSub:"Weekend school and the masjid are a blessing. One-on-one online classes cover what they don't have time for.",
+    sH:'How Guidance Tutors fixes it', sSub:'The right teacher, the right time, and progress you can see without asking.',
+    s1t:"An Al-Azhar teacher who speaks your child's language", s1d:'Al-Azhar graduates with a Quran ijazah who explain in Arabic and English, so your child follows every word.',
+    s2t:'One-on-one, at their level', s2d:"The lesson moves at your child's pace, with correction on every ayah.",
+    s3t:'Female teachers for girls', s3d:'Experienced female Quran teachers for girls and sisters who prefer them.',
+    s4t:'Times that fit your day', s4d:'Mornings, after school or weekends, with support around the clock.',
+    mockAria:'Illustration of the parent platform', mTitle:'Parent platform', mNext:'Next class', mWhen:'Today, 5:00 PM', mJoin:'Join class',
+    mT1:'Class report', mT2:'Homework', mT3:'Library', mMsg:'<b>Teacher:</b> Adam read much better today, masha\'Allah. Homework: review lesson 3.',
+    mA1:'Postpone', mA2:'Reschedule', mA3:'Message teacher', mNote:'Illustration of the platform',
+    plH:"The parent platform: your child's learning, always in view", plSub:"On your phone or computer, everything about your child's classes in one place.",
+    f1t:'Join class in one tap', f1d:'Your child joins class straight from the platform. No lost links.',
+    f2t:'Message the teacher', f2d:"Reach your child's teacher inside the platform whenever you need to.",
+    f3t:'Class reports', f3d:"A short report after every class, and a monthly report on your child's level.",
+    f4t:'Homework', f4d:"Each class's homework is written down, so you know what to practice at home.",
+    f5t:'Postpone or reschedule', f5d:'Something came up? Postpone a class or change its time on the platform.',
+    f6t:'Free book library', f6d:'Free books and learning materials for your child, inside the platform.',
+    stH:'Start in 3 steps',
+    st1t:'Book a free trial', st1d:'Answer 3 short questions and send us your best times on WhatsApp.',
+    st2t:'Meet the teacher', st2d:'A free one-on-one class where the teacher gets to know your child and checks their level.',
+    st3t:'Start your plan', st3d:'Choose 30 or 60-minute classes, 2 to 5 times a week.',
+    prH:'Choose where your child starts', prSub:'Every program is one-on-one, for kids and adults. You can split classes between programs.',
+    pr1t:'Quran reading with Tajweed', pr1d:'From the Arabic letters to correct, confident recitation.',
+    pr2t:'Quran memorization for kids', pr2d:'Memorization and reading with games and activities kids look forward to.',
+    pr3t:'Quran memorization for adults', pr3d:'A plan that fits your day, with regular review so nothing slips.',
+    pr4t:'Arabic language', pr4d:'For non-native speakers, with curricula like Noor Al-Bayan and Arabic Between Your Hands.',
+    pr5t:'Stories of the Prophets', pr5d:'Age-appropriate stories that teach honesty, patience and kindness.',
+    pr6t:'Islamic basics', pr6d:'Belief, worship and manners, step by step from the beginning.',
+    prcH:'Simple monthly plans', prcSub:'Pick the class length and how many classes a week. The more classes, the lower the price per class.',
+    d30:'30 min', d60:'60 min',
+    famH:'Permanent family discount', famD:'Enroll two or more students from the same family and your monthly fee drops by 10%, for as long as you study with us.',
+    inclH:'Every plan includes',
+    custom:'Need 6 or 7 days a week? We will build a custom plan at <b>$8.50</b> per hour.',
+    pay:'Pay by card, Apple Pay or Cash App.', pnote:'Monthly fees in USD. Price per class is approximate, based on 4 weeks a month.',
+    rH:'What parents say', rNote:'Reviews published on our website.',
+    vids:'[ Parent video reviews go here: send them and I will add them ]',
+    qH:'Questions parents ask',
+    bH:'Book your free trial class', bSub:'Three short steps, then WhatsApp opens with all the details filled in. We reply and set a time in your time zone.',
+    r1:'Completely free, no payment details', r2:'Meet the teacher and try the platform', r3:'Decide after the class, with no commitment',
+    dirP:'Prefer to just chat? Message us on WhatsApp:', dirA:'Start a chat',
+    fH:'Your first class is on us. Try it, then decide.', fP:"No subscription and no payment until you've seen a class yourself.",
+    footName:'Guidance Tutors Academy', footWa:'WhatsApp:'
+  };
+  var AR = {};   // filled from the Arabic already in the page
+
+  var T = {
+    ar: {
+      title:'حصص قرآن وعربي أونلاين لطفلك | معلمين الهداية', langBtn:'English', durLabel:'مدة الحصة',
+      plan: function(n){ return n === 2 ? 'حصتان في الأسبوع' : n + ' حصص في الأسبوع'; },
+      count: function(k, d){ return (k <= 10 ? k + ' حصص' : k + ' حصة') + ' في الشهر، ' + (d === '60' ? 'ساعة لكل حصة' : '30 دقيقة'); },
+      per:'شهريًا', unit: function(v, d){ return 'تقريبًا <bdi dir="ltr">' + v + '</bdi> ' + (d === '60' ? 'للساعة' : 'للحصة'); },
+      rec:'ننصح بها', pick:'ابدئي بهذه الباقة',
+      notes:{5:'حصة كل يوم دراسي، وأقل سعر للحصة.', 4:'تقدّم أسرع، ويناسب خطة الحفظ.', 3:'انتظام يحفظ ما تعلّمه طفلك بين الحصص.', 2:'بداية خفيفة للأطفال الصغار والجداول المزدحمة.'},
+      incl:['معلم أزهري بإجازة في القرآن','حصة تجريبية مجانية قبل الدفع','تقرير بعد كل حصة وتقرير شهري','منصة ولي الأمر','مواعيد مرنة','تقسيم الحصص بين المواد'],
+      cmpCols:['الفصل الجماعي الحضوري','حصص الهداية أونلاين'],
+      cmp:[['انتباه المعلم','موزّع على المجموعة','لطفلك وحده طوال الحصة'],['الوصول','سواقة وانتظار ذهابًا وإيابًا','من البيت بضغطة زر'],['المواعيد','ثابتة يحددها المكان','تختارونها على توقيت ولايتكم'],['المعلم','من يتوفر في منطقتكم','أزهري بإجازة، يتكلم الإنجليزية'],['حصة فاتت','تضيع غالبًا','تؤجلينها أو تغيّرين موعدها من المنصة'],['المتابعة','«ماذا أخذتم اليوم؟»','تقرير بعد كل حصة، وتقرير شهري']],
+      faq:[
+        ['هل الحصص فردية ومباشرة؟','نعم. كل حصة مباشرة أونلاين، والمعلم مع طفلك وحده طوال الوقت، والدرس يمشي على مستواه وسرعته.'],
+        ['ما الأعمار التي تدرّسونها؟ وهل يمكن البدء من الصفر؟','نعلّم الأطفال والكبار، بنين وبنات. والمبتدئ تمامًا مرحب به، حتى لو لم يقرأ الحروف العربية من قبل.'],
+        ['كيف تتعاملون مع فرق التوقيت؟','أخبرينا بولايتكم والأوقات التي تناسبكم، ونرتب الحصص عليها. أغلب أسرنا في أمريكا، ومعنا طلاب من أكثر من 15 دولة.'],
+        ['من هم المعلمون؟','أكثر من 40 معلمًا ومعلمة من خريجي الأزهر، يحملون إجازة في القرآن، ويتكلمون العربية والإنجليزية.'],
+        ['كيف أتابع مستوى طفلي؟','يرسل المعلم تقريرًا قصيرًا بعد كل حصة، ويصلكِ تقرير شهري، ولكل طالب خطة دراسية. وعلى منصة ولي الأمر تجدين التقارير والواجبات والمواعيد.'],
+        ['ماذا لو فاتتنا حصة أو تغيّر جدولنا؟','يمكنكِ تأجيل الحصة أو تغيير موعدها من المنصة. وإذا غاب المعلم، نتواصل معكِ ونعوّض الحصة.'],
+        ['هل يمكن تقسيم الحصص بين أكثر من مادة؟','نعم. مثلًا حصتان للقرآن وحصة للعربية كل أسبوع، أو أي تقسيم يناسب باقتكم.'],
+        ['كيف أدفع؟ وهل يوجد خصم؟','الدفع شهري بالدولار، بالبطاقة البنكية أو Apple Pay أو Cash App. والأسرة التي يدرس منها طالبان أو أكثر تحصل على خصم دائم 10%.'],
+        ['ما منهجكم في تعليم الإسلام؟','منهجنا وسطي على طريقة أهل السنة والجماعة. ومعلمونا مربّون وقدوة، لا ملقّنون فقط.'],
+        ['هل أدفع شيئًا قبل الحصة التجريبية؟','لا. الحصة الأولى مجانية، بلا دفع ولا التزام. تقابلين المعلم وتجربين المنصة، ثم تقررين.']
+      ],
+      revs:[
+        ['رشّحت أكاديمية معلمين الهداية لعائلتي وأصدقائي ولكل من أقابله. غيّرت معلمي قرآن كثيرين لأن أولادي لم يكونوا يتعلمون شيئًا.','Judy Adel','الولايات المتحدة'],
+        ['الأطفال يستمتعون بالحصص، وبدأت فاطمة تقرأ أفضل وبثقة من غير اعتماد على الحفظ، وهذا كان هدفنا الأساسي.','Yasmin Mohamed','فرنسا'],
+        ['الهداية هي ما كنت أبحث عنه منذ سنوات، وأنصح بها بشدة. احترافية ومنظمة وتراعي احتياجاتنا، وجودة المعلمين والتنظيم لا تُقارن.','Ali Hazem','ألمانيا'],
+        ['جزاكم الله خيرًا على التقرير. أخذت بملاحظات المعلمة عن نقاط التحسين، وإن شاء الله تتحسن مع الوقت وتصبح مسلمة أفضل برحمة الله وبركته.','Mohammed Ghouse Khan','أستراليا']
+      ],
+      f:{ steps:['الطالب','البرنامج','الموعد'], pkg:'الباقة المختارة:', remove:'إزالة', name:'اسم الطالب', namePh:'مثال: آدم', age:'العمر',
+          ages:[['4-6','4–6'],['7-9','7–9'],['10-13','10–13'],['14-17','14–17'],['adult','كبار']],
+          ageMsg:{'4-6':'4–6 سنوات','7-9':'7–9 سنوات','10-13':'10–13 سنة','14-17':'14–17 سنة','adult':'كبار'},
+          prog:'ماذا تريدين أن يتعلم؟ يمكنكِ اختيار أكثر من برنامج.',
+          progs:[['tajweed','قراءة القرآن بالتجويد'],['hifz','حفظ القرآن'],['arabic','اللغة العربية'],['prophets','قصص الأنبياء'],['basics','أساسيات الإسلام'],['unsure','لست متأكدة، ساعدوني في الاختيار']],
+          teacher:'تفضّلين معلمًا أم معلمة؟', teachers:[['m','معلم'],['f','معلمة'],['any','لا يهم']],
+          state:'الولاية', statePh:'اختاري الولاية', outside:'خارج أمريكا', time:'الأوقات المناسبة',
+          times:[['morning','صباحًا'],['after','بعد المدرسة'],['evening','مساءً'],['weekend','نهاية الأسبوع']],
+          back:'رجوع', next:'التالي', go:'افتحي الواتساب برسالة جاهزة',
+          done:'هذه رسالتكِ. إذا لم يُفتح الواتساب، انسخيها وأرسليها إلى', copy:'نسخ الرسالة', copied:'تم النسخ',
+          e1n:'اكتبي اسم الطالب للمتابعة.', e1a:'اختاري عمر الطالب للمتابعة.', e2:'اختاري برنامجًا واحدًا على الأقل.', e3s:'اختاري الولاية حتى نرتب الموعد على توقيتكم.', e3t:'اختاري وقتًا مناسبًا واحدًا على الأقل.',
+          msg:{hi:'السلام عليكم، أريد حجز حصة تجريبية مجانية.', name:'اسم الطالب', age:'العمر', prog:'البرنامج', teacher:'المعلم', state:'الولاية', time:'الأوقات المناسبة', plan:'الباقة', src:'المصدر'} },
+      direct:'السلام عليكم، عندي سؤال عن حصص معلمين الهداية.'
+    },
+    en: {
+      title:'Online Quran & Arabic classes for kids | Guidance Tutors', langBtn:'العربية', durLabel:'Class length',
+      plan: function(n){ return n + ' classes a week'; },
+      count: function(k, d){ return k + ' classes a month, ' + (d === '60' ? '60 min each' : '30 min each'); },
+      per:'/month', unit: function(v, d){ return 'About <bdi dir="ltr">' + v + '</bdi> ' + (d === '60' ? 'per hour' : 'per class'); },
+      rec:'We recommend', pick:'Start with this plan',
+      notes:{5:'A class every school day, at the lowest price per class.', 4:'Faster progress. A good fit for a Hifz plan.', 3:'Steady enough that nothing is forgotten between classes.', 2:'A gentle start for young kids and busy weeks.'},
+      incl:['Al-Azhar teacher with Quran ijazah','Free trial class before you pay','A report after every class, plus a monthly report','Parent platform','Flexible times','Split classes between subjects'],
+      cmpCols:['In-person group class','Guidance Tutors online'],
+      cmp:[["Teacher's attention",'Shared by the whole group','On your child, the whole class'],['Getting there','Driving and waiting, both ways','From home, one tap'],['Schedule','Fixed by the venue','You choose, in your time zone'],['The teacher','Whoever is available nearby','Al-Azhar, with ijazah, fluent in English'],['A missed class','Usually lost','Postpone or reschedule it on the platform'],['Progress','"What did you do today?"','A report after every class, plus a monthly one']],
+      faq:[
+        ['Are classes live and one-on-one?','Yes. Every class is live online, and the teacher is with your child alone for the whole session, at their level and pace.'],
+        ['What ages do you teach? Can complete beginners join?','We teach children and adults, boys and girls. Complete beginners are welcome, even if they have never read the Arabic letters.'],
+        ['How do you handle time zones?','Tell us your state and the times that work for you, and we schedule around them. Most of our families are in the US, and we teach students from more than 15 countries.'],
+        ['Who are the teachers?','More than 40 male and female teachers. They are Al-Azhar graduates with an ijazah in the Quran, and they speak Arabic and English.'],
+        ["How do I follow my child's progress?",'The teacher sends a short report after every class, you get a monthly report, and each student has a study plan. The parent platform keeps reports, homework and the schedule in one place.'],
+        ['What if we miss a class or our schedule changes?','You can postpone a class or change its time on the platform. If the teacher has to miss a class, we contact you and make it up.'],
+        ['Can we split classes between subjects?','Yes. For example, two Quran classes and one Arabic class each week, or any split that fits your plan.'],
+        ['How do I pay? Is there a discount?','Fees are monthly in USD, by card, Apple Pay or Cash App. Families with two or more students get a permanent 10% discount.'],
+        ['What is your approach to teaching Islam?',"Our approach is moderate and follows Ahl al-Sunnah wal-Jama'ah. Our teachers are mentors and guides, not only instructors."],
+        ['Do I pay anything before the trial?','No. The first class is free, with no payment and no commitment. You meet the teacher, try the platform, then decide.']
+      ],
+      revs:[
+        ['I have recommended Guidance Tutors Academy to my family and friends and everyone I meet. I have changed so many Quran teachers because my sons were not learning anything.','Judy Adel','United States'],
+        ['Kids are enjoying the classes and Fatimah has begun to read better and confidently without memorization, which was the main goal.','Yasmin Mohamed','France'],
+        ["Guidance Tutors Academy is what I've been looking for for years! Highly recommend them. Very professional, structured and organised, and accommodating to needs. The quality of teachers and structure cannot be compared.",'Ali Hazem','Germany'],
+        ["Jazakallah for the report. Have taken note of final comments on areas of improvement. Insha'Allah over time she will adapt and become a better Muslimah with Allah's rahmah and barakah.",'Mohammed Ghouse Khan','Australia']
+      ],
+      f:{ steps:['Student','Program','Schedule'], pkg:'Chosen plan:', remove:'Remove', name:"Student's name", namePh:'e.g. Adam', age:'Age',
+          ages:[['4-6','4–6'],['7-9','7–9'],['10-13','10–13'],['14-17','14–17'],['adult','Adult']],
+          ageMsg:{'4-6':'4–6 years','7-9':'7–9 years','10-13':'10–13 years','14-17':'14–17 years','adult':'Adult'},
+          prog:'What would you like them to learn? Pick as many as you like.',
+          progs:[['tajweed','Quran reading with Tajweed'],['hifz','Quran memorization'],['arabic','Arabic language'],['prophets','Stories of the Prophets'],['basics','Islamic basics'],['unsure','Not sure yet, help me choose']],
+          teacher:'Male or female teacher?', teachers:[['m','Male teacher'],['f','Female teacher'],['any','No preference']],
+          state:'State', statePh:'Choose your state', outside:'Outside the US', time:'Best times',
+          times:[['morning','Mornings'],['after','After school'],['evening','Evenings'],['weekend','Weekends']],
+          back:'Back', next:'Next', go:'Open WhatsApp with my message',
+          done:"Here's your message. If WhatsApp didn't open, copy it and send it to", copy:'Copy message', copied:'Copied',
+          e1n:"Enter the student's name to continue.", e1a:"Choose the student's age to continue.", e2:'Choose at least one program.', e3s:'Choose your state so we can schedule in your time zone.', e3t:'Choose at least one time that works.',
+          msg:{hi:"Assalamu alaikum, I'd like to book a free trial class.", name:'Student', age:'Age', prog:'Program', teacher:'Teacher', state:'State', time:'Best times', plan:'Plan', src:'Source'} },
+      direct:'Assalamu alaikum, I have a question about Guidance Tutors classes.'
+    }
+  };
+
+  var lang = document.documentElement.lang === 'en' ? 'en' : 'ar';
+  var dur = '30';
+  var money = function(v){ return '$' + (Number.isInteger(v) ? v : (Math.round(v * 100) / 100).toFixed(2)); };
+  var tick = '<svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>';
+  var xmark = '<svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>';
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var waLink = function(text){ return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text); };
+
+  // Remember the Arabic copy that ships in the HTML, so switching back restores it exactly.
+  $$('[data-i18n]').forEach(function(el){ AR[el.dataset.i18n] = el.innerHTML; });
+  $$('[data-i18n-aria]').forEach(function(el){ AR[el.dataset.i18nAria] = el.getAttribute('aria-label'); });
+
+  /* ── Compare table ── */
+  function drawCompare(){
+    var t = T[lang];
+    var h = '<div class="ch" role="row"><b role="columnheader"></b><span class="off" role="columnheader">' + t.cmpCols[0] + '</span><span class="on" role="columnheader">' + t.cmpCols[1] + '</span></div>';
+    h += t.cmp.map(function(r){ return '<div role="row"><b role="rowheader">' + r[0] + '</b><span class="off" role="cell">' + xmark + '<span>' + r[1] + '</span></span><span class="on" role="cell">' + tick + '<span>' + r[2] + '</span></span></div>'; }).join('');
+    $('#cmp').innerHTML = h;
+    $('#cmp').setAttribute('aria-label', $('[data-i18n="cH"]').textContent);
+  }
+
+  /* ── Pricing ── */
+  function drawPlans(){
+    var t = T[lang];
+    $$('#dur button').forEach(function(b){ b.setAttribute('aria-checked', b.dataset.d === dur ? 'true' : 'false'); });
+    $('#dur').setAttribute('aria-label', t.durLabel);
+    $('#plans').innerHTML = ORDER.map(function(n){
+      var price = PRICES[dur][n], per = price / (n * 4);
+      return '<article class="plan' + (n === REC ? ' is-rec' : '') + '">' +
+        (n === REC ? '<span class="plan-badge">' + t.rec + '</span>' : '') +
+        '<h3>' + t.plan(n) + '</h3>' +
+        '<p class="plan-count">' + t.count(n * 4, dur) + '</p>' +
+        '<div class="plan-price"><bdi dir="ltr" class="amt">' + money(price) + '</bdi><span class="per">' + t.per + '</span></div>' +
+        '<p class="plan-unit">' + t.unit(money(per), dur) + '</p>' +
+        '<p class="plan-note">' + t.notes[n] + '</p>' +
+        '<button type="button" class="plan-cta" data-n="' + n + '">' + t.pick + '</button></article>';
+    }).join('');
+    $('#incl').innerHTML = t.incl.map(function(x){ return '<li>' + tick + x + '</li>'; }).join('');
+  }
+  $('#dur').addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b) return; dur = b.dataset.d; drawPlans(); });
+  $('#plans').addEventListener('click', function(e){
+    var b = e.target.closest('.plan-cta'); if (!b) return;
+    form.pkg = {n:+b.dataset.n, d:dur};
+    track('SelectPlan', {classes_per_week:+b.dataset.n, minutes:+dur, value:PRICES[dur][b.dataset.n], currency:'USD'});
+    drawForm();
+    $('#book').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+  });
+
+  /* ── Reviews & FAQ ── */
+  function drawReviews(){
+    $('#revs').innerHTML = T[lang].revs.map(function(r){
+      return '<figure class="rev" style="margin:0"><p>' + (lang === 'ar' ? '«' + r[0] + '»' : '“' + r[0] + '”') + '</p><cite><i aria-hidden="true">' + r[1].charAt(0) + '</i><span><bdi>' + r[1] + '</bdi><small>' + r[2] + '</small></span></cite></figure>';
+    }).join('');
+  }
+  function drawFaq(){
+    $('#faq-list').innerHTML = T[lang].faq.map(function(q){ return '<details><summary>' + q[0] + '</summary><p>' + q[1] + '</p></details>'; }).join('');
+  }
+
+  /* ── Booking form (values are stored as codes, so switching language keeps them) ── */
+  var form = {step:1, name:'', age:'', progs:[], teacher:'', state:'', times:[], pkg:null};
+  function planText(){
+    if (!form.pkg) return '';
+    var t = T[lang], n = form.pkg.n, d = form.pkg.d;
+    return t.plan(n) + (lang === 'ar' ? '، ' + (d === '60' ? 'ساعة' : '30 دقيقة') : ', ' + d + ' min') + ' (' + money(PRICES[d][n]) + ')';
+  }
+  function message(){
+    var f = T[lang].f, m = f.msg, sep = lang === 'ar' ? '، ' : ', ';
+    var lab = function(list, code){ for (var i = 0; i < list.length; i++) if (list[i][0] === code) return list[i][1]; return code; };
+    var q = new URLSearchParams(location.search);
+    var src = ['utm_source','utm_campaign','utm_content'].map(function(k){ return q.get(k); }).filter(Boolean).join(' / ');
+    var lines = [m.hi,
+      '• ' + m.name + ': ' + (form.name || '-'),
+      '• ' + m.age + ': ' + (form.age ? f.ageMsg[form.age] : '-'),
+      '• ' + m.prog + ': ' + (form.progs.map(function(c){ return lab(f.progs, c); }).join(sep) || '-'),
+      '• ' + m.teacher + ': ' + (form.teacher ? lab(f.teachers, form.teacher) : '-'),
+      '• ' + m.state + ': ' + (form.state === 'outside' ? f.outside : (form.state || '-')),
+      '• ' + m.time + ': ' + (form.times.map(function(c){ return lab(f.times, c); }).join(sep) || '-')];
+    if (form.pkg) lines.push('• ' + m.plan + ': ' + planText());
+    if (src) lines.push('• ' + m.src + ': ' + src);
+    return lines.join('\n');
+  }
+  function chips(key, label, list, multi){
+    var sel = form[key];
+    return '<p class="bk-q" id="bk-' + key + '-l">' + label + '</p><div class="chips" role="' + (multi ? 'group' : 'radiogroup') + '" aria-labelledby="bk-' + key + '-l" data-key="' + key + '"' + (multi ? ' data-multi' : '') + '>' +
+      list.map(function(o){
+        var on = multi ? sel.indexOf(o[0]) > -1 : sel === o[0];
+        return '<button type="button" class="chip" ' + (multi ? 'aria-pressed' : 'role="radio" aria-checked') + '="' + on + '" data-v="' + o[0] + '">' + o[1] + '</button>';
+      }).join('') + '</div>';
+  }
+  function drawForm(){
+    var f = T[lang].f;
+    var host = $('#form-host');
+    var keepDone = form.done;
+    host.innerHTML = '<form class="bk" id="bk" novalidate>' +
+      '<ol class="bk-steps">' + f.steps.map(function(s, i){ return '<li class="' + (i + 1 === form.step ? 'is-on' : i + 1 < form.step ? 'is-done' : '') + '">' + s + '</li>'; }).join('') + '</ol>' +
+      (form.pkg ? '<div class="bk-pkg">' + f.pkg + ' <b>' + esc(planText()) + '</b><button type="button" id="bk-pkg-x">' + f.remove + '</button></div>' : '') +
+      '<div class="bk-pane"' + (form.step === 1 ? '' : ' hidden') + '>' +
+        '<div class="bk-field"><label for="bk-name">' + f.name + '</label><input id="bk-name" autocomplete="off" placeholder="' + f.namePh + '" value="' + esc(form.name) + '"></div>' +
+        chips('age', f.age, f.ages, false) + '</div>' +
+      '<div class="bk-pane"' + (form.step === 2 ? '' : ' hidden') + '>' + chips('progs', f.prog, f.progs, true) + chips('teacher', f.teacher, f.teachers, false) + '</div>' +
+      '<div class="bk-pane"' + (form.step === 3 ? '' : ' hidden') + '>' +
+        '<div class="bk-field"><label for="bk-state">' + f.state + '</label><select id="bk-state"><option value="">' + f.statePh + '</option>' +
+          STATES.map(function(s){ return '<option' + (form.state === s ? ' selected' : '') + '>' + s + '</option>'; }).join('') +
+          '<option value="outside"' + (form.state === 'outside' ? ' selected' : '') + '>' + f.outside + '</option></select></div>' +
+        chips('times', f.time, f.times, true) + '</div>' +
+      '<p class="bk-err" role="alert"></p>' +
+      '<div class="bk-nav">' +
+        (form.step > 1 ? '<button type="button" class="bk-back">' + f.back + '</button>' : '') +
+        (form.step < 3 ? '<button type="button" class="btn bk-next">' + f.next + '</button>' : '<a class="btn bk-go" target="_blank" rel="noopener" href="' + waLink(message()) + '">' + f.go + '</a>') +
+      '</div>' +
+      '<div class="bk-done"' + (keepDone ? '' : ' hidden') + '><p>' + f.done + ' <bdi dir="ltr">+1 267-300-4382</bdi></p><pre class="bk-msg">' + esc(message()) + '</pre><button type="button" class="bk-copy">' + f.copy + '</button></div>' +
+      '</form>';
+  }
+  function refreshLink(){ var go = $('#bk .bk-go'); if (go) go.href = waLink(message()); var pre = $('#bk .bk-msg'); if (pre) pre.textContent = message(); }
+  function check(step){
+    var f = T[lang].f;
+    if (step === 1 && !form.name) return f.e1n;
+    if (step === 1 && !form.age) return f.e1a;
+    if (step === 2 && !form.progs.length) return f.e2;
+    if (step === 3 && !form.state) return f.e3s;
+    if (step === 3 && !form.times.length) return f.e3t;
+    return '';
+  }
+  var host = $('#form-host');
+  host.addEventListener('click', function(e){
+    var c = e.target.closest('.chip');
+    if (c) {
+      var g = c.parentElement, key = g.dataset.key, v = c.dataset.v;
+      if (g.hasAttribute('data-multi')) {
+        var i = form[key].indexOf(v); if (i > -1) form[key].splice(i, 1); else form[key].push(v);
+        c.setAttribute('aria-pressed', i > -1 ? 'false' : 'true');
+      } else {
+        form[key] = v;
+        $$('.chip', g).forEach(function(x){ x.setAttribute('aria-checked', x === c ? 'true' : 'false'); });
+      }
+      $('#bk .bk-err').textContent = ''; refreshLink(); return;
+    }
+    if (e.target.closest('.bk-next')) {
+      var m = check(form.step); if (m) { $('#bk .bk-err').textContent = m; return; }
+      form.step++; drawForm(); var first = $('#bk .bk-pane:not([hidden]) input, #bk .bk-pane:not([hidden]) select, #bk .bk-pane:not([hidden]) .chip'); if (first) first.focus(); return;
+    }
+    if (e.target.closest('.bk-back')) { form.step--; drawForm(); return; }
+    if (e.target.closest('#bk-pkg-x')) { form.pkg = null; drawForm(); return; }
+    var go = e.target.closest('.bk-go');
+    if (go) {
+      var m3 = check(3);
+      if (m3) { e.preventDefault(); $('#bk .bk-err').textContent = m3; return; }
+      go.href = waLink(message());
+      form.done = true; $('#bk .bk-msg').textContent = message(); $('#bk .bk-done').hidden = false;
+      track('Lead', {content_name:'free_trial', lang:lang, plan: form.pkg ? form.pkg.n + 'x' + form.pkg.d : 'none'});
+      return;
+    }
+    var cp = e.target.closest('.bk-copy');
+    if (cp) {
+      var f = T[lang].f;
+      var ok = function(){ cp.textContent = f.copied; setTimeout(function(){ cp.textContent = f.copy; }, 1800); };
+      var sel = function(){ var r = document.createRange(); r.selectNodeContents($('#bk .bk-msg')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+      try { navigator.clipboard.writeText(message()).then(ok, sel); } catch(_) { sel(); }
+    }
+  });
+  host.addEventListener('input', function(e){
+    if (e.target.id === 'bk-name') form.name = e.target.value.trim();
+    if (e.target.id === 'bk-state') form.state = e.target.value;
+    refreshLink();
+  });
+  host.addEventListener('change', function(e){ if (e.target.id === 'bk-state') { form.state = e.target.value; refreshLink(); } });
+  host.addEventListener('submit', function(e){ e.preventDefault(); });
+
+  /* ── Direct WhatsApp links ── */
+  function drawDirect(){ $$('.wa-direct').forEach(function(a){ a.href = waLink(T[lang].direct); }); }
+  document.addEventListener('click', function(e){ if (e.target.closest('.wa-direct')) track('Contact', {method:'whatsapp_direct', lang:lang}); });
+
+  /* ── Language ── */
+  function setLang(l){
+    lang = l;
+    document.documentElement.lang = l;
+    document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    var dict = l === 'ar' ? AR : EN;
+    $$('[data-i18n]').forEach(function(el){ var k = el.dataset.i18n; if (dict[k] != null) el.innerHTML = dict[k]; });
+    $$('[data-i18n-aria]').forEach(function(el){ var k = el.dataset.i18nAria; if (dict[k] != null) el.setAttribute('aria-label', dict[k]); });
+    document.title = T[l].title;
+    var btn = $('#lang-btn'); btn.textContent = T[l].langBtn; btn.lang = l === 'ar' ? 'en' : 'ar';
+    drawCompare(); drawPlans(); drawReviews(); drawFaq(); drawForm(); drawDirect();
+    try { localStorage.setItem('gt-lang', l); } catch(e) {}
+  }
+  $('#lang-btn').addEventListener('click', function(){ setLang(lang === 'ar' ? 'en' : 'ar'); });
+  setLang(lang);
+
+  /* ── Mobile bar: hidden while the hero button or the form is on screen ── */
+  if ('IntersectionObserver' in window) {
+    var bar = $('#mbar');
+    new IntersectionObserver(function(es){ es.forEach(function(en){ bar.classList.toggle('is-early', en.isIntersecting || en.boundingClientRect.top > 0); }); }).observe($('#hero-cta'));
+    new IntersectionObserver(function(es){ es.forEach(function(en){ bar.classList.toggle('is-away', en.isIntersecting); }); }, {threshold:.15}).observe($('#book'));
+  } else { $('#mbar').classList.remove('is-early'); }
+})();
+</script>
+</body>
+</html>
