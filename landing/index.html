@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>حصص قرآن وعربي أونلاين لطفلك | معلمين الهداية</title>
-<meta name="description" content="حصص فردية مباشرة مع معلمين أزهريين يتكلمون الإنجليزية، من عمر 4 سنوات وللكبار، على توقيت ولايتك في أمريكا. منصة لولي الأمر، ومشرفة تربوية، وأول حصة مجانية.">
+<title>حصص قرآن وعربي أونلاين لأولادك | أكاديمية معلمين الهداية</title>
+<meta name="description" content="حصص فردية مباشرة لأولادك مع معلمين أزهريين يتكلمون الإنجليزية، من عمر 4 سنوات وللكبار، على توقيت ولايتك في أمريكا. منصة لولي الأمر، ومشرفة تربوية، وأول حصة مجانية.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#1B3A2B">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Guidance Tutors">
 <meta property="og:title" content="1,200 ساعة بالإنجليزية هذا العام. فكم ساعة مع القرآن والعربية؟">
-<meta property="og:description" content="معلم أزهري يتكلم العربية والإنجليزية يعلّم طفلك وحده من البيت. أول حصة مجانية.">
+<meta property="og:description" content="معلم أزهري يتكلم العربية والإنجليزية يعلّم أولادك في حصص فردية من البيت. أول حصة مجانية.">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:locale:alternate" content="en_US">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -109,7 +109,25 @@ html.anim [data-reveal].split:not(.in) .wi{transform:translateY(118%)}
 
 /* hook band */
 .hook{background:var(--ink);color:var(--on);position:relative;overflow:hidden;padding-block:clamp(40px,6.5vw,76px)}
-.hook .wrap{position:relative;display:grid;gap:16px}
+.hook-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(28px,4vw,56px);align-items:center}
+.hook-txt{display:grid;gap:16px;min-width:0}
+.hvid{margin:0;position:relative;aspect-ratio:4/5;width:100%;max-width:360px;justify-self:center;border-radius:28px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 30% 18%,rgba(255,182,39,.28),transparent 55%),linear-gradient(160deg,#2C5D45,#0F251B);border:2px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -30px rgba(0,0,0,.65)}
+.hvid::before{content:"";position:absolute;inset:0;background:var(--emblem) center 36%/44% no-repeat;opacity:.13}
+.hvid-tag{position:absolute;top:14px;inset-inline-start:14px;display:inline-flex;align-items:center;gap:7px;background:rgba(0,0,0,.35);color:var(--on);font-size:13.5px;font-weight:700;border-radius:999px;padding:4px 12px}
+.hvid-tag i{width:8px;height:8px;border-radius:50%;background:var(--tomato);animation:blink 1.2s ease-in-out infinite}
+.hvid-play{position:relative;width:90px;height:90px;border-radius:50%;border:0;background:var(--sun);color:var(--ink);display:grid;place-items:center;box-shadow:0 6px 0 var(--sun-d);cursor:pointer;transition:transform .15s}
+.hvid-play:hover{transform:scale(1.06)}
+.hvid-play::before,.hvid-play::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--sun);animation:ripple 2.4s ease-out infinite}
+.hvid-play::after{animation-delay:1.2s}
+@keyframes ripple{from{transform:scale(1);opacity:.85}to{transform:scale(1.95);opacity:0}}
+.hvid-play .ico{width:38px;height:38px;margin-left:5px}
+.hvid figcaption{position:absolute;inset:auto 0 0;padding:44px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,.6));display:grid;gap:4px;color:var(--on)}
+.hvid figcaption b{font-size:clamp(17px,2vw,20px);line-height:1.35}
+.hvid figcaption small{font-size:13px;opacity:.85}
+.hvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;z-index:2}
+.hvid.nudge .hvid-play{animation:shake .5s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@media (max-width:860px){.hook-grid{grid-template-columns:1fr}.hvid{aspect-ratio:16/11;max-width:none}}
 .hook-tag{justify-self:start;display:inline-flex;align-items:center;gap:8px;background:rgba(255,182,39,.15);color:var(--sun);font-weight:700;font-size:15px;border-radius:999px;padding:4px 14px}
 .hook-tag i{width:8px;height:8px;border-radius:50%;background:var(--sun);animation:blink 1.4s ease-in-out infinite}
 @keyframes blink{50%{opacity:.25}}
@@ -163,9 +181,15 @@ html.anim .hook.go .bar:not(.q) .bar-fill{animation:grow 1.8s cubic-bezier(.2,.8
 .typing i{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:tdot 1s ease-in-out infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
 @keyframes tdot{0%,60%,100%{transform:none;opacity:.4}30%{transform:translateY(-4px);opacity:1}}
-.trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px;grid-column:1/-1}
-.trust>span{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:7px 16px;font-weight:600;font-size:15.5px}
-.trust .ico{color:var(--green)}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;grid-column:1/-1}
+.tr{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:12px 14px;font-weight:700;font-size:15.5px;line-height:1.35}
+.tr-i{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center}
+.tr-i .ico{width:23px;height:23px;stroke-width:2}
+.tr:nth-child(1) .tr-i{background:var(--p-leaf);color:var(--green-d)}
+.tr:nth-child(2) .tr-i{background:var(--p-sun);color:#8A5A00}
+.tr:nth-child(3) .tr-i{background:var(--p-sky);color:var(--sky-d)}
+.tr:nth-child(4) .tr-i{background:var(--p-tomato);color:var(--tomato-d)}
+@media (max-width:860px){.trust{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:32px}.tr{flex-direction:column;align-items:flex-start;gap:10px;padding:14px;font-size:15px}}
 @media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.play{order:-1;gap:26px}}
 
 /* numbers */
@@ -192,26 +216,21 @@ html.anim .prob.in .ico{animation:wiggle .7s ease calc(var(--sd,0ms) + .5s)}
 .good .ico{width:28px;height:28px}
 @media (max-width:700px){.probs{grid-template-columns:1fr}}
 
-/* compare */
-.cmp{margin-top:36px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.15fr);border-radius:26px;overflow:hidden;border:2px solid var(--line);background:var(--card)}
+/* compare: one connected two-column table */
+.cmp{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;border-radius:26px;overflow:hidden;border:2px solid var(--ink);background:var(--card);box-shadow:6px 7px 0 var(--ink)}
 .cmp>div{display:contents}
-.cmp [role="row"]>*{padding:15px 18px;border-top:1.5px solid var(--line);font-size:16px}
-.cmp .ch>*{border-top:0;font-weight:800;font-size:17px;padding-block:18px}
-.cmp b{font-weight:700}
-.cmp .off{color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.cmp [role="row"]>*{padding:16px 18px;font-size:16px;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+.cmp [role="row"]:not(.ch)>*{border-top:1.5px solid var(--line)}
+.cmp .off{color:var(--muted);background:var(--card)}
 .cmp .off .ico{color:var(--tomato-d);margin-top:3px}
-.cmp .on{background:var(--mint);color:var(--ink);font-weight:600;display:flex;gap:8px;align-items:flex-start;border-inline-start:2px solid var(--leaf)}
+.cmp .on{background:var(--mint);color:var(--ink);font-weight:700;border-inline-start:2px solid var(--leaf)}
 .cmp .on .ico{color:var(--green);margin-top:3px}
+.cmp .ch>*{font-weight:800;font-size:17px;padding-block:16px;align-items:center}
+.cmp .ch .off{background:var(--paper);color:var(--ink)}
+.cmp .ch .on{background:var(--green);color:var(--on);border-inline-start-color:var(--green)}
 html.anim .cmp .on.in .ico{animation:pop .45s cubic-bezier(.3,1.6,.5,1) calc(var(--sd,0ms) + .35s) both}
 @keyframes pop{from{transform:scale(0)}to{transform:none}}
-.cmp .ch .on{background:var(--green);color:var(--on);border-inline-start-color:var(--green)}
-@media (max-width:680px){
-  .cmp{grid-template-columns:1fr 1fr}
-  .cmp [role="row"]>b{grid-column:1/-1;padding-bottom:6px;background:var(--bg);font-size:15px}
-  .cmp .ch>b{display:none}
-  .cmp [role="row"]>span{font-size:15px;padding:10px 12px 14px}
-  .cmp [role="row"]:not(.ch)>span{border-top:0}
-}
+@media (max-width:680px){.cmp [role="row"]>*{padding:13px 12px;font-size:14.5px;gap:7px}.cmp .ch>*{font-size:15px}}
 
 /* solution */
 .sols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
@@ -273,22 +292,33 @@ html.anim .steps:not(.drawn)::before{transform:scaleX(0)}
 .steps p{color:var(--muted);max-width:30ch}
 @media (max-width:760px){.steps{grid-template-columns:1fr;gap:22px}.steps::before{display:none}.steps li{grid-template-columns:auto 1fr;justify-items:start;text-align:start;column-gap:16px}.steps li>b{grid-row:span 2}}
 
-/* programs */
-.progs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
-.prog{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:22px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:start;transition:transform .2s,border-color .2s}
-.prog:hover{transform:translateY(-3px);border-color:var(--leaf)}
-.prog .ltr-tile{grid-row:span 2;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:var(--on);font-weight:800;font-size:30px;line-height:1;padding-bottom:4px;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
-.prog:hover .ltr-tile{transform:rotate(-8deg) scale(1.08)}
-.prog:nth-child(1) .ltr-tile{background:var(--tomato);box-shadow:0 4px 0 var(--tomato-d)}
-.prog:nth-child(2) .ltr-tile{background:var(--sky);box-shadow:0 4px 0 var(--sky-d)}
-.prog:nth-child(3) .ltr-tile{background:var(--sun);box-shadow:0 4px 0 var(--sun-d);color:var(--ink)}
-.prog:nth-child(4) .ltr-tile{background:var(--leaf);box-shadow:0 4px 0 var(--leaf-d)}
-.prog:nth-child(5) .ltr-tile{background:var(--grape);box-shadow:0 4px 0 var(--grape-d)}
-.prog:nth-child(6) .ltr-tile{background:var(--teal);box-shadow:0 4px 0 var(--teal-d)}
-.prog h3{font-size:20px}
-.prog p{color:var(--muted);font-size:16px}
-@media (max-width:900px){.progs{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.progs{grid-template-columns:1fr}}
+/* programs: a deck of cards to swipe through */
+.deck-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.deck-hint{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:700;margin-top:8px}
+.deck-hint .ico{width:24px;height:24px;animation:swipe 1.8s ease-in-out infinite}
+@keyframes swipe{50%{transform:translateX(-9px)}}
+.deck-area{display:grid;gap:26px;justify-items:center;min-width:0}
+.deck{position:relative;width:min(100%,400px);touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.dcard{position:absolute;inset:0 0 auto;background:var(--card);border:2.5px solid var(--ink);border-radius:28px;box-shadow:6px 7px 0 var(--ink);padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .35s;cursor:grab;will-change:transform}
+.dcard.drag{transition:none;cursor:grabbing}
+.dcard.hint{animation:hintwig 1.5s ease-in-out .2s 2}
+@keyframes hintwig{25%{translate:-28px 0;rotate:-4deg}75%{translate:16px 0;rotate:3deg}}
+.dc-top{display:flex;justify-content:space-between;align-items:center;background:var(--cp);border-radius:18px;padding:12px 14px;margin-bottom:4px}
+.dc-l{width:58px;height:58px;border-radius:16px;background:var(--c);box-shadow:0 4px 0 var(--cd);color:var(--ct,#fff);display:grid;place-items:center;font-size:32px;font-weight:800;padding-bottom:4px}
+.dc-n{font-weight:800;color:var(--cd);font-variant-numeric:tabular-nums}
+.dcard h3{font-size:22px}
+.dcard p{color:var(--muted);font-size:16px;line-height:1.6}
+.dcard ul{list-style:none;margin:2px 0 6px;padding:0;display:grid;gap:4px}
+.dcard li{display:flex;gap:8px;align-items:flex-start;font-size:15px;font-weight:600}
+.dcard li .ico{color:var(--cd);margin-top:3px}
+.dc-cta{margin-top:auto;border:0;border-radius:999px;background:var(--c);color:var(--ct,#fff);font-weight:700;padding:12px;box-shadow:0 4px 0 var(--cd)}
+.deck-ctl{display:flex;align-items:center;gap:18px}
+.deck-btn{width:52px;height:52px;border-radius:50%;border:2px solid var(--ink);background:var(--card);display:grid;place-items:center;box-shadow:0 3px 0 var(--ink)}
+.deck-btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.deck-btn .ico{width:24px;height:24px;stroke-width:2.2}
+.deck-count{font-weight:800;min-width:4ch;text-align:center;font-variant-numeric:tabular-nums}
+[dir="rtl"] .ch-fwd .ico,[dir="ltr"] .ch-back .ico{transform:scaleX(-1)}
+@media (max-width:860px){.deck-wrap{grid-template-columns:1fr}}
 
 /* curricula (book covers) */
 .books{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,34px);margin-top:40px}
@@ -330,7 +360,6 @@ html.anim .steps:not(.drawn)::before{transform:scaleX(0)}
 @media (max-width:620px){.plans{grid-template-columns:1fr;max-width:440px}}
 .pay{margin-top:30px;display:grid;gap:10px}
 .pay h3{font-size:19px}
-.incl ul{display:flex;flex-wrap:wrap;gap:8px 10px;margin:0;padding:0;list-style:none}
 .pms{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .pm{height:42px;display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:0 12px;font-size:14.5px;font-weight:700;color:var(--ink);transition:transform .2s,border-color .2s}
 .pm:hover{transform:translateY(-2px);border-color:var(--ink)}
@@ -342,10 +371,26 @@ html.anim .steps:not(.drawn)::before{transform:scaleX(0)}
 .family strong{flex:none;width:86px;height:86px;border-radius:50%;background:var(--tomato-d);color:var(--on);display:grid;place-items:center;font-size:30px;font-weight:800;rotate:-8deg}
 .family h3{font-size:21px}
 .family p{color:var(--muted);font-size:16px}
-.incl{margin-top:30px}
-.incl h3{font-size:19px;margin-bottom:10px}
-.incl li{display:flex;align-items:center;gap:6px;background:var(--card);border-radius:999px;padding:6px 14px;font-weight:600;font-size:15px}
-.incl .ico{color:var(--green)}
+.incl{margin-top:30px;background:var(--card);border:2px dashed var(--leaf);border-radius:26px;padding:clamp(18px,3vw,26px)}
+.incl h3{font-size:clamp(19px,2.3vw,22px);display:flex;align-items:center;gap:10px}
+.incl h3 .ico{width:28px;height:28px;padding:5px;box-sizing:content-box;border-radius:50%;background:var(--green);color:var(--on);stroke-width:2.4}
+.incl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;list-style:none;margin:16px 0 0;padding:0}
+.incl-grid li{display:flex;align-items:center;gap:12px;padding:12px;border-radius:18px;background:var(--bg);font-weight:700;font-size:15.5px;line-height:1.4}
+.ii{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:var(--on)}
+.ii .ico{width:23px;height:23px;stroke-width:2}
+.incl-grid li:nth-child(1) .ii{background:var(--tomato-d)}.incl-grid li:nth-child(2) .ii{background:var(--sky-d)}.incl-grid li:nth-child(3) .ii{background:var(--leaf-d)}
+.incl-grid li:nth-child(4) .ii{background:var(--grape-d)}.incl-grid li:nth-child(5) .ii{background:var(--teal-d)}.incl-grid li:nth-child(6) .ii{background:var(--sun);color:var(--ink)}
+@media (max-width:900px){.incl-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.incl-grid{gap:10px}.incl-grid li{flex-direction:column;text-align:center;font-size:14.5px;gap:8px;padding:14px 10px}}
+.bridge{margin-top:30px;display:flex;align-items:center;gap:16px;background:var(--sun);color:var(--ink);text-decoration:none;border-radius:24px;padding:18px 22px;border:2.5px solid var(--ink);box-shadow:5px 6px 0 var(--ink);max-width:780px;transition:transform .15s}
+.bridge:hover{transform:translateY(-2px)}
+.bridge-i{flex:none;width:56px;height:56px;border-radius:16px;background:var(--card);display:grid;place-items:center;color:var(--tomato-d)}
+.bridge-i .ico{width:30px;height:30px;stroke-width:2;animation:giftbob 2.2s ease-in-out infinite}
+@keyframes giftbob{50%{transform:rotate(-10deg) scale(1.1)}}
+.bridge-t{display:grid;gap:2px;flex:1;min-width:0}
+.bridge-t b{font-size:clamp(19px,2.4vw,23px);line-height:1.3}
+.bridge-t span{font-weight:600;font-size:15.5px;line-height:1.5}
+.bridge-a{flex:none;width:26px;height:26px;stroke-width:2.4;animation:nudge 1.6s ease-in-out infinite}
 .pfoot{display:grid;gap:6px;margin-top:22px;color:var(--muted);font-size:15.5px}
 .pfoot b{color:var(--ink)}
 
@@ -447,11 +492,32 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
 .bk-field{display:grid;gap:6px}
 .bk input,.bk select{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);min-height:50px}
 .bk input[type="number"]{max-width:160px}
-.slots{display:grid;gap:8px}
-.slot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,8em) 44px;gap:8px;align-items:center}
-.slot button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--muted)}
-.slot button:disabled{opacity:.35;cursor:default}
-.add-slot{justify-self:start;background:none;border:2px dashed var(--leaf);color:var(--green);border-radius:999px;padding:8px 16px;font-weight:700}
+.cal{border:1.5px solid var(--line);border-radius:20px;padding:12px;background:var(--bg)}
+.cal-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.cal-h b{font-size:17px}
+.cal-nav{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);display:grid;place-items:center}
+.cal-nav:disabled{opacity:.35;cursor:default}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal-g .wd{font-size:12.5px;color:var(--muted);font-weight:700;padding:2px 0 4px}
+.cal-d{aspect-ratio:1;border:0;border-radius:12px;background:var(--card);font-weight:700;font-size:15.5px;position:relative;font-variant-numeric:tabular-nums;transition:background .15s,color .15s,transform .15s}
+.cal-d:not(:disabled):hover{transform:scale(1.06)}
+.cal-d:disabled{background:transparent;color:#B9C6BE;cursor:default}
+.cal-d.today{box-shadow:inset 0 0 0 1.5px var(--leaf)}
+.cal-d.active{background:var(--green);color:var(--on)}
+.cal-d.has::after{content:"";position:absolute;bottom:5px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--sun)}
+.day-panel{display:grid;gap:10px;margin-top:4px}
+html.anim .day-panel{animation:fadeup .3s ease both}
+.periods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.per{border:1.5px solid var(--line);background:var(--card);border-radius:16px;padding:10px 6px;text-align:center;display:grid;gap:2px;line-height:1.35}
+.per b{font-size:15px}
+.per small{font-size:12.5px;color:var(--muted);font-weight:600}
+.per[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--on)}
+.per[aria-pressed="true"] small{color:#DDF3E6}
+.hours .chip{padding:6px 14px;font-size:14.5px}
+.picks{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.picks li{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--p-leaf);border-radius:14px;padding:7px 8px 7px 12px;font-size:14.5px;font-weight:600}
+[dir="rtl"] .picks li{padding:7px 12px 7px 8px}
+.picks button{flex:none;width:28px;height:28px;border-radius:50%;border:0;background:var(--card);display:grid;place-items:center;color:var(--muted)}
 .bk-err{min-height:1.5em;margin-top:6px;font-size:15px;font-weight:700;color:var(--tomato-d)}
 .bk-nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px}
 .bk-nav .bk-next,.bk-nav .bk-go{margin-inline-start:auto}
@@ -515,6 +581,10 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
   <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M10 15l2 2 3.5-3.5"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7.5 4.5 3.5 4.5v14c4 0 6.5.5 8.5 2 2-1.5 4.5-2 8.5-2v-14c-4 0-6.5.5-8.5 2z"/><path d="M12 6.5v14"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="4.5" rx="1"/><path d="M5 12.5v8h14v-8M12 8v12.5M12 8C10.6 4.6 6.4 4.4 6.9 7c.3 1.3 5.1 1 5.1 1zm0 0c1.4-3.4 5.6-3.6 5.1-1-.3 1.3-5.1 1-5.1 1z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-swipe" viewBox="0 0 24 24"><path d="M3.5 12h17M7.5 8l-4 4 4 4M16.5 8l4 4-4 4"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 5.5l6.5 6.5L9 18.5"/></symbol>
   <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
   <symbol id="pm-visa" viewBox="-0.40 7.72 24.80 8.55"><path fill="currentColor" d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></symbol>
   <symbol id="pm-amex" viewBox="-0.40 -0.40 24.80 24.80"><path fill="currentColor" d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0zM21.156 14.955c.004.005.006.012.01.016.01.01.024.01.032.02l-.042-.035zM23.828 13.082h.065v.555h-.065zM23.865 15.03v-.005c-.03-.025-.046-.048-.075-.07-.15-.153-.39-.215-.764-.225l-.36-.012c-.12 0-.194-.007-.27-.03-.09-.03-.15-.105-.15-.21 0-.09.03-.16.09-.204.076-.045.15-.05.27-.05h1.223v-.588h-1.283c-.69 0-.96.437-.96.84 0 .9.78.855 1.41.87.104 0 .18.015.224.06.046.03.076.106.076.18 0 .07-.034.138-.09.18-.045.056-.136.07-.27.07h-1.288v.605h1.287c.42 0 .734-.118.9-.36h.03c.09-.134.135-.3.135-.523 0-.24-.045-.39-.135-.526zM18.597 14.208v-.583h-2.235V16.458h2.235v-.585h-1.57v-.57h1.533v-.584h-1.532v-.51M13.51 8.787h.685V11.6h-.684zM13.126 9.543l-.007.006c0-.314-.13-.5-.34-.624-.217-.125-.47-.135-.81-.135H10.43v2.82h.674v-1.034h.72c.24 0 .39.03.487.12.122.136.107.378.107.548v.354h.677v-.553c0-.25-.016-.375-.11-.516-.09-.107-.202-.19-.33-.237.172-.07.472-.3.472-.75zm-.855.396h-.015c-.09.054-.195.056-.33.056H11.1v-.623h.825c.12 0 .24.004.33.05.09.04.15.128.15.25s-.047.22-.134.266zM15.92 9.373h.632v-.6h-.644c-.464 0-.804.105-1.02.33-.286.3-.362.69-.362 1.11 0 .512.123.833.36 1.074.232.238.645.31.97.31h.78l.255-.627h1.39l.262.627h1.36v-2.11l1.272 2.11h.95l.002.002V8.786h-.684v1.963l-1.18-1.96h-1.02V11.4L18.11 8.744h-1.004l-.943 2.22h-.3c-.177 0-.362-.03-.468-.134-.125-.15-.186-.36-.186-.662 0-.285.08-.51.194-.63.133-.135.272-.165.516-.165zm1.668-.108l.464 1.118v.002h-.93l.466-1.12zM2.38 10.97l.254.628H4V9.393l.972 2.205h.584l.973-2.202.015 2.202h.69v-2.81H6.118l-.807 1.904-.876-1.905H3.343v2.663L2.205 8.787h-.997L.01 11.597h.72l.26-.626h1.39zm-.688-1.705l.46 1.118-.003.002h-.915l.457-1.12zM11.856 13.62H9.714l-.85.923-.825-.922H5.346v2.82H8l.855-.932.824.93h1.302v-.94h.838c.6 0 1.17-.164 1.17-.945l-.006-.003c0-.78-.598-.93-1.128-.93zM7.67 15.853l-.014-.002H6.02v-.557h1.47v-.574H6.02v-.51H7.7l.733.82-.764.824zm2.642.33l-1.03-1.147 1.03-1.108v2.253zm1.553-1.258h-.885v-.717h.885c.24 0 .42.098.42.344 0 .243-.15.372-.42.372zM9.967 9.373v-.586H7.73V11.6h2.237v-.58H8.4v-.564h1.527V9.88H8.4v-.507"/></symbol>
@@ -531,7 +601,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
 <div class="progress" aria-hidden="true"><i id="progress"></i></div>
 
 <header class="wrap top">
-  <a class="brand" href="#start"><i aria-hidden="true"></i><span data-i18n="brand">معلمين الهداية</span></a>
+  <a class="brand" href="#start"><i aria-hidden="true"></i><span data-i18n="brand">أكاديمية معلمين الهداية</span></a>
   <div class="top-r">
     <a class="link" href="#book" data-i18n="navBook">احجزي التجريبية</a>
     <button type="button" class="lang" id="lang-btn" lang="en">English</button>
@@ -544,16 +614,23 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     <span class="float-l" aria-hidden="true" style="font-size:140px;top:8%;inset-inline-end:4%">ب</span>
     <span class="float-l" aria-hidden="true" style="font-size:90px;bottom:10%;inset-inline-end:28%;animation-delay:-5s">ع</span>
     <span class="float-l" aria-hidden="true" style="font-size:120px;top:40%;inset-inline-end:58%;animation-delay:-9s">ق</span>
-    <div class="wrap">
+    <div class="wrap hook-grid">
+     <div class="hook-txt">
       <span class="hook-tag"><i aria-hidden="true"></i><span data-i18n="hTag">رقم قد يصدمكِ</span></span>
       <p class="hook-big"><strong id="hook-n">1,200</strong><span data-i18n="hUnit">ساعة</span></p>
-      <p class="hook-line" data-i18n="hLine">يقضيها طفلك هذا العام في المدرسة، يتعلم ويتكلم الإنجليزية فقط.</p>
+      <p class="hook-line" data-i18n="hLine">يقضيها أولادك هذا العام في المدرسة، يتعلمون ويتكلمون الإنجليزية فقط.</p>
       <div class="bars">
         <div class="bar"><div class="bar-top"><span data-i18n="hB1">بالإنجليزية في المدرسة</span><b><bdi dir="ltr">1,200</bdi> <span data-i18n="hB1u">ساعة</span></b></div><div class="bar-track"><div class="bar-fill"></div></div></div>
         <div class="bar q"><div class="bar-top"><span data-i18n="hB2">مع القرآن وتعلّم العربية</span><b>?</b></div><div class="bar-track"><div class="bar-fill"></div></div></div>
       </div>
-      <p class="hook-q" id="hook-q" data-i18n="hQ">فكم ساعة سيقضيها مع القرآن وتعلّم العربية؟</p>
+      <p class="hook-q" id="hook-q" data-i18n="hQ">فكم ساعة سيقضونها مع القرآن وتعلّم العربية؟</p>
       <a class="hook-cue" href="#start"><span data-i18n="hCue">الحل يبدأ من هنا</span><svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></a>
+     </div>
+      <figure class="hvid" id="hvid">
+        <span class="hvid-tag"><i aria-hidden="true"></i><span data-i18n="vTag">آراء الأهالي</span></span>
+        <button type="button" class="hvid-play" aria-label="تشغيل فيديو آراء الأهالي" data-i18n-aria="vPlay"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></button>
+        <figcaption><b data-i18n="vT">شاهدي ماذا يقول الأهالي عن أكاديمية معلمين الهداية</b><small class="hvid-ph" data-i18n="vPh">[ فيديو آراء الأهالي يُضاف هنا ]</small></figcaption>
+      </figure>
     </div>
   </section>
 
@@ -562,8 +639,8 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     <div class="wrap">
       <div>
         <span class="kicker" data-i18n="kicker">لأهالينا في أمريكا</span>
-        <h1 data-i18n="h1">القرآن والعربية لطفلك، بلا مشاوير ولا فصول مزدحمة</h1>
-        <p class="lead" data-i18n="lead">معلم أزهري يتكلم العربية والإنجليزية يعلّم طفلك وحده، في حصة مباشرة من البيت وعلى توقيت ولايتكم. وأنتِ تتابعين كل حصة من منصة ولي الأمر.</p>
+        <h1 data-i18n="h1">القرآن والعربية لأولادك، بلا مشاوير ولا فصول مزدحمة</h1>
+        <p class="lead" data-i18n="lead">معلم أزهري يتكلم العربية والإنجليزية يعلّم أولادك في حصص فردية مباشرة من البيت، وعلى توقيت ولايتكم. وأنتِ تتابعين كل حصة من منصة ولي الأمر.</p>
         <div class="ctas">
           <a class="btn shine" href="#book" id="hero-cta" data-i18n="cta">احجزي حصة تجريبية مجانية</a>
           <a class="link" href="#pricing" data-i18n="seePrices">الأسعار</a>
@@ -580,10 +657,10 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
         <div class="bubble" id="bubble"><span id="say">أول حصة مجانية، ومعها تحديد المستوى</span></div>
       </div>
       <div class="trust">
-        <span><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg><span data-i18n="t1">معلمون أزهريون بإجازة في القرآن</span></span>
-        <span><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="t2">مواعيد مرنة</span></span>
-        <span><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg><span data-i18n="t3">حصة فردية مباشرة</span></span>
-        <span><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="t4">مسجلة رسميًا في وايومنج، أمريكا</span></span>
+        <div class="tr"><span class="tr-i"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg></span><span data-i18n="t1">معلمون أزهريون بإجازة</span></div>
+        <div class="tr"><span class="tr-i"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span data-i18n="t2">مواعيد مرنة</span></div>
+        <div class="tr"><span class="tr-i"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></span><span data-i18n="t3">حصص فردية مباشرة</span></div>
+        <div class="tr"><span class="tr-i"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span><span data-i18n="t4">مسجلة رسميًا في أمريكا</span></div>
       </div>
     </div>
   </section>
@@ -603,14 +680,14 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
   <section class="problem" id="problem">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="pH">لماذا يبتعد أطفال كثيرون في أمريكا عن القرآن والعربية؟</h2>
-        <p class="sub" data-i18n="pSub">العيب ليس في الطفل، ولا في حرصكِ. العيب في الظروف.</p>
+        <h2 data-i18n="pH">لماذا يبتعد أولادنا في أمريكا عن القرآن والعربية؟</h2>
+        <p class="sub" data-i18n="pSub">العيب ليس في أولادك، ولا في حرصكِ. العيب في الظروف.</p>
       </div>
       <div class="probs">
-        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-lang"/></svg><h3 data-i18n="p1t">الإنجليزية في كل مكان</h3><p data-i18n="p1d">المدرسة والأصحاب والشاشات كلها بالإنجليزية. فمتى يستعمل طفلك العربية؟</p></div>
-        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-group"/></svg><h3 data-i18n="p2t">ساعة في الأسبوع وسط مجموعة</h3><p data-i18n="p2d">في الفصل الجماعي، نصيب كل طفل من القراءة والتصحيح دقائق قليلة.</p></div>
+        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-lang"/></svg><h3 data-i18n="p1t">الإنجليزية في كل مكان</h3><p data-i18n="p1d">المدرسة والأصحاب والشاشات كلها بالإنجليزية. فمتى يستعمل أولادك العربية؟</p></div>
+        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-group"/></svg><h3 data-i18n="p2t">ساعة في الأسبوع وسط مجموعة</h3><p data-i18n="p2d">في الفصل الجماعي، نصيب كل طالب من القراءة والتصحيح دقائق قليلة.</p></div>
         <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><h3 data-i18n="p3t">مشاوير ومواعيد ثابتة</h3><p data-i18n="p3d">مدرسة ورياضة وعمل، ثم طريق طويل إلى المسجد. ويكفي أسبوع مزدحم واحد ليتوقف كل شيء.</p></div>
-        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg><h3 data-i18n="p4t">لا تعرفين أين وصل</h3><p data-i18n="p4d">بعد شهور من الدراسة، يصعب أن تعرفي ماذا تعلّم طفلك بالضبط، وأين يحتاج مساعدة.</p></div>
+        <div class="prob"><svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg><h3 data-i18n="p4t">لا تعرفين أين وصلوا</h3><p data-i18n="p4d">بعد شهور من الدراسة، يصعب أن تعرفي ماذا تعلّم أولادك بالضبط، وأين يحتاجون المساعدة.</p></div>
       </div>
       <p class="good"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="good">الخبر الجيد: كل هذا له حل، ومن البيت.</span></p>
     </div>
@@ -620,7 +697,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
   <section id="compare">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="cH">لماذا يفيد التعلم أونلاين طفلك أكثر؟</h2>
+        <h2 data-i18n="cH">لماذا يفيد التعلم أونلاين أولادك أكثر؟</h2>
         <p class="sub" data-i18n="cSub">مدرسة المسجد ونهاية الأسبوع خير كبير، والحصص الفردية أونلاين تكمّل ما لا يتسع له وقتها.</p>
       </div>
       <div class="cmp" id="cmp" role="table"></div>
@@ -631,15 +708,15 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
   <section id="solution" style="padding-top:0">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="sH">هكذا نحل المشكلة في الهداية</h2>
+        <h2 data-i18n="sH">هكذا تحل أكاديمية معلمين الهداية المشكلة</h2>
         <p class="sub" data-i18n="sSub">معلم مناسب، ووقت مناسب، ومتابعة لا تحتاجين فيها إلى السؤال.</p>
       </div>
       <div class="sols">
-        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg><h3 data-i18n="s1t">معلم أزهري يتكلم لغة طفلك</h3><p data-i18n="s1d">خريجو الأزهر بإجازة في القرآن، يشرحون بالعربية والإنجليزية حتى يفهم طفلك كل كلمة.</p></div>
-        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg><h3 data-i18n="s2t">حصة فردية على مستواه</h3><p data-i18n="s2d">الدرس يمشي على سرعة طفلك، والتصحيح في كل آية.</p></div>
+        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg><h3 data-i18n="s1t">معلم أزهري يتكلم لغة أولادك</h3><p data-i18n="s1d">خريجو الأزهر بإجازة في القرآن، يشرحون بالعربية والإنجليزية حتى يفهم أولادك كل كلمة.</p></div>
+        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg><h3 data-i18n="s2t">حصة فردية على مستوى كل طالب</h3><p data-i18n="s2d">الدرس يمشي على سرعة كل طالب، والتصحيح في كل آية.</p></div>
         <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><h3 data-i18n="s3t">معلمات للبنات</h3><p data-i18n="s3d">معلمات متخصصات في القرآن للبنات والأخوات اللواتي يفضّلن ذلك.</p></div>
         <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><h3 data-i18n="s4t">مواعيد على توقيتكم</h3><p data-i18n="s4d">صباحًا أو بعد المدرسة أو في نهاية الأسبوع، مع دعم على مدار الساعة.</p></div>
-        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg><h3 data-i18n="s5t">مشرفة تربوية كل شهر</h3><p data-i18n="s5d">تجلس معكم مشرفة تربوية مرة كل شهر، تسمع ملاحظاتكم، وتعطيكم رأيها في مستوى طفلك وما يحتاجه.</p></div>
+        <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg><h3 data-i18n="s5t">مشرفة تربوية كل شهر</h3><p data-i18n="s5d">تجلس معكم مشرفة تربوية مرة كل شهر، تسمع ملاحظاتكم، وتعطيكم رأيها في مستوى أولادك وما يحتاجونه.</p></div>
         <div class="sol"><svg class="ico" aria-hidden="true"><use href="#i-sprout"/></svg><h3 data-i18n="s6t">من عمر 4 سنوات، وللكبار</h3><p data-i18n="s6d">لكل عمر طريقته: ألعاب وأنشطة للصغار، وخطة مرنة تناسب يوم الكبار.</p></div>
       </div>
     </div>
@@ -668,16 +745,16 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
       </div>
       <div>
         <div class="head">
-          <h2 data-i18n="plH">منصة ولي الأمر: طفلك أمامكِ في أي وقت</h2>
-          <p class="sub" data-i18n="plSub">من الموبايل أو الكمبيوتر، كل ما يخص دراسة طفلك في مكان واحد.</p>
+          <h2 data-i18n="plH">منصة ولي الأمر: أولادك أمامكِ في أي وقت</h2>
+          <p class="sub" data-i18n="plSub">من الموبايل أو الكمبيوتر، كل ما يخص دراسة أولادك في مكان واحد.</p>
         </div>
         <div class="feats">
-          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-video"/></svg><h3 data-i18n="f1t">دخول الحصة بضغطة</h3><p data-i18n="f1d">طفلك يدخل حصته من المنصة مباشرة، بلا روابط ضائعة.</p></div>
-          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><h3 data-i18n="f2t">تواصل مع المعلم</h3><p data-i18n="f2d">راسلي معلم طفلك من داخل المنصة متى احتجتِ.</p></div>
-          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-report"/></svg><h3 data-i18n="f3t">تقارير الحصص</h3><p data-i18n="f3d">تقرير قصير بعد كل حصة، وتقرير شهري عن مستوى طفلك.</p></div>
-          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg><h3 data-i18n="f4t">الواجبات</h3><p data-i18n="f4d">واجب كل حصة مكتوب أمامكِ، فتعرفين ماذا يراجع طفلك في البيت.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-video"/></svg><h3 data-i18n="f1t">دخول الحصة بضغطة</h3><p data-i18n="f1d">أولادك يدخلون حصصهم من المنصة مباشرة، بلا روابط ضائعة.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><h3 data-i18n="f2t">تواصل مع المعلم</h3><p data-i18n="f2d">راسلي معلم أولادك من داخل المنصة متى احتجتِ.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-report"/></svg><h3 data-i18n="f3t">تقارير الحصص</h3><p data-i18n="f3d">تقرير قصير بعد كل حصة، وتقرير شهري عن مستوى أولادك.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg><h3 data-i18n="f4t">الواجبات</h3><p data-i18n="f4d">واجب كل حصة مكتوب أمامكِ، فتعرفين ماذا يراجع أولادك في البيت.</p></div>
           <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><h3 data-i18n="f5t">تأجيل وتغيير المواعيد</h3><p data-i18n="f5d">ظرف طارئ؟ أجّلي الحصة أو غيّري موعدها من المنصة.</p></div>
-          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><h3 data-i18n="f6t">مكتبة كتب مجانية</h3><p data-i18n="f6d">كتب ومواد تعليمية مجانية لطفلك داخل المنصة.</p></div>
+          <div class="feat"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><h3 data-i18n="f6t">مكتبة كتب مجانية</h3><p data-i18n="f6d">كتب ومواد تعليمية مجانية لأولادك داخل المنصة.</p></div>
         </div>
       </div>
     </div>
@@ -688,8 +765,8 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     <div class="wrap">
       <div class="head"><h2 data-i18n="stH">ابدئي في 3 خطوات</h2></div>
       <ol class="steps" id="steps-list">
-        <li><b>1</b><h3 data-i18n="st1t">احجزي التجريبية</h3><p data-i18n="st1d">أجيبي عن 3 أسئلة قصيرة، وأرسلي لنا الأيام والمواعيد المناسبة على الواتساب.</p></li>
-        <li><b>2</b><h3 data-i18n="st2t">قابلي المعلم</h3><p data-i18n="st2d">حصة فردية مجانية يتعرف فيها المعلم على طفلك ويحدد مستواه.</p></li>
+        <li><b>1</b><h3 data-i18n="st1t">احجزي التجريبية</h3><p data-i18n="st1d">أجيبي عن 3 أسئلة قصيرة، واختاري الأيام والمواعيد المناسبة من التقويم.</p></li>
+        <li><b>2</b><h3 data-i18n="st2t">قابلي المعلم</h3><p data-i18n="st2d">حصة فردية مجانية يتعرف فيها المعلم على أولادك ويحدد مستواهم.</p></li>
         <li><b>3</b><h3 data-i18n="st3t">ابدئي الخطة</h3><p data-i18n="st3d">اختاري حصصًا مدتها 30 دقيقة أو ساعة، من 2 إلى 5 مرات في الأسبوع.</p></li>
       </ol>
     </div>
@@ -697,18 +774,19 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
 
   <!-- PROGRAMS -->
   <section id="programs" style="padding-top:0">
-    <div class="wrap">
+    <div class="wrap deck-wrap">
       <div class="head">
-        <h2 data-i18n="prH">اختاري من أين يبدأ طفلك</h2>
+        <h2 data-i18n="prH">اختاري من أين يبدأ أولادك</h2>
         <p class="sub" data-i18n="prSub">كل البرامج فردية، من عمر 4 سنوات وللكبار من كل الأعمار. ويمكن تقسيم الحصص بين أكثر من برنامج.</p>
+        <p class="deck-hint"><svg class="ico" aria-hidden="true"><use href="#i-swipe"/></svg><span data-i18n="deckHint">اسحبي البطاقة لتري البرنامج التالي</span></p>
       </div>
-      <div class="progs">
-        <div class="prog"><span class="ltr-tile" aria-hidden="true">ت</span><h3 data-i18n="pr1t">قراءة القرآن بالتجويد</h3><p data-i18n="pr1d">من الحروف العربية حتى التلاوة الصحيحة الواثقة.</p></div>
-        <div class="prog"><span class="ltr-tile" aria-hidden="true">ح</span><h3 data-i18n="pr2t">حفظ القرآن للأطفال</h3><p data-i18n="pr2d">حفظ وقراءة بأنشطة وألعاب تجعل الطفل ينتظر حصته.</p></div>
-        <div class="prog"><span class="ltr-tile" aria-hidden="true">ق</span><h3 data-i18n="pr3t">حفظ القرآن للكبار</h3><p data-i18n="pr3d">خطة تناسب يومك، ومراجعة منتظمة حتى لا يضيع ما حفظت.</p></div>
-        <div class="prog"><span class="ltr-tile" aria-hidden="true">ع</span><h3 data-i18n="pr4t">اللغة العربية</h3><p data-i18n="pr4d">لغير الناطقين بها: قراءة وكتابة وفهم وكلام.</p></div>
-        <div class="prog"><span class="ltr-tile" aria-hidden="true">ن</span><h3 data-i18n="pr5t">قصص الأنبياء</h3><p data-i18n="pr5d">قصص على قدر عمر الطفل، تغرس فيه الصدق والصبر والرحمة.</p></div>
-        <div class="prog"><span class="ltr-tile" aria-hidden="true">أ</span><h3 data-i18n="pr6t">الآداب وأساسيات الإسلام</h3><p data-i18n="pr6d">العقيدة والعبادات والآداب، خطوة بخطوة من البداية.</p></div>
+      <div class="deck-area">
+        <div class="deck" id="deck" role="region" aria-roledescription="carousel" aria-label="البرامج" data-i18n-aria="deckAria"></div>
+        <div class="deck-ctl">
+          <button type="button" class="deck-btn ch-back" id="deck-prev" aria-label="البرنامج السابق" data-i18n-aria="deckPrev"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <span class="deck-count" id="deck-count" dir="ltr" aria-live="polite">1 / 6</span>
+          <button type="button" class="deck-btn ch-fwd" id="deck-next" aria-label="البرنامج التالي" data-i18n-aria="deckNext"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        </div>
       </div>
     </div>
   </section>
@@ -717,13 +795,13 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
   <section id="curricula" style="padding-top:0">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="cuH">مناهج معروفة، لا اجتهادات شخصية</h2>
-        <p class="sub" data-i18n="cuSub">يدرس طفلك من كتب مجرّبة ومعروفة، فتعرفين دائمًا أين يقف وما الخطوة التالية.</p>
+        <h2 data-i18n="cuH">مناهج معروفة وعالمية</h2>
+        <p class="sub" data-i18n="cuSub">يدرس أولادك من كتب مجرّبة ومعروفة حول العالم، فتعرفين دائمًا أين يقفون وما الخطوة التالية.</p>
       </div>
       <div class="books">
         <article class="bookc"><div class="cover" aria-hidden="true"><i></i><div><b>نور البيان</b><br><small>الأساسي والمتقدم</small></div></div><h3 data-i18n="cu1t">نور البيان للقراءة</h3><p data-i18n="cu1d">منهج التأسيس في القراءة: من الحروف حتى القراءة الصحيحة، بمستواه الأساسي ثم المتقدم.</p></article>
         <article class="bookc"><div class="cover" aria-hidden="true"><i></i><div><b>العربية بين يديك</b><br><small>سلسلة كتب</small></div></div><h3 data-i18n="cu2t">سلسلة العربية بين يديك</h3><p data-i18n="cu2d">سلسلة معروفة لتعليم العربية لغير الناطقين بها: استماع وكلام وقراءة وكتابة.</p></article>
-        <article class="bookc"><div class="cover" aria-hidden="true"><i></i><div><b>الآداب الإسلامية</b><br><small>منهج كامل</small></div></div><h3 data-i18n="cu3t">منهج الآداب الإسلامية</h3><p data-i18n="cu3d">منهج كامل يشرح الآداب الإسلامية خطوة بخطوة، ويربطها بحياة طفلك اليومية.</p></article>
+        <article class="bookc"><div class="cover" aria-hidden="true"><i></i><div><b>الآداب الإسلامية</b><br><small>منهج كامل</small></div></div><h3 data-i18n="cu3t">منهج الآداب الإسلامية</h3><p data-i18n="cu3d">منهج كامل يشرح الآداب الإسلامية خطوة بخطوة، ويربطها بحياة أولادك اليومية.</p></article>
       </div>
     </div>
   </section>
@@ -749,13 +827,18 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
         <ul class="pms" aria-label="طرق الدفع" data-i18n-aria="payAria"><li class="pm"><svg width="41" height="14" style="color:#1A1F71" role="img" aria-label="Visa"><use href="#pm-visa"/></svg></li><li class="pm"><svg width="35" height="22" role="img" aria-label="Mastercard"><use href="#pm-mc"/></svg></li><li class="pm"><svg width="24" height="24" style="color:#2E77BC" role="img" aria-label="American Express"><use href="#pm-amex"/></svg></li><li class="pm"><svg width="56" height="11" style="color:#231F20" role="img" aria-label="Discover"><use href="#pm-discover"/></svg></li><li class="pm"><svg width="31" height="20" style="color:#000" role="img" aria-label="Apple Pay"><use href="#pm-applepay"/></svg></li><li class="pm"><svg width="16" height="19" style="color:#003087" aria-hidden="true"><use href="#pm-paypal"/></svg><b class="pp" lang="en"><i>Pay</i><i>Pal</i></b></li><li class="pm"><svg width="20" height="20" style="color:#00C244" aria-hidden="true"><use href="#pm-cashapp"/></svg><b lang="en">Cash App</b></li><li class="pm"><svg width="31" height="20" style="color:#232F3E" role="img" aria-label="Amazon Pay"><use href="#pm-amazonpay"/></svg></li><li class="pm more" data-i18n="pay2">وطرق أخرى</li></ul>
       </div>
       <div class="incl">
-        <h3 data-i18n="inclH">في كل الباقات</h3>
-        <ul id="incl"></ul>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="inclH">كل الباقات تشمل</span></h3>
+        <ul id="incl" class="incl-grid"></ul>
       </div>
       <div class="pfoot">
         <p data-i18n="custom">تحتاجين 6 أو 7 أيام في الأسبوع؟ نصمم لكِ باقة بسعر <b><bdi dir="ltr">$8.50</bdi></b> للساعة.</p>
         <p data-i18n="pnote">الأسعار شهرية بالدولار الأمريكي. سعر الحصة تقريبي، محسوب على 4 أسابيع في الشهر.</p>
       </div>
+      <a class="bridge" href="#referral">
+        <span class="bridge-i"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg></span>
+        <span class="bridge-t"><b data-i18n="brT">تريدين خصمًا إضافيًا؟</b><span data-i18n="brD">استفيدي من برنامج «الدال على الخير»: رشّحي أسرة واحصلي على خصم 25% أو 50%، أو شهر كامل مجانًا.</span></span>
+        <svg class="ico bridge-a" aria-hidden="true"><use href="#i-down"/></svg>
+      </a>
     </div>
   </section>
 
@@ -765,7 +848,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     <div class="wrap">
       <div>
         <span class="ref-tag" data-i18n="refTag">برنامج «الدال على الخير»</span>
-        <h2 data-i18n="refH">رشّحي الهداية لأسرة تعرفينها، ووفّري من اشتراككِ</h2>
+        <h2 data-i18n="refH">رشّحي أكاديمية معلمين الهداية لأسرة تعرفينها، ووفّري من اشتراككِ</h2>
         <blockquote class="hadith"><span data-i18n="hadith">«مَن دلَّ على خيرٍ فله مثلُ أجرِ فاعلِه»</span><cite data-i18n="hadithSrc">رواه مسلم</cite></blockquote>
       </div>
       <div class="ref-card" id="ref-card">
@@ -795,7 +878,6 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
       <p class="rev-note" data-i18n="rNote">آراء منشورة على موقعنا، مترجمة من الإنجليزية.</p>
       <h3 class="voice-h" data-i18n="vH">اسمعيها بأصواتهم</h3>
       <div class="voices" id="voices"></div>
-      <div class="vids"><span><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><i class="ph" data-i18n="vids">[ مكان فيديوهات آراء الأهالي: أرسلها لأضيفها هنا ]</i></div>
     </div>
   </section>
 
@@ -886,38 +968,45 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
 
   /* ── Data ── */
   var PRICES = { '30': {2:38, 3:55, 4:72, 5:88}, '60': {2:75, 3:110, 4:144, 5:175} };
-  var ORDER = [5, 4, 3, 2];   // highest first, so the recommended plan reads as good value
+  var ORDER = [2, 3, 4, 5];   // cheapest first
   var REC = 3;
+  // Time-of-day windows offered in the booking calendar (local time, 24h). Edit freely.
+  var PERIODS = [{k:'morning', from:8, to:12}, {k:'asr', from:15, to:18}, {k:'evening', from:18, to:21}];
+  // Parent-review video at the top: put the file in assets/ and set src (and an optional poster image).
+  var VIDEO = {src:'', poster:''};
   var STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   var QS = new URLSearchParams(location.search);
   var REF = (QS.get('ref') || '').slice(0, 60);
 
   var EN = {
-    brand:'Guidance Tutors', navBook:'Book a trial',
+    brand:'Guidance Tutors Academy', navBook:'Book a trial',
     hTag:'A number that may surprise you', hUnit:'hours',
-    hLine:'That is how long your child spends at school this year, learning and speaking only English.',
+    hLine:'That is how long your kids spend at school this year, learning and speaking only English.',
     hB1:'English, at school', hB1u:'hours', hB2:'The Quran and learning Arabic',
     hQ:'So how many hours will they spend with the Quran and learning Arabic?', hCue:'Here is where the answer starts',
     kicker:'For Muslim families in the US',
-    h1:'Quran and Arabic for your child, without the drive or the crowded class',
-    lead:'An Al-Azhar teacher who speaks Arabic and English teaches your child one-on-one, live from home, on your time zone. You follow every class on the parent platform.',
+    h1:'Quran and Arabic for your kids, without the drive or the crowded class',
+    lead:'An Al-Azhar teacher who speaks Arabic and English teaches your kids in live one-on-one classes from home, on your time zone. You follow every class on the parent platform.',
     cta:'Book a free trial class', seePrices:'See prices', micro:'Completely free. No payment details needed.',
     tl1:'one-on-one', tl2:'Al-Azhar teacher', tl3:'from age 4', tl4:'first class',
-    t1:'Al-Azhar teachers with Quran ijazah', t2:'Flexible times', t3:'Live one-on-one classes', t4:'Registered in Wyoming, USA',
+    t1:'Al-Azhar teachers with ijazah', t2:'Flexible times', t3:'Live one-on-one classes', t4:'Registered in the USA',
+    vTag:'Parent reviews', vPlay:'Play the parent reviews video', vT:'Hear what parents say about Guidance Tutors Academy', vPh:'[ Parent reviews video goes here ]',
+    deckHint:'Swipe the card to see the next program', deckAria:'Programs', deckPrev:'Previous program', deckNext:'Next program',
+    brT:'Want an extra discount?', brD:'Use our "Guide to Good" program: recommend a family and get 25% or 50% off, or a full month free.',
     n1:'families have studied with us', n2:'families learning now', n3:'male and female teachers', n4:'countries',
-    pH:'Why do so many kids in the US drift away from the Quran and Arabic?', pSub:"It isn't your child, and it isn't you. It's the setup.",
-    p1t:'English is everywhere', p1d:'School, friends and screens are all in English. When does your child ever need Arabic?',
+    pH:'Why do our kids in the US drift away from the Quran and Arabic?', pSub:"It isn't your kids, and it isn't you. It's the setup.",
+    p1t:'English is everywhere', p1d:'School, friends and screens are all in English. When do your kids ever need Arabic?',
     p2t:'One hour a week, in a group', p2d:'In a group class, each child gets a few minutes of reading and correction at most.',
     p3t:'Long drives, fixed times', p3d:'School, sports, work, then a long drive to the masjid. One busy week and everything stops.',
-    p4t:"You can't see the progress", p4d:"After months of classes, it's hard to know what your child has learned and where they need help.",
+    p4t:"You can't see the progress", p4d:"After months of classes, it's hard to know what your kids have learned and where they need help.",
     good:'The good news: all of this can be fixed, from home.',
-    cH:'Why online works better for your child', cSub:"Weekend school and the masjid are a blessing. One-on-one online classes cover what they don't have time for.",
-    sH:'How Guidance Tutors fixes it', sSub:'The right teacher, the right time, and progress you can see without asking.',
-    s1t:"An Al-Azhar teacher who speaks your child's language", s1d:'Al-Azhar graduates with a Quran ijazah who explain in Arabic and English, so your child follows every word.',
-    s2t:'One-on-one, at their level', s2d:"The lesson moves at your child's pace, with correction on every ayah.",
+    cH:'Why online works better for your kids', cSub:"Weekend school and the masjid are a blessing. One-on-one online classes cover what they don't have time for.",
+    sH:'How Guidance Tutors Academy fixes it', sSub:'The right teacher, the right time, and progress you can see without asking.',
+    s1t:"An Al-Azhar teacher who speaks your kids' language", s1d:'Al-Azhar graduates with a Quran ijazah who explain in Arabic and English, so your kids follow every word.',
+    s2t:"One-on-one, at each student's level", s2d:"The lesson moves at each student's pace, with correction on every ayah.",
     s3t:'Female teachers for girls', s3d:'Experienced female Quran teachers for girls and sisters who prefer them.',
     s4t:'Times that fit your day', s4d:'Mornings, after school or weekends, with support around the clock.',
-    s5t:'A monthly supervisor check-in', s5d:"Once a month, an education supervisor meets your family, listens to your notes, and gives you feedback on your child's level and next steps.",
+    s5t:'A monthly supervisor check-in', s5d:"Once a month, an education supervisor meets your family, listens to your notes, and gives you feedback on your kids' level and next steps.",
     s6t:'From age 4, and adults too', s6d:'Each age gets its own approach: games and activities for little ones, a flexible plan for adults.',
     mockAria:'Illustration of the parent platform', mTitle:'Parent platform', mNext:'Next class', mWhen:'Today, 5:00 PM', mJoin:'Join class',
     mT1:'Class report', mT2:'Homework', mT3:'Library',
@@ -925,28 +1014,28 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     mMsg2:"JazakAllah khair, we'll review it today.",
     mMsg3:'<b>Supervisor:</b> Our monthly check-in is on Saturday. Does that work for you?',
     mA1:'Postpone', mA2:'Reschedule', mA3:'Message teacher', mNote:'Illustration of the platform',
-    plH:"The parent platform: your child's learning, always in view", plSub:"On your phone or computer, everything about your child's classes in one place.",
-    f1t:'Join class in one tap', f1d:'Your child joins class straight from the platform. No lost links.',
-    f2t:'Message the teacher', f2d:"Reach your child's teacher inside the platform whenever you need to.",
-    f3t:'Class reports', f3d:"A short report after every class, and a monthly report on your child's level.",
+    plH:"The parent platform: your kids' learning, always in view", plSub:"On your phone or computer, everything about your kids' classes in one place.",
+    f1t:'Join class in one tap', f1d:'Your kids join class straight from the platform. No lost links.',
+    f2t:'Message the teacher', f2d:"Reach your kids' teacher inside the platform whenever you need to.",
+    f3t:'Class reports', f3d:"A short report after every class, and a monthly report on your kids' level.",
     f4t:'Homework', f4d:"Each class's homework is written down, so you know what to practice at home.",
     f5t:'Postpone or reschedule', f5d:'Something came up? Postpone a class or change its time on the platform.',
-    f6t:'Free book library', f6d:'Free books and learning materials for your child, inside the platform.',
+    f6t:'Free book library', f6d:'Free books and learning materials for your kids, inside the platform.',
     stH:'Start in 3 steps',
-    st1t:'Book a free trial', st1d:'Answer 3 short questions and send us the days and times that suit you on WhatsApp.',
-    st2t:'Meet the teacher', st2d:'A free one-on-one class where the teacher gets to know your child and checks their level.',
+    st1t:'Book a free trial', st1d:'Answer 3 short questions and pick the days and times that suit you from the calendar.',
+    st2t:'Meet the teacher', st2d:'A free one-on-one class where the teacher gets to know your kids and checks their level.',
     st3t:'Start your plan', st3d:'Choose 30 or 60-minute classes, 2 to 5 times a week.',
-    prH:'Choose where your child starts', prSub:'Every program is one-on-one, from age 4 up to adults of any age. You can split classes between programs.',
+    prH:'Choose where your kids start', prSub:'Every program is one-on-one, from age 4 up to adults of any age. You can split classes between programs.',
     pr1t:'Quran reading with Tajweed', pr1d:'From the Arabic letters to correct, confident recitation.',
     pr2t:'Quran memorization for kids', pr2d:'Memorization and reading with games and activities kids look forward to.',
     pr3t:'Quran memorization for adults', pr3d:'A plan that fits your day, with regular review so nothing slips.',
     pr4t:'Arabic language', pr4d:'For non-native speakers: reading, writing, understanding and speaking.',
     pr5t:'Stories of the Prophets', pr5d:'Age-appropriate stories that teach honesty, patience and kindness.',
     pr6t:'Islamic manners and basics', pr6d:'Belief, worship and manners, step by step from the beginning.',
-    cuH:'Recognized curricula, not guesswork', cuSub:'Your child learns from proven, well-known books, so you always know where they stand and what comes next.',
+    cuH:'Well-known, international curricula', cuSub:'Your kids learn from proven books used around the world, so you always know where they stand and what comes next.',
     cu1t:'Noor Al-Bayan', cu1d:'The reading foundation: from the letters to correct reading, through its basic and then its advanced level.',
     cu2t:'Arabic Between Your Hands', cu2d:'The well-known Al-Arabiyyah Bayna Yadayk series for non-native speakers: listening, speaking, reading and writing.',
-    cu3t:'Islamic manners (Adab)', cu3d:"A complete curriculum that explains Islamic manners step by step and ties them to your child's daily life.",
+    cu3t:'Islamic manners (Adab)', cu3d:"A complete curriculum that explains Islamic manners step by step and ties them to your kids' daily life.",
     prcH:'Simple monthly plans', prcSub:'Pick the class length and how many classes a week. The more classes, the lower the price per class.',
     d30:'30 min', d60:'60 min',
     famH:'Permanent family discount', famD:'Enroll two or more students from the same family and your monthly fee drops by 10%, for as long as you study with us.',
@@ -954,7 +1043,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     inclH:'Every plan includes',
     custom:'Need 6 or 7 days a week? We will build a custom plan at <b><bdi dir="ltr">$8.50</bdi></b> per hour.',
     pnote:'Monthly fees in USD. Price per class is approximate, based on 4 weeks a month.',
-    refTag:'The “Guide to Good” program', refH:'Recommend us to a family you know, and save on your fees',
+    refTag:'The “Guide to Good” program', refH:'Recommend Guidance Tutors Academy to a family you know, and save on your fees',
     hadith:'“Whoever guides someone to good will have a reward like the one who does it.”', hadithSrc:'Sahih Muslim',
     ref1:'1 family joins through you', ref1v:'25% off', ref2:'2 families', ref2v:'50% off', ref3:'3 families', ref3v:'A full month free',
     refNote:'The discount comes off your monthly bill.', refLabel:'Your name, to show in the invitation', refPh:"e.g. Adam's mom", refBtn:'Send the invite on WhatsApp',
@@ -971,26 +1060,35 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
 
   var T = {
     ar: {
-      title:'حصص قرآن وعربي أونلاين لطفلك | معلمين الهداية', langBtn:'English', durLabel:'مدة الحصة',
+      title:'حصص قرآن وعربي أونلاين لأولادك | أكاديمية معلمين الهداية', langBtn:'English', durLabel:'مدة الحصة',
       marquee:['معلم أزهري بإجازة في القرآن','حصة فردية 1:1','من عمر 4 سنوات وللكبار','أول حصة مجانية','خصم 10% للعائلات','مشرفة تربوية كل شهر','منصة لولي الأمر','مواعيد على توقيتكِ'],
       bubble:['أول حصة مجانية، ومعها تحديد المستوى','معلمات متخصصات للبنات','خصم 10% دائم للعائلات','مواعيد على توقيت ولايتكِ','مشرفة تربوية تتابع معكِ كل شهر','نقبل الطلاب من عمر 4 سنوات'],
       plan: function(n){ return n === 2 ? 'حصتان في الأسبوع' : n + ' حصص في الأسبوع'; },
       count: function(k, d){ return (k <= 10 ? k + ' حصص' : k + ' حصة') + ' في الشهر، ' + (d === '60' ? 'ساعة لكل حصة' : '30 دقيقة'); },
       per:'شهريًا', unit: function(v, d){ return 'تقريبًا <bdi dir="ltr">' + v + '</bdi> ' + (d === '60' ? 'للساعة' : 'للحصة'); },
       rec:'ننصح بها', pick:'ابدئي بهذه الباقة',
-      notes:{5:'حصة كل يوم دراسي، وأقل سعر للحصة.', 4:'تقدّم أسرع، ويناسب خطة الحفظ.', 3:'انتظام يحفظ ما تعلّمه طفلك بين الحصص.', 2:'بداية خفيفة للأطفال الصغار والجداول المزدحمة.'},
-      incl:['معلم أزهري بإجازة في القرآن','حصة تجريبية مجانية قبل الدفع','تقرير بعد كل حصة وتقرير شهري','لقاء شهري مع مشرفة تربوية','منصة ولي الأمر','مواعيد مرنة','تقسيم الحصص بين المواد'],
-      cmpCols:['الفصل الجماعي الحضوري','حصص الهداية أونلاين'],
-      cmp:[['انتباه المعلم','موزّع على المجموعة','لطفلك وحده طوال الحصة'],['الوصول','سواقة وانتظار ذهابًا وإيابًا','من البيت بضغطة زر'],['المواعيد','ثابتة يحددها المكان','تختارونها على توقيت ولايتكم'],['المعلم','من يتوفر في منطقتكم','أزهري بإجازة، يتكلم الإنجليزية'],['حصة فاتت','تضيع غالبًا','تؤجلينها أو تغيّرين موعدها من المنصة'],['المتابعة','«ماذا أخذتم اليوم؟»','تقرير بعد كل حصة، ولقاء شهري مع مشرفة تربوية']],
+      notes:{5:'حصة كل يوم دراسي، وأقل سعر للحصة.', 4:'تقدّم أسرع، ويناسب خطة الحفظ.', 3:'انتظام يحفظ ما تعلّمه أولادك بين الحصص.', 2:'بداية خفيفة للصغار والجداول المزدحمة.'},
+      incl:[['cap','معلم أزهري بإجازة في القرآن'],['gift','حصة تجريبية مجانية قبل الدفع'],['report','تقرير بعد كل حصة وتقرير شهري'],['heart','لقاء شهري مع مشرفة تربوية'],['phone','منصة ولي الأمر'],['clock','مواعيد مرنة وتقسيم الحصص بين المواد']],
+      cmpCols:['الفصل الجماعي الحضوري','أكاديمية معلمين الهداية أونلاين'],
+      cmp:[['انتباه المعلم موزّع على المجموعة','المعلم مع طالب واحد طوال الحصة'],['سواقة وانتظار ذهابًا وإيابًا','من البيت بضغطة زر'],['مواعيد ثابتة يحددها المكان','مواعيد تختارونها على توقيت ولايتكم'],['المعلم المتاح في منطقتكم','معلم أزهري بإجازة يتكلم الإنجليزية'],['حصة لن تستطيعوا حضورها؟ في الغالب تفوتكم','حصة لن تستطيعوا حضورها؟ تستطيعين تأجيلها'],['«ماذا أخذتم اليوم؟» بلا أي تقرير','تقرير بعد كل حصة، ولقاء شهري مع مشرفة تربوية']],
+      progs:[
+        {code:'tajweed', l:'ت', t:'قراءة القرآن بالتجويد', d:'من الحروف العربية حتى التلاوة الصحيحة الواثقة.', b:['نطق صحيح حرفًا حرفًا','تصحيح فردي في كل حصة']},
+        {code:'hifz', l:'ح', t:'حفظ القرآن للصغار', d:'حفظ وقراءة بأنشطة وألعاب تجعل الصغار ينتظرون حصتهم.', b:['ألعاب وأنشطة ممتعة','معلمون ومعلمات','متابعة الأهل على المنصة']},
+        {code:'hifz', l:'ق', t:'حفظ القرآن للكبار', d:'حفظ بالقراءة التي تفضّلها، بخطة تناسب يومك.', b:['خطة تناسب جدولك','مراجعة منتظمة حتى لا يضيع ما حفظت','تقرير شهري بالتقدم']},
+        {code:'arabic', l:'ع', t:'اللغة العربية', d:'قراءة وكتابة وفهم وكلام، لغير الناطقين بها.', b:['منهج نور البيان والعربية بين يديك','للصغار والكبار والمسلمين الجدد']},
+        {code:'prophets', l:'ن', t:'قصص الأنبياء', d:'قصص تناسب أعمار الصغار، تغرس فيهم الصدق والصبر والرحمة.', b:['قصص على قدر العمر','دروس في الأخلاق','حصص قصيرة وممتعة']},
+        {code:'adab', l:'أ', t:'الآداب وأساسيات الإسلام', d:'العقيدة والعبادات والآداب، خطوة بخطوة من البداية.', b:['منهج كامل في الآداب الإسلامية','خطوة بخطوة من الأساس']}
+      ],
+      progCta:'احجزي تجريبية لهذا البرنامج',
       faq:[
-        ['هل الحصص فردية ومباشرة؟','نعم. كل حصة مباشرة أونلاين، والمعلم مع طفلك وحده طوال الوقت، والدرس يمشي على مستواه وسرعته.'],
+        ['هل الحصص فردية ومباشرة؟','نعم. كل حصة مباشرة أونلاين، والمعلم مع الطالب وحده طوال الوقت، والدرس يمشي على مستواه وسرعته.'],
         ['ما الأعمار التي تقبلونها؟ وهل يمكن البدء من الصفر؟','نقبل الطلاب من عمر 4 سنوات، ولدينا حصص للكبار من كل الأعمار، رجالًا ونساءً. والمبتدئ تمامًا مرحب به، حتى لو لم يقرأ الحروف العربية من قبل.'],
-        ['نتكلم لهجة مختلفة. هل سيفهم طفلي المعلم؟','اللهجة ليست عائقًا أبدًا. الدروس بالعربية الفصحى، والمعلم يشرح بالإنجليزية عند الحاجة. ومعنا طلاب من لهجات وبلاد مختلفة، ولم يواجه أحد منهم أي مشكلة مع المعلمين.'],
+        ['نتكلم لهجة مختلفة. هل سيفهم أولادي المعلم؟','اللهجة ليست عائقًا أبدًا. الدروس بالعربية الفصحى، والمعلم يشرح بالإنجليزية عند الحاجة. ومعنا طلاب من لهجات وبلاد مختلفة، ولم يواجه أحد منهم أي مشكلة مع المعلمين.'],
         ['كيف تتعاملون مع فرق التوقيت؟','أخبرينا بولايتكم والأيام والأوقات التي تناسبكم، ونرتب الحصص عليها. أغلب أسرنا في أمريكا، ومعنا طلاب من أكثر من 15 دولة.'],
         ['من هم المعلمون؟','أكثر من 40 معلمًا ومعلمة من خريجي الأزهر، يحملون إجازة في القرآن، ويتكلمون العربية والإنجليزية.'],
         ['ما المناهج التي تدرّسونها؟','نور البيان للقراءة بمستوييه الأساسي والمتقدم، وسلسلة العربية بين يديك لتعليم العربية، ومنهج كامل في الآداب الإسلامية، إلى جانب القرآن بالتجويد والحفظ.'],
-        ['كيف أتابع مستوى طفلي؟','يرسل المعلم تقريرًا قصيرًا بعد كل حصة، ويصلكِ تقرير شهري. ومرة كل شهر تجلس معكم مشرفة تربوية تسمع ملاحظاتكم وتعطيكم رأيها في مستوى طفلك. وعلى منصة ولي الأمر تجدين التقارير والواجبات والمواعيد.'],
-        ['ماذا لو فاتتنا حصة أو تغيّر جدولنا؟','يمكنكِ تأجيل الحصة أو تغيير موعدها من المنصة. وإذا غاب المعلم، نتواصل معكِ ونعوّض الحصة.'],
+        ['كيف أتابع مستوى أولادي؟','يرسل المعلم تقريرًا قصيرًا بعد كل حصة، ويصلكِ تقرير شهري. ومرة كل شهر تجلس معكم مشرفة تربوية تسمع ملاحظاتكم وتعطيكم رأيها في مستوى أولادك. وعلى منصة ولي الأمر تجدين التقارير والواجبات والمواعيد.'],
+        ['ماذا لو لم نستطع حضور حصة أو تغيّر جدولنا؟','يمكنكِ تأجيل الحصة أو تغيير موعدها من المنصة. وإذا غاب المعلم، نتواصل معكِ ونعوّض الحصة.'],
         ['هل يمكن تقسيم الحصص بين أكثر من مادة؟','نعم. مثلًا حصتان للقرآن وحصة للعربية كل أسبوع، أو أي تقسيم يناسب باقتكم.'],
         ['كيف أدفع؟','الاشتراك شهري، وتدفعين بالطريقة التي تناسبكِ: البطاقات البنكية، أو Apple Pay، أو Cash App، أو Amazon Pay، أو PayPal، وغيرها. والأسرة التي يدرس منها طالبان أو أكثر تحصل على خصم دائم 10%.'],
         ['هل يوجد خصم إذا رشّحت أسرة أخرى؟','نعم، ضمن برنامج «الدال على الخير»: إذا اشتركت أسرة من طرفكِ تحصلين على خصم 25% من فاتورتكِ، وأسرتان 50%، وثلاث أسر شهرًا كاملًا مجانًا.'],
@@ -1000,7 +1098,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
       revs:[
         ['رشّحت أكاديمية معلمين الهداية لعائلتي وأصدقائي ولكل من أقابله. غيّرت معلمي قرآن كثيرين لأن أولادي لم يكونوا يتعلمون شيئًا.','Judy Adel','الولايات المتحدة'],
         ['الأطفال يستمتعون بالحصص، وبدأت فاطمة تقرأ أفضل وبثقة من غير اعتماد على الحفظ، وهذا كان هدفنا الأساسي.','Yasmin Mohamed','فرنسا'],
-        ['الهداية هي ما كنت أبحث عنه منذ سنوات، وأنصح بها بشدة. احترافية ومنظمة وتراعي احتياجاتنا، وجودة المعلمين والتنظيم لا تُقارن.','Ali Hazem','ألمانيا'],
+        ['أكاديمية معلمين الهداية هي ما كنت أبحث عنه منذ سنوات، وأنصح بها بشدة. احترافية ومنظمة وتراعي احتياجاتنا، وجودة المعلمين والتنظيم لا تُقارن.','Ali Hazem','ألمانيا'],
         ['جزاكم الله خيرًا على التقرير. أخذت بملاحظات المعلمة عن نقاط التحسين، وإن شاء الله تتحسن مع الوقت وتصبح مسلمة أفضل برحمة الله وبركته.','Mohammed Ghouse Khan','أستراليا']
       ],
       voice:{ play:'تشغيل التسجيل', pause:'إيقاف التسجيل', soon:'[ تسجيل صوتي حقيقي من ولي أمر ]' },
@@ -1012,16 +1110,17 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
           progs:[['tajweed','قراءة القرآن بالتجويد'],['hifz','حفظ القرآن'],['arabic','اللغة العربية'],['prophets','قصص الأنبياء'],['adab','الآداب وأساسيات الإسلام'],['unsure','لست متأكدة، ساعدوني في الاختيار']],
           teacher:'تفضّلين معلمًا أم معلمة؟', teachers:[['m','معلم'],['f','معلمة'],['any','لا يهم']],
           state:'الولاية', statePh:'اختاري الولاية', outside:'خارج أمريكا',
-          slots:'الأيام والمواعيد المناسبة', slotsHint:'بتوقيت ولايتكِ. أضيفي أكثر من يوم أو موعد إن أحببتِ.',
-          dayPh:'اليوم', add:'أضيفي يومًا أو موعدًا آخر', removeSlot:'حذف هذا الموعد', timeLabel:'الوقت',
-          days:[['sat','السبت'],['sun','الأحد'],['mon','الاثنين'],['tue','الثلاثاء'],['wed','الأربعاء'],['thu','الخميس'],['fri','الجمعة']],
+          calQ:'اختاري الأيام المناسبة من التقويم', calHint:'اضغطي على يوم، ثم اختاري الفترة، ويمكنكِ تحديد الساعة أيضًا. أضيفي أكثر من يوم إن أحببتِ. المواعيد بتوقيت ولايتكِ.',
+          prevM:'الشهر السابق', nextM:'الشهر التالي', wd:['أحد','إثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'],
+          dayQ:'المواعيد المتاحة يوم', perHint:'حددي ساعة بعينها إن أحببتِ:', picked:'مواعيدكِ المختارة', removePick:'حذف هذا الموعد',
+          periods:{morning:'الفترة الصباحية', asr:'بعد العصر', evening:'المساء بعد المدرسة'}, loc:'ar-u-nu-latn',
           time: function(h, m){ return (h % 12 || 12) + ':' + m + ' ' + (h < 12 ? 'ص' : 'م'); },
           back:'رجوع', next:'التالي', go:'افتحي الواتساب برسالة جاهزة',
           done:'هذه رسالتكِ. إذا لم يُفتح الواتساب، انسخيها وأرسليها إلى', copy:'نسخ الرسالة', copied:'تم النسخ',
           e1n:'اكتبي اسم الطالب للمتابعة.', e1a:'اكتبي عمر الطالب للمتابعة.', e1y:'نقبل الطلاب من عمر 4 سنوات.', e2:'اختاري برنامجًا واحدًا على الأقل.',
-          e3s:'اختاري الولاية حتى نرتب الموعد على توقيتكم.', e3t:'اختاري يومًا ووقتًا مناسبًا واحدًا على الأقل.',
+          e3s:'اختاري الولاية حتى نرتب الموعد على توقيتكم.', e3t:'اختاري يومًا وفترة مناسبة واحدة على الأقل من التقويم.',
           msg:{hi:'السلام عليكم، أريد حجز حصة تجريبية مجانية.', name:'اسم الطالب', age:'العمر', prog:'البرنامج', teacher:'المعلم', state:'الولاية', time:'المواعيد المناسبة (بتوقيت الولاية)', plan:'الباقة', ref:'رشّحتنا', src:'المصدر'} },
-      direct:'السلام عليكم، عندي سؤال عن حصص معلمين الهداية.'
+      direct:'السلام عليكم، عندي سؤال عن حصص أكاديمية معلمين الهداية.'
     },
     en: {
       title:'Online Quran & Arabic classes for kids | Guidance Tutors', langBtn:'العربية', durLabel:'Class length',
@@ -1032,18 +1131,27 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
       per:'/month', unit: function(v, d){ return 'About <bdi dir="ltr">' + v + '</bdi> ' + (d === '60' ? 'per hour' : 'per class'); },
       rec:'We recommend', pick:'Start with this plan',
       notes:{5:'A class every school day, at the lowest price per class.', 4:'Faster progress. A good fit for a Hifz plan.', 3:'Steady enough that nothing is forgotten between classes.', 2:'A gentle start for young kids and busy weeks.'},
-      incl:['Al-Azhar teacher with Quran ijazah','Free trial class before you pay','A report after every class, plus a monthly report','Monthly check-in with an education supervisor','Parent platform','Flexible times','Split classes between subjects'],
-      cmpCols:['In-person group class','Guidance Tutors online'],
-      cmp:[["Teacher's attention",'Shared by the whole group','On your child, the whole class'],['Getting there','Driving and waiting, both ways','From home, one tap'],['Schedule','Fixed by the venue','You choose, in your time zone'],['The teacher','Whoever is available nearby','Al-Azhar, with ijazah, fluent in English'],['A missed class','Usually lost','Postpone or reschedule it on the platform'],['Progress','"What did you do today?"','A report after every class, plus a monthly supervisor check-in']],
+      incl:[['cap','Al-Azhar teacher with Quran ijazah'],['gift','Free trial class before you pay'],['report','A report after every class, plus a monthly one'],['heart','Monthly check-in with an education supervisor'],['phone','Parent platform'],['clock','Flexible times, and classes split between subjects']],
+      cmpCols:['In-person group class','Guidance Tutors Academy online'],
+      cmp:[["The teacher's attention is shared by the group",'The teacher is with one student the whole class'],['Driving and waiting, both ways','From home, in one tap'],['Fixed times set by the venue','Times you choose, in your time zone'],['Whoever teaches nearby','An Al-Azhar teacher with ijazah who speaks English'],["Can't make a class? You usually miss it","Can't make a class? You can postpone it"],['"What did you do today?" and no report','A report after every class, plus a monthly supervisor check-in']],
+      progs:[
+        {code:'tajweed', l:'ت', t:'Quran reading with Tajweed', d:'From the Arabic letters to correct, confident recitation.', b:['Correct pronunciation, letter by letter','One-on-one correction in every class']},
+        {code:'hifz', l:'ح', t:'Quran memorization for kids', d:'Memorization and reading with games and activities kids look forward to.', b:['Fun games and activities','Male and female teachers','Parents follow progress on the platform']},
+        {code:'hifz', l:'ق', t:'Quran memorization for adults', d:"Memorize in the Qira'ah you prefer, with a plan that fits your day.", b:['A plan that fits your schedule','Regular review so nothing slips','Monthly progress report']},
+        {code:'arabic', l:'ع', t:'Arabic language', d:'Reading, writing, understanding and speaking, for non-native speakers.', b:['Noor Al-Bayan and Arabic Between Your Hands','Kids, adults and new Muslims']},
+        {code:'prophets', l:'ن', t:'Stories of the Prophets', d:'Age-appropriate stories that teach honesty, patience and kindness.', b:['Stories for every age','Lessons in good character','Short, engaging classes']},
+        {code:'adab', l:'أ', t:'Islamic manners and basics', d:'Belief, worship and manners, step by step from the beginning.', b:['A complete Islamic manners curriculum','Step by step from the basics']}
+      ],
+      progCta:'Book a free trial for this',
       faq:[
         ['Are classes live and one-on-one?','Yes. Every class is live online, and the teacher is with your child alone for the whole session, at their level and pace.'],
         ['What ages do you accept? Can complete beginners join?','We accept students from age 4, and we have classes for adults of every age, men and women. Complete beginners are welcome, even if they have never read the Arabic letters.'],
-        ['We speak a different Arabic dialect. Will my child understand the teacher?','Dialect is never a barrier. Lessons are in standard Arabic (Fusha), and teachers explain in English when needed. We teach students from many dialects and countries, and none of them have had any trouble with their teachers.'],
+        ['We speak a different Arabic dialect. Will my kids understand the teacher?','Dialect is never a barrier. Lessons are in standard Arabic (Fusha), and teachers explain in English when needed. We teach students from many dialects and countries, and none of them have had any trouble with their teachers.'],
         ['How do you handle time zones?','Tell us your state and the days and times that work for you, and we schedule around them. Most of our families are in the US, and we teach students from more than 15 countries.'],
         ['Who are the teachers?','More than 40 male and female teachers. They are Al-Azhar graduates with an ijazah in the Quran, and they speak Arabic and English.'],
         ['Which curricula do you teach?','Noor Al-Bayan for reading, in its basic and advanced levels; the Arabic Between Your Hands series for Arabic; and a complete Islamic manners (Adab) curriculum, alongside Quran with Tajweed and Hifz.'],
-        ["How do I follow my child's progress?","The teacher sends a short report after every class, and you get a monthly report. Once a month, an education supervisor meets your family, listens to your notes and gives you feedback on your child's level. The parent platform keeps reports, homework and the schedule in one place."],
-        ['What if we miss a class or our schedule changes?','You can postpone a class or change its time on the platform. If the teacher has to miss a class, we contact you and make it up.'],
+        ["How do I follow my kids' progress?","The teacher sends a short report after every class, and you get a monthly report. Once a month, an education supervisor meets your family, listens to your notes and gives you feedback on your kids' level. The parent platform keeps reports, homework and the schedule in one place."],
+        ["What if we can't make a class, or our schedule changes?",'You can postpone a class or change its time on the platform. If the teacher has to miss a class, we contact you and make it up.'],
         ['Can we split classes between subjects?','Yes. For example, two Quran classes and one Arabic class each week, or any split that fits your plan.'],
         ['How do I pay?','It is a monthly subscription, and you pay the way that suits you: bank cards, Apple Pay, Cash App, Amazon Pay, PayPal and more. Families with two or more students get a permanent 10% discount.'],
         ['Is there a discount if I recommend another family?','Yes, through our “Guide to Good” program: one family joining through you takes 25% off your bill, two families take 50% off, and three families give you a full month free.'],
@@ -1065,16 +1173,17 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
           progs:[['tajweed','Quran reading with Tajweed'],['hifz','Quran memorization'],['arabic','Arabic language'],['prophets','Stories of the Prophets'],['adab','Islamic manners and basics'],['unsure','Not sure yet, help me choose']],
           teacher:'Male or female teacher?', teachers:[['m','Male teacher'],['f','Female teacher'],['any','No preference']],
           state:'State', statePh:'Choose your state', outside:'Outside the US',
-          slots:'Days and times that work', slotsHint:'In your local time. Add as many days or times as you like.',
-          dayPh:'Day', add:'Add another day or time', removeSlot:'Remove this time', timeLabel:'Time',
-          days:[['sun','Sunday'],['mon','Monday'],['tue','Tuesday'],['wed','Wednesday'],['thu','Thursday'],['fri','Friday'],['sat','Saturday']],
+          calQ:'Pick the days that suit you on the calendar', calHint:'Tap a day, choose a time of day, and pick an exact hour if you like. Add as many days as you want. Times are in your local time.',
+          prevM:'Previous month', nextM:'Next month', wd:['Su','Mo','Tu','We','Th','Fr','Sa'],
+          dayQ:'Times available on', perHint:'Pick an exact hour if you like:', picked:'Your chosen times', removePick:'Remove this time',
+          periods:{morning:'Morning', asr:'After Asr', evening:'Evening, after school'}, loc:'en-US',
           time: function(h, m){ return (h % 12 || 12) + ':' + m + ' ' + (h < 12 ? 'AM' : 'PM'); },
           back:'Back', next:'Next', go:'Open WhatsApp with my message',
           done:"Here's your message. If WhatsApp didn't open, copy it and send it to", copy:'Copy message', copied:'Copied',
           e1n:"Enter the student's name to continue.", e1a:"Enter the student's age to continue.", e1y:'We accept students from age 4.', e2:'Choose at least one program.',
-          e3s:'Choose your state so we can schedule in your time zone.', e3t:'Add at least one day and time that works.',
+          e3s:'Choose your state so we can schedule in your time zone.', e3t:'Pick at least one day and time of day on the calendar.',
           msg:{hi:"Assalamu alaikum, I'd like to book a free trial class.", name:'Student', age:'Age', prog:'Program', teacher:'Teacher', state:'State', time:'Days and times (local)', plan:'Plan', ref:'Referred by', src:'Source'} },
-      direct:'Assalamu alaikum, I have a question about Guidance Tutors classes.'
+      direct:'Assalamu alaikum, I have a question about Guidance Tutors Academy classes.'
     }
   };
 
@@ -1137,7 +1246,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     o.observe(el);
   }
   var SPLIT = '.hero h1, .head > h2, #referral h2, .final h2';
-  var STATIC_REVEAL = '.hook-tag, .hook-big, .hook-line, .bars .bar, .hook-cue, .kicker, .hero h1, .lead, .ctas, .micro, .bubble, .trust > span, .nums .num, .head > *, .prob, .good, .sol, .feat, .mock-wrap, .steps li, .prog, .bookc, .family, .pay h3, .pm, .incl h3, .incl li, .pfoot p, .ref-tag, #referral h2, .hadith, .ref-card, .voice-h, .reassure li, .direct, #form-host, .final h2, .final p, .final .btn';
+  var STATIC_REVEAL = '.hook-tag, .hook-big, .hook-line, .bars .bar, .hook-cue, .kicker, .hero h1, .lead, .ctas, .micro, .bubble, .trust > .tr, .hvid, .nums .num, .head > *, .prob, .good, .sol, .feat, .mock-wrap, .steps li, .deck-area, .bookc, .family, .pay h3, .pm, .incl h3, .incl-grid li, .pfoot p, .bridge, .ref-tag, #referral h2, .hadith, .ref-card, .voice-h, .reassure li, .direct, #form-host, .final h2, .final p, .final .btn';
 
   /* ── Hook: count, grow, then type the question ── */
   var hookQ = $('#hook-q'), typed = false;
@@ -1181,8 +1290,8 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
 
   function drawCompare(instant){
     var t = T[lang];
-    var h = '<div class="ch" role="row"><b role="columnheader"></b><span class="off" role="columnheader">' + t.cmpCols[0] + '</span><span class="on" role="columnheader">' + t.cmpCols[1] + '</span></div>';
-    h += t.cmp.map(function(r){ return '<div role="row"><b role="rowheader">' + r[0] + '</b><span class="off" role="cell">' + xmark + '<span>' + r[1] + '</span></span><span class="on" role="cell">' + tick + '<span>' + r[2] + '</span></span></div>'; }).join('');
+    var h = '<div class="ch" role="row"><span class="off" role="columnheader">' + t.cmpCols[0] + '</span><span class="on" role="columnheader">' + t.cmpCols[1] + '</span></div>';
+    h += t.cmp.map(function(r){ return '<div role="row"><span class="off" role="cell">' + xmark + '<span>' + r[0] + '</span></span><span class="on" role="cell">' + tick + '<span>' + r[1] + '</span></span></div>'; }).join('');
     var c = $('#cmp'); c.innerHTML = h;
     c.setAttribute('aria-label', $('[data-i18n="cH"]').textContent);
     $$('[role="row"]', c).forEach(function(row){ Array.prototype.forEach.call(row.children, function(cell){ if (getComputedStyle(cell).display !== 'none') { cell._rv = false; reveal([cell], instant); } }); });
@@ -1206,7 +1315,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
         '<button type="button" class="plan-cta" data-n="' + n + '">' + t.pick + '</button></article>';
     }).join('');
     $$('#plans .amt').forEach(function(a){ var n = +a.dataset.n, to = PRICES[dur][n]; if (shown[n] != null && shown[n] !== to) countTo(a, shown[n], to, 500, '', '$'); shown[n] = to; });
-    $('#incl').innerHTML = t.incl.map(function(x){ return '<li>' + tick + x + '</li>'; }).join('');
+    $('#incl').innerHTML = t.incl.map(function(x){ return '<li><span class="ii"><svg class="ico" aria-hidden="true"><use href="#i-' + x[0] + '"/></svg></span><span>' + x[1] + '</span></li>'; }).join('');
     reveal('#plans .plan', instant);
   }
   $('#dur').addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b || b.dataset.d === dur) return; dur = b.dataset.d; drawPlans(true); });
@@ -1217,6 +1326,91 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     drawForm();
     $('#book').scrollIntoView({behavior: MOTION ? 'smooth' : 'auto'});
   });
+
+  /* ── Programs deck: swipe or tap through stacked cards ── */
+  var deckIdx = 0, deck = $('#deck'), drag = null;
+  var DECK_COLORS = [['tomato','#fff'],['sky','#fff'],['sun','var(--ink)'],['leaf','#fff'],['grape','#fff'],['teal','#fff']];
+  function deckCards(){ return $$('.dcard', deck); }
+  function drawDeck(){
+    var t = T[lang], n = t.progs.length;
+    deck.innerHTML = t.progs.map(function(pg, i){
+      var c = DECK_COLORS[i % DECK_COLORS.length];
+      return '<article class="dcard" style="--c:var(--' + c[0] + ');--cd:var(--' + c[0] + '-d);--cp:var(--p-' + c[0] + ');--ct:' + c[1] + '">' +
+        '<div class="dc-top"><span class="dc-l" aria-hidden="true">' + pg.l + '</span><span class="dc-n" dir="ltr">' + (i + 1) + ' / ' + n + '</span></div>' +
+        '<h3>' + pg.t + '</h3><p>' + pg.d + '</p>' +
+        '<ul>' + pg.b.map(function(x){ return '<li>' + tick + '<span>' + x + '</span></li>'; }).join('') + '</ul>' +
+        '<button type="button" class="dc-cta" data-code="' + pg.code + '">' + t.progCta + '</button></article>';
+    }).join('');
+    // every card takes the height of the tallest, so the stack lines up
+    var cards = deckCards(), hMax = 0;
+    cards.forEach(function(c){ c.style.height = 'auto'; hMax = Math.max(hMax, c.offsetHeight); });
+    cards.forEach(function(c){ c.style.height = hMax + 'px'; });
+    deck.style.height = (hMax + 44) + 'px';
+    layoutDeck();
+  }
+  function layoutDeck(){
+    var cards = deckCards(), n = cards.length;
+    cards.forEach(function(c, i){
+      var k = (i - deckIdx + n) % n;
+      c.style.zIndex = n - k;
+      c.inert = k !== 0; c.setAttribute('aria-hidden', k ? 'true' : 'false');
+      if (k === 0) { c.style.transform = 'none'; c.style.opacity = 1; }
+      else if (k <= 2) { c.style.transform = 'translateY(' + (k * 20) + 'px) scale(' + (1 - k * .05) + ') rotate(' + (k === 1 ? 3 : -3) + 'deg)'; c.style.opacity = 1; }
+      else { c.style.transform = 'translateY(44px) scale(.85)'; c.style.opacity = 0; }
+    });
+    $('#deck-count').textContent = (deckIdx + 1) + ' / ' + n;
+  }
+  function flyNext(dir){
+    var cards = deckCards(), c = cards[deckIdx];
+    c.style.transform = 'translateX(' + (dir * 130) + '%) rotate(' + (dir * 16) + 'deg)'; c.style.opacity = 0;
+    setTimeout(function(){ deckIdx = (deckIdx + 1) % cards.length; layoutDeck(); }, MOTION ? 260 : 0);
+  }
+  $('#deck-next').addEventListener('click', function(){ flyNext(lang === 'ar' ? -1 : 1); });
+  $('#deck-prev').addEventListener('click', function(){ var n = deckCards().length; deckIdx = (deckIdx - 1 + n) % n; layoutDeck(); });
+  deck.addEventListener('pointerdown', function(e){
+    var c = e.target.closest('.dcard'); if (!c || c.inert || e.target.closest('button')) return;
+    drag = {c:c, x:e.clientX, y:e.clientY, dx:0, on:false, id:e.pointerId};
+  });
+  deck.addEventListener('pointermove', function(e){
+    if (!drag) return;
+    var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!drag.on) {
+      if (Math.abs(dx) < 8) return;
+      if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
+      drag.on = true; drag.c.classList.add('drag'); drag.c.classList.remove('hint');
+      try { drag.c.setPointerCapture(drag.id); } catch(_) {}
+    }
+    drag.dx = dx; drag.c.style.transform = 'translateX(' + dx + 'px) rotate(' + (dx * .06) + 'deg)';
+  });
+  function endDrag(){
+    if (!drag) return; var d = drag; drag = null;
+    if (!d.on) return;
+    d.c.classList.remove('drag');
+    if (Math.abs(d.dx) > 80) flyNext(d.dx > 0 ? 1 : -1); else layoutDeck();
+  }
+  deck.addEventListener('pointerup', endDrag); deck.addEventListener('pointercancel', endDrag);
+  deck.addEventListener('click', function(e){
+    var b = e.target.closest('.dc-cta'); if (!b) return;
+    if (form.progs.indexOf(b.dataset.code) < 0) form.progs.push(b.dataset.code);
+    track('SelectProgram', {program:b.dataset.code});
+    drawForm(); $('#book').scrollIntoView({behavior: MOTION ? 'smooth' : 'auto'});
+  });
+  onIn(deck, function(){ var top = deckCards()[deckIdx]; if (top && MOTION) { top.classList.add('hint'); setTimeout(function(){ top.classList.remove('hint'); }, 3400); } });
+  addEventListener('resize', function(){ clearTimeout(deck._rt); deck._rt = setTimeout(drawDeck, 200); });
+
+  /* ── Parent-review video at the top ── */
+  (function(){
+    var fig = $('#hvid');
+    if (VIDEO.poster) { fig.style.backgroundImage = 'url("' + VIDEO.poster + '")'; fig.style.backgroundSize = 'cover'; }
+    $('.hvid-ph', fig).hidden = !!VIDEO.src;
+    $('.hvid-play', fig).addEventListener('click', function(){
+      if (!VIDEO.src) { fig.classList.remove('nudge'); void fig.offsetWidth; fig.classList.add('nudge'); return; }
+      var v = document.createElement('video');
+      v.src = VIDEO.src; v.controls = true; v.playsInline = true; if (VIDEO.poster) v.poster = VIDEO.poster;
+      fig.appendChild(v); v.play().catch(function(){});
+      track('PlayVideoReview', {lang:lang});
+    });
+  })();
 
   /* ── Referral ── */
   onIn($('#ref-card'), function(){
@@ -1315,15 +1509,28 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
   onIn($('#steps-list'), function(){ $('#steps-list').classList.add('drawn'); });
 
   /* ── Booking form (values stored as codes, so switching language keeps them) ── */
-  var form = {step:1, name:'', age:'', progs:[], teacher:'', state:'', slots:[{day:'', time:''}], pkg:null, done:false};
+  var form = {step:1, name:'', age:'', progs:[], teacher:'', state:'', picks:[], cal:null, active:null, activeP:null, pkg:null, done:false};
   function lab(list, code){ for (var i = 0; i < list.length; i++) if (list[i][0] === code) return list[i][1]; return code; }
   function planText(){
     if (!form.pkg) return '';
     var t = T[lang], n = form.pkg.n, d = form.pkg.d;
     return t.plan(n) + (lang === 'ar' ? '، ' + (d === '60' ? 'ساعة' : '30 دقيقة') : ', ' + d + ' min') + ' (' + money(PRICES[d][n]) + ')';
   }
-  function goodSlots(){ return form.slots.filter(function(s){ return s.day && s.time; }); }
-  function slotText(s){ var f = T[lang].f, p = s.time.split(':'); return lab(f.days, s.day) + ' ' + f.time(+p[0], p[1]); }
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function dkey(d){ return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function dparse(k){ var a = k.split('-'); return new Date(+a[0], +a[1] - 1, +a[2]); }
+  function dlong(k){ return new Intl.DateTimeFormat(T[lang].f.loc, {weekday:'long', day:'numeric', month:'long'}).format(dparse(k)); }
+  function hm(h){ return T[lang].f.time(h, '00'); }
+  function period(k){ return PERIODS.filter(function(P){ return P.k === k; })[0]; }
+  function perRange(P){ return hm(P.from) + ' – ' + hm(P.to); }
+  function sortedPicks(){
+    var order = {}; PERIODS.forEach(function(P, i){ order[P.k] = i; });
+    return form.picks.slice().sort(function(a, b){ return a.d < b.d ? -1 : a.d > b.d ? 1 : order[a.p] - order[b.p]; });
+  }
+  function pickText(pk){
+    var f = T[lang].f;
+    return dlong(pk.d) + ': ' + f.periods[pk.p] + (pk.t ? (lang === 'ar' ? '، ' : ', ') + hm(+pk.t) : ' (' + perRange(period(pk.p)) + ')');
+  }
   function message(){
     var f = T[lang].f, m = f.msg, sep = lang === 'ar' ? '، ' : ', ';
     var src = ['utm_source','utm_campaign','utm_content'].map(function(k){ return QS.get(k); }).filter(Boolean).join(' / ');
@@ -1333,7 +1540,8 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
       '• ' + m.prog + ': ' + (form.progs.map(function(c){ return lab(f.progs, c); }).join(sep) || '-'),
       '• ' + m.teacher + ': ' + (form.teacher ? lab(f.teachers, form.teacher) : '-'),
       '• ' + m.state + ': ' + (form.state === 'outside' ? f.outside : (form.state || '-')),
-      '• ' + m.time + ': ' + (goodSlots().map(slotText).join(sep) || '-')];
+      '• ' + m.time + ':' + (form.picks.length ? '' : ' -')];
+    sortedPicks().forEach(function(pk){ lines.push('   - ' + pickText(pk)); });
     if (form.pkg) lines.push('• ' + m.plan + ': ' + planText());
     if (REF) lines.push('• ' + m.ref + ': ' + REF);
     if (src) lines.push('• ' + m.src + ': ' + src);
@@ -1347,14 +1555,50 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
         return '<button type="button" class="chip" ' + (multi ? 'aria-pressed' : 'role="radio" aria-checked') + '="' + on + '" data-v="' + o[0] + '">' + o[1] + '</button>';
       }).join('') + '</div>';
   }
-  function slotsHTML(){
+  function calHTML(){
+    var f = T[lang].f, now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate()), tk = dkey(today);
+    if (!form.cal) form.cal = {y:today.getFullYear(), m:today.getMonth()};
+    var y = form.cal.y, m = form.cal.m, first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate();
+    var minM = today.getFullYear() * 12 + today.getMonth(), curM = y * 12 + m;
+    var chev = '<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>';
+    var h = '<div class="cal"><div class="cal-h">' +
+      '<button type="button" class="cal-nav ch-back" data-dir="-1" aria-label="' + f.prevM + '"' + (curM <= minM ? ' disabled' : '') + '>' + chev + '</button>' +
+      '<b>' + new Intl.DateTimeFormat(f.loc, {month:'long', year:'numeric'}).format(first) + '</b>' +
+      '<button type="button" class="cal-nav ch-fwd" data-dir="1" aria-label="' + f.nextM + '"' + (curM >= minM + 2 ? ' disabled' : '') + '>' + chev + '</button></div><div class="cal-g">';
+    h += f.wd.map(function(w){ return '<span class="wd" aria-hidden="true">' + w + '</span>'; }).join('');
+    for (var i = 0; i < first.getDay(); i++) h += '<span aria-hidden="true"></span>';
+    for (var d = 1; d <= days; d++) {
+      var dt = new Date(y, m, d), k = dkey(dt), has = form.picks.some(function(p){ return p.d === k; });
+      h += '<button type="button" class="cal-d' + (k === tk ? ' today' : '') + (form.active === k ? ' active' : '') + (has ? ' has' : '') + '" data-d="' + k + '" aria-pressed="' + (form.active === k) + '" aria-label="' + dlong(k) + '"' + (dt < today ? ' disabled' : '') + '>' + d + '</button>';
+    }
+    return h + '</div></div>';
+  }
+  function dayHTML(){
+    if (!form.active) return '';
+    var f = T[lang].f, k = form.active;
+    var h = '<div class="day-panel"><p class="bk-q">' + f.dayQ + ' ' + dlong(k) + '</p><div class="periods">' +
+      PERIODS.map(function(P){ var on = form.picks.some(function(p){ return p.d === k && p.p === P.k; }); return '<button type="button" class="per" data-p="' + P.k + '" aria-pressed="' + on + '"><b>' + f.periods[P.k] + '</b><small>' + perRange(P) + '</small></button>'; }).join('') + '</div>';
+    var ap = form.picks.filter(function(p){ return p.d === k && p.p === form.activeP; })[0];
+    if (ap) {
+      var P = period(ap.p);
+      h += '<p class="bk-hint">' + f.perHint + '</p><div class="chips hours">';
+      for (var hr = P.from; hr < P.to; hr++) h += '<button type="button" class="chip hr" data-h="' + hr + '" aria-pressed="' + (ap.t === String(hr)) + '">' + hm(hr) + '</button>';
+      h += '</div>';
+    }
+    return h + '</div>';
+  }
+  function picksHTML(){
+    if (!form.picks.length) return '';
     var f = T[lang].f;
-    return form.slots.map(function(s, i){
-      return '<div class="slot" data-i="' + i + '">' +
-        '<select aria-label="' + f.dayPh + '" data-f="day"><option value="">' + f.dayPh + '</option>' + f.days.map(function(d){ return '<option value="' + d[0] + '"' + (s.day === d[0] ? ' selected' : '') + '>' + d[1] + '</option>'; }).join('') + '</select>' +
-        '<input type="time" aria-label="' + f.timeLabel + '" data-f="time" value="' + esc(s.time) + '" step="900">' +
-        '<button type="button" class="rm-slot" aria-label="' + f.removeSlot + '"' + (form.slots.length === 1 ? ' disabled' : '') + '>' + playIcon('x') + '</button></div>';
-    }).join('');
+    return '<p class="bk-q">' + f.picked + '</p><ul class="picks">' + sortedPicks().map(function(p){ return '<li><span>' + pickText(p) + '</span><button type="button" class="rm-pick" data-d="' + p.d + '" data-p="' + p.p + '" aria-label="' + f.removePick + '">' + playIcon('x') + '</button></li>'; }).join('') + '</ul>';
+  }
+  function drawCal(){
+    var a = document.activeElement, sel = null;
+    if (a && host.contains(a)) ['data-d','data-p','data-h','data-dir'].some(function(at){ if (a.hasAttribute(at)) { sel = '[' + at + '="' + a.getAttribute(at) + '"]' + (a.classList.contains('rm-pick') ? '.rm-pick' : ''); return true; } });
+    $('#cal-host').innerHTML = calHTML() + dayHTML() + picksHTML();
+    if (sel) { var b = $('#cal-host ' + sel); if (b && !b.disabled) b.focus(); }
+    var err = $('#bk .bk-err'); if (err) err.textContent = '';
+    refreshLink();
   }
   function drawForm(){
     var f = T[lang].f, host = $('#form-host');
@@ -1369,9 +1613,8 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
         '<div class="bk-field"><label for="bk-state">' + f.state + '</label><select id="bk-state"><option value="">' + f.statePh + '</option>' +
           STATES.map(function(s){ return '<option' + (form.state === s ? ' selected' : '') + '>' + s + '</option>'; }).join('') +
           '<option value="outside"' + (form.state === 'outside' ? ' selected' : '') + '>' + f.outside + '</option></select></div>' +
-        '<p class="bk-q">' + f.slots + '</p><p class="bk-hint">' + f.slotsHint + '</p>' +
-        '<div class="slots" id="slots">' + slotsHTML() + '</div>' +
-        '<button type="button" class="add-slot">+ ' + f.add + '</button></div>' : '') +
+        '<p class="bk-q">' + f.calQ + '</p><p class="bk-hint">' + f.calHint + '</p>' +
+        '<div id="cal-host" class="bk-pane">' + calHTML() + dayHTML() + picksHTML() + '</div></div>' : '') +
       '<p class="bk-err" role="alert"></p>' +
       '<div class="bk-nav">' +
         (form.step > 1 ? '<button type="button" class="bk-back">' + f.back + '</button>' : '') +
@@ -1388,11 +1631,27 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     if (step === 1 && +form.age < 4) return f.e1y;
     if (step === 2 && !form.progs.length) return f.e2;
     if (step === 3 && !form.state) return f.e3s;
-    if (step === 3 && !goodSlots().length) return f.e3t;
+    if (step === 3 && !form.picks.length) return f.e3t;
     return '';
   }
   var host = $('#form-host');
   host.addEventListener('click', function(e){
+    var nav = e.target.closest('.cal-nav');
+    if (nav) { var t = form.cal.y * 12 + form.cal.m + (+nav.dataset.dir); form.cal = {y:Math.floor(t / 12), m:t % 12}; drawCal(); return; }
+    var cd = e.target.closest('.cal-d');
+    if (cd) { form.active = cd.dataset.d; form.activeP = null; drawCal(); return; }
+    var per = e.target.closest('.per');
+    if (per) {
+      var k = form.active, pk = per.dataset.p, at = -1;
+      form.picks.forEach(function(p, i){ if (p.d === k && p.p === pk) at = i; });
+      if (at > -1) { form.picks.splice(at, 1); if (form.activeP === pk) form.activeP = null; }
+      else { form.picks.push({d:k, p:pk, t:''}); form.activeP = pk; }
+      drawCal(); return;
+    }
+    var hr = e.target.closest('.hr');
+    if (hr) { form.picks.forEach(function(p){ if (p.d === form.active && p.p === form.activeP) p.t = p.t === hr.dataset.h ? '' : hr.dataset.h; }); drawCal(); return; }
+    var rp = e.target.closest('.rm-pick');
+    if (rp) { form.picks = form.picks.filter(function(p){ return !(p.d === rp.dataset.d && p.p === rp.dataset.p); }); drawCal(); return; }
     var c = e.target.closest('.chip');
     if (c) {
       var g = c.parentElement, key = g.dataset.key, v = c.dataset.v;
@@ -1405,12 +1664,6 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
       }
       $('#bk .bk-err').textContent = ''; refreshLink(); return;
     }
-    if (e.target.closest('.add-slot')) {
-      form.slots.push({day:'', time:''}); $('#slots').innerHTML = slotsHTML();
-      var rows = $$('#slots .slot'); $('select', rows[rows.length - 1]).focus(); return;
-    }
-    var rm = e.target.closest('.rm-slot');
-    if (rm) { form.slots.splice(+rm.closest('.slot').dataset.i, 1); $('#slots').innerHTML = slotsHTML(); refreshLink(); return; }
     if (e.target.closest('.bk-next')) {
       var m = check(form.step); if (m) { $('#bk .bk-err').textContent = m; return; }
       form.step++; drawForm(); var first = $('#bk .bk-pane input, #bk .bk-pane select, #bk .bk-pane .chip'); if (first) first.focus(); return;
@@ -1439,7 +1692,6 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     if (t.id === 'bk-name') form.name = t.value.trim();
     if (t.id === 'bk-age') form.age = t.value.replace(/\D/g, '').slice(0, 2);
     if (t.id === 'bk-state') form.state = t.value;
-    if (t.dataset.f) form.slots[+t.closest('.slot').dataset.i][t.dataset.f] = t.value;
     var err = $('#bk .bk-err'); if (err) err.textContent = '';
     refreshLink();
   }
@@ -1468,7 +1720,7 @@ html.anim .bk-pane{animation:fadeup .35s ease both}
     document.title = T[l].title;
     $('#say').textContent = T[l].bubble[0];
     var btn = $('#lang-btn'); btn.textContent = T[l].langBtn; btn.lang = l === 'ar' ? 'en' : 'ar';
-    drawMarquee(); drawCompare(!first); drawPlans(!first); drawReviews(!first); drawVoices(!first); drawFaq(!first); drawForm(); drawDirect(); inviteLink();
+    drawMarquee(); drawCompare(!first); drawDeck(); drawPlans(!first); drawReviews(!first); drawVoices(!first); drawFaq(!first); drawForm(); drawDirect(); inviteLink();
     if (!first) playChat();
     try { if (!first) localStorage.setItem('gt-lang', l); } catch(e) {}
     first = false;
