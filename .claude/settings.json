@@ -24,6 +24,16 @@
     ],
     "SessionStart": [
       {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v graphify >/dev/null 2>&1 || pip install -q graphifyy >/dev/null 2>&1 || true",
+            "timeout": 180
+          }
+        ]
+      },
+      {
         "matcher": "compact",
         "hooks": [
           {
